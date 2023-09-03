@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "title": "Interior Design",
+    "discount": "discount",
+    "goDown": "Go down",
+    "shopButton": "Go to shop",
+    "toolTips": {
+      "slide": "Go to product"
+    }
+  },
+  "presentation": {
+    "header": "Satisfied customers are our specialty.",
+    "text": "See what the creative process looks like and have no doubt that only imagination can limit us.",
+    "article_1": {
+      "title": "Passion",
+      "description": "Passion is the driving force that propels our creators to craft beautiful handmade ornaments. Every item that comes to life in our workshop is made with love and a passion for the art of craftsmanship. That's why when you're looking for handmade decorations, you'll find products with not only beauty but also uniqueness here. Our creators are enthusiasts of the craft, dedicating their time and energy to craft distinctive and original ornaments. Their passion allows them to conjure up diverse projects that amaze and inspire. Each item is meticulously crafted, and the passion they pour into their creations translates into high-quality and durable products. When you buy handmade ornaments from our creators, you receive more than just a product. You receive an item with a soul and a story. Every one of our products is exceptional and possesses its own character, making it a perfect gift for a loved one or for yourself."
+    },
+    "article_2": {
+      "title": "Creativity",
+      "description": "We experiment with various techniques and materials, meaning our handmade ornaments are always diverse and unique. As a result, you not only receive beautiful decorations, but also items that are exceptional and unparalleled. Our creators are exceptionally creative and can draw inspiration from various sources to craft exquisite ornaments. From traditional designs to modern and original projects, our creators have many ideas and skills to create exceptional and beautiful ornaments. We invite you to explore our unique projects, which are crafted with love and creativity. Each of our products is one-of-a-kind and distinctive, so you're sure to find something that suits your taste."
+    }
+  },
+  "products": {
+    "addToCart": "Add to cart",
+    "buy": "Buy now"
+  },
+  "cart": {
+    "emptyCart": "You have no items in your shopping cart.",
+    "goToShop": "Go to shop",
+    "title": "Your Cart",
+    "backToShop": "Back to shop"
+  },
+  "footer": {
+    "subscribe": "BE TO KNOW FIRST ABOUT NEW PRODUCTS ",
+    "button": "Subscribe"
+  },
+  "alerts": {
+    "itemAddedToCart": "Successful added to cart",
+    "suchItemExist": "Such item is exist in cart"
+  }
+}

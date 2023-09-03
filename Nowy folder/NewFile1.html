@@ -1,0 +1,274 @@
+<div class="container">
+<div class="row p-3">
+    <span class="text-center" style="font-size: 30px; font-family: 'Century Gothic', sans-serif">Zlecenie nr.: @OrderNumber</span>
+</div>
+<div class="row py-3">
+    <div class="col-sm-12 col-md-6 mb-3">
+        <div class="card py-3" style="min-height: 220px;">
+            <div class="row m-2">
+                <h5 class="text-center"> Klient</h5>
+                <div class="col-10">
+                    <SfDropDownList @ref="@ClientDropdownListObj" TValue="string" TItem="SpeditionClients_Class" bind-Index="@_NewOrderTmp.NewClientId" Placeholder="Wybierz klienta" DataSource="@_clients" AllowFiltering="true" FilterType="FilterType.Contains" IgnoreAccent="true" IgnoreCase="true" ShowClearButton="true">
+                        <DropDownListFieldSettings Value="ClientId" Text="Name"/>
+                        <DropDownListEvents TValue="string" TItem="SpeditionClients_Class" ValueChange="@OnClientSelectionChange"/>
+                    </SfDropDownList>
+                </div>
+                <div class="col text-end">
+                    <MudIconButton Color="Color.Tertiary" Icon="@Icons.Material.Filled.AddCircleOutline" Size="Size.Medium" @onclick="() => NewClientVisible = true"></MudIconButton>
+                </div>
+            </div>
+            <div class="row m-2 ">
+                <div class="col-10">
+                    <SfDropDownList @ref="@ClientContactDropdownListObj" Enabled="@EnableClientContactDropDown" TValue="string" bind-Index="@_NewOrderTmp.NewClientContactId" TItem="SpeditionClientContact_Class" Placeholder="Wybierz osobę kontaktową" PopupHeight="auto" DataSource="@_clientsContact" IgnoreAccent="true" IgnoreCase="true" ShowClearButton="true" FilterBarPlaceholder="true" FilterType="FilterType.Contains">
+                        <DropDownListEvents TItem="SpeditionClientContact_Class" TValue="string" ValueChange="@OnClientContactChange"/>
+                        <DropDownListFieldSettings Text="Name" Value="ContactId"/>
+                    </SfDropDownList>
+                </div>
+                <div class="col-2 text-end">
+                    <MudIconButton Color="Color.Tertiary" Icon="@Icons.Material.Filled.AddCircleOutline" Size="Size.Medium" @onclick="() => NewClientContactVisible = true"></MudIconButton>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 mb-3">
+        <div class="card py-3" style="min-height: 220px;">
+            <div class="row m-2">
+                <div class="col-2">
+                    <label>Przewoźnik </label>
+                </div>
+                <div class="col-8">
+                    <SfDropDownList @ref="@CarrierDropdownListObj" TValue="string" TItem="SpeditionCarriers_Data" Placeholder="Wybierz przewoźnika" DataSource="@_Carriers" AllowFiltering="true" ShowClearButton="true" EnableVirtualization="true" bind-Index="@_NewOrderTmp.NewCarrierId" FilterType="FilterType.Contains">
+                        <DropDownListTemplates TItem="SpeditionCarriers_Data">
+                            <ItemTemplate>
+                                <span class="row">
+                                    <span class="col">@(context.Name ?? "Brak")</span>
+                                    <span class="col text-end">NIP: @(context.NIP ?? "Brak")</span>
+                                </span>
+                            </ItemTemplate>
+                        </DropDownListTemplates>
+                        <DropDownListFieldSettings Value="ID" Text="Name"></DropDownListFieldSettings>
+                        <DropDownListEvents TValue="string" TItem="SpeditionCarriers_Data" ValueChange="@OnCarrierSelectionChange"/>
+                    </SfDropDownList>
+                </div>
+                <div class="col-2 text-end">
+                    <MudIconButton Color="Color.Tertiary" Icon="@Icons.Material.Filled.AddCircleOutline" Size="Size.Medium" @onclick="@AddNewCarrier"></MudIconButton>
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-2">
+                    <label>Kontakt </label>
+                </div>
+                <div class="col-8">
+                    <SfDropDownList @ref="@CarrierContactDropdownListObj" TValue="string" TItem="SpeditionCarriers_Contact" Placeholder="Wybierz osobe kontaktową" DataSource="@_CarriersContacts" AllowFiltering="true" @bind-Value="@SelectedNewCarrierContact" FilterType="FilterType.Contains">
+                        <DropDownListFieldSettings Value="ID" Text="Name"></DropDownListFieldSettings>
+                        <DropDownListEvents TValue="string" TItem="SpeditionCarriers_Contact" OnValueSelect="OnValueCarrierContactSelect"/>
+                    </SfDropDownList>
+                </div>
+                <div class="col-2 text-end">
+                    <MudIconButton Color="Color.Tertiary" Icon="@Icons.Material.Filled.AddCircleOutline" Size="Size.Medium" @onclick="() => NewCarrierContactVisible = true" Disabled="@NewCarrierContactVisibleBtn"></MudIconButton>
+                </div>
+            </div>
+            <div class="row m-2 ">
+                <div class="col-2">
+                    <label>Kierowca </label>
+                </div>
+                <div class="col-8">
+                    <SfDropDownList @ref="@CarrierDriverDropdownListObj" TValue="string" TItem="SpeditionCarriers_Drivers" Placeholder="Wybierz Kierowcę" DataSource="@_CarriersDrivers" AllowFiltering="true" @bind-Value="@SelectedNewCarrierDriver" FilterType="FilterType.Contains">
+                        <DropDownListFieldSettings Value="ID" Text="Name"/>
+                        <DropDownListEvents TValue="string" TItem="SpeditionCarriers_Drivers" ValueChange="@OnCarrierDriverSelectionChange"/>
+                    </SfDropDownList>
+                </div>
+                <div class="col-2 text-end">
+                    <MudIconButton Color="Color.Tertiary" Icon="@Icons.Material.Filled.AddCircleOutline" Size="Size.Medium" @onclick="() => NewCarrierDriverVisible = true" Disabled="@NewCarrierDriverVisibleBtn"></MudIconButton>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr/>
+<div class="container-fluid" style="min-height: 200px;">
+    <div class="row text-center mb-2">
+        <div class="col">
+            <MudButton Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.AddLocation" Style="background-color: yellowgreen; color: white; width: 200px; height: 50px;" @onclick="@AddNewAddressTMP">
+                NOWY ADRES
+            </MudButton>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @if (virtualAddressList.List.Count != 0)
+            {
+                foreach (var ad in virtualAddressList.List.Where(z => z is { Is_Load: 1,Is_UnLoad: 0 }))
+                {
+                    <div class="card cardAddressLoading pt-2">
+                        <table>
+                            <tr>
+                                <td class="pt-3">
+                                    <h5>@ad.Name_tmp</h5>
+                                    <i>@ad.Address_tmp</i>
+                                    <div class="row">
+                                        <i>@ad.PCode_tmp @ad.City_tmp @ad.Country_tmp</i>
+                                    </div>
+                                </td>
+                                <td class="pt-3">
+                                    <i>Od: @ad.DateFrom_tmp.Value.ToShortDateString() : @ad.TimeFrom_tmp.Value.ToString(@"hh\:mm")</i>
+                                    <br/>
+                                    <i>Do: @ad.DateTo_tmp.Value.ToShortDateString() : @ad.TimeTo_tmp.Value.ToString(@"hh\:mm")</i>
+                                </td>
+                                <td style="width: 50px;">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Delete" Variant="Variant.Outlined" Color="Color.Error" Size="Size.Small" @onclick="() => RemoveAddressTMP(ad)"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="card cardAddressLoading" style="display: flex; justify-content: center; align-items: center;">
+                    <h5 class="text-center text-danger">Brak adresu załadunku</h5>
+                </div>
+            }
+        </div>
+        <div class="col">
+            @if (virtualAddressList.List.Where(z => z.Is_Load == 0 && z.Is_UnLoad == 1).Count() != 0)
+            {
+                foreach (var ad in virtualAddressList.List.Where(z => z is { Is_Load: 0,Is_UnLoad: 1 }))
+                {
+                    <div class="row card cardAddressUnLoading">
+                        <table>
+                            <tr>
+                                <td class="pt-3" style="max-width: 300px;">
+                                    <h5>@ad.Name_tmp</h5>
+                                    <i>@ad.Address_tmp</i>
+                                    <div class="row">
+                                        <i>@ad.PCode_tmp @ad.City_tmp @ad.Country_tmp</i>
+                                    </div>
+                                </td>
+                                <td class="pt-3">
+                                    <i>Od: @ad.DateFrom_tmp.Value.ToShortDateString() : @ad.TimeFrom_tmp.Value.ToString(@"hh\:mm")</i>
+                                    <br/>
+                                    <i>Do: @ad.DateTo_tmp.Value.ToShortDateString() : @ad.TimeTo_tmp.Value.ToString(@"hh\:mm")</i>
+                                </td>
+                                <td style="width: 50px;">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Delete" Variant="Variant.Outlined" Color="Color.Error" Size="Size.Small" @onclick="() => RemoveAddressTMP(ad)"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="card cardAddressUnLoading" style="display: flex; justify-content: center; align-items: center;">
+                    <h5 class="text-center text-danger">Brak adresu rozładunku</h5>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col text-center rounded-3 m-3 p-2">
+        <h5 class="text-center">Ładunek</h5>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-transparent" id="Weight">Waga</span>
+            <input type="number" class="form-control text-end" @bind="@_NewOrderTmp.Weight" placeholder="0" aria-label="Weight" aria-describedby="Weight">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-transparent" id="Quantity">Ilość</span>
+            <input type="number" @bind="@_NewOrderTmp.Quantity" class="form-control text-end" placeholder="0" aria-label="Username" aria-describedby="Quantity">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-transparent" id="Kilometers">Kilometry</span>
+            <input type="number" @bind="@_NewOrderTmp.Route" class="form-control text-end" placeholder="0" aria-label="Kilometers" aria-describedby="Kilometers">
+        </div>
+    </div>
+    <div class="d-flex" style="width: 30px;">
+        <div class="vr"></div>
+    </div>
+    <div class="col ">
+        <h5 class="text-center">Kwoty</h5>
+        <div class="input-group row mt-3">
+            <span class="col input-group-text bg-transparent">Klient: </span>
+            <input type="number" class="col form-control text-end input-select-width" maxlength="5" @bind="@_NewOrderTmp.ClientPrice">
+            <select class="col form-select input-select-width" @bind="@_NewOrderTmp.ClientCurrency">
+                <option value="pln">PLN</option>
+                <option value="euro" selected>EURO</option>
+            </select>
+        </div>
+        <div class="input-group row mt-3">
+            <span class="col input-group-text bg-transparent">Termin: </span>
+            <input type="number" class="col form-control text-end input-select-width" @bind="@_NewOrderTmp.ClientPaymentTime">
+            <select class="col form-select input-select-width">
+                <option value="1" selected>Przelew</option>
+                <option value="2">Gotówka</option>
+                <option value="3">Inne</option>
+            </select>
+        </div>
+        <div class="input-group mt-3 row">
+            <span class="col input-group-text bg-transparent">Przewoźnik: </span>
+            <input type="number" class="col form-control text-end input-select-width" @bind="@_NewOrderTmp.CarrierPrice">
+            <select class="col form-select input-select-width" @bind="@_NewOrderTmp.CarrierCurrency">
+                <option value="pln">PLN</option>
+                <option value="euro" selected>EURO</option>
+            </select>
+        </div>
+        <div class="input-group mt-3 row">
+            <span class="col input-group-text bg-transparent">Termin: </span>
+            <input type="number" class="col form-control text-end input-select-width" @bind="@_NewOrderTmp.CarrierPaymentTime">
+            <select class="col form-select input-select-width">
+                <option value="1" selected>Przelew</option>
+                <option value="2">Gotówka</option>
+                <option value="3">Inne</option>
+            </select>
+        </div>
+    </div>
+    <div class="d-flex" style="width: 30px; align-content: center;">
+        <div class="vr"></div>
+    </div>
+    <div class="col-3 text-center rounded-3 m-3 p-3">
+        <h5>Inne</h5>
+        <div class="form-floating mt-3">
+            <select class="form-select" aria-label="Rodzaj pojazdu" @bind="_NewOrderTmp.VehicleType">
+                <option value="Solówka" selected>Solówka</option>
+                <option value="TIR">TIR</option>
+                <option value="BUS">BUS</option>
+                <option value="Chłodnia">Chłodnia</option>
+                <option value="Laweta">Laweta</option>
+                <option value="Cysterna">Cysterna</option>
+            </select>
+            <label for="floatingSelect">Rodzaj pojazdu</label>
+        </div>
+        <div class="form-floating mt-3">
+            <select class="form-select" aria-label="Rodzaj nadwozia" @bind="@_NewOrderTmp.VehicleBody">
+                <option value="Plandeka" selected>Plandeka</option>
+                <option value="Kontener">Kontener</option>
+                <option value="Wywrotka">Wywrotka </option>
+                <option value="Chłodnia">Chłodnia </option>
+                <option value="Cysterna">Cysterna </option>
+                <option value="Platforma">Platforma </option>
+                <option value="Laweta">Laweta </option>
+                <option value="Betonomieszarka">Betonomieszarka </option>
+                <option value="HDS">Samochód z HDS (żurawiem)</option>
+                <option value="Niskopodwoziowa">Naczepa niskopodwoziowa </option>
+            </select>
+            <label for="floatingSelect">Rodzaj nadwozia</label>
+        </div>
+        <div class="row mt-3">
+            <div class="btn-group col" role="group">
+                <button class="btn @(_NewOrderTmp.FTL ? "btn-success" : "btn-light")" type="button" @onclick="FTLClick" aria-pressed="@_NewOrderTmp.FTL">FTL</button>
+                <button class="btn @(_NewOrderTmp.LTL ? "btn-success" : "btn-light")" type="button" @onclick="LTLClick" aria-pressed="@_NewOrderTmp.LTL">LTL</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row m-5">
+    <div class="row text-center">
+        <div class="col">
+            <button class="btn btn-success btn-lg" disabled="@SaveButtonDisabled" style="width: 300px;" @onclick="@SaveNewOrderAsync">Zapisz nowe zlecenie</button>
+        </div>
+    </div>
+</div>
+</div>

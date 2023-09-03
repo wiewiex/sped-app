@@ -1,0 +1,21 @@
+{
+  "name": "Moja aplikacja",
+  "short_name": "Aplikacja",
+  "description": "Opis mojej aplikacji",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/assets/logo/logo-vector-2.png",
+      "sizes": "600x600",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logo/logo-vector-2-144px.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}

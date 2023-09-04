@@ -38,6 +38,10 @@ export const Container = styled.div(
     zIndex?: number;
     boxShadow?: string;
     backgroundGradient?: boolean;
+    borderTop?: string;
+    borderBottom?: string;
+    borderLeft?: string;
+    borderRight?: string;
   }) => css`
     position: ${props.relative ? 'relative' : 'initial'};
     display: flex;
@@ -76,6 +80,10 @@ export const Container = styled.div(
     background-image: ${props.backgroundGradient
       ? (props) => props.theme.backgroundGradient
       : 'initial'};
+    border-top: ${props.borderTop ? props.borderTop : 'initial'};
+    border-bottom: ${props.borderBottom ? props.borderBottom : 'initial'};
+    border-left: ${props.borderLeft ? props.borderLeft : 'initial'};
+    border-right: ${props.borderRight ? props.borderRight : 'initial'};
 
     > img {
       object-position: ${props.imgPosition ? props.imgPosition : 'center'};
@@ -208,7 +216,7 @@ export const SecondaryButtonContainer = styled.button`
 `;
 
 export const PrimaryTextInputContainer = styled.input<{ error: boolean }>`
-  padding: 10px 0;
+  padding: 2rem 0 1.5rem 0.5rem;
   border: none;
   border-bottom: 1px solid
     ${(props) =>
@@ -219,10 +227,6 @@ export const PrimaryTextInputContainer = styled.input<{ error: boolean }>`
   color: ${(props) => props.theme.colors.text};
   width: 100%;
   background-color: transparent;
-
-  &&::placeholder {
-    color: ${(props) => props.theme.colors.placeholder};
-  }
 `;
 
 export const GlassBackground = styled.div`

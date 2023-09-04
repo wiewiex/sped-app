@@ -12,9 +12,6 @@ export const Text = styled.p<{ textAlign?: string }>`
   @media ${mediaQueries.tabletHorizontal} {
     font-size: 1.5rem;
   }
-  @media ${mediaQueries.desktop} {
-    font-size: 2rem;
-  }
 `;
 
 export const H2 = styled.h2<{
@@ -122,5 +119,21 @@ export const H1 = styled.h1<{
   @media ${mediaQueries.bigScreen} {
     font-size: 12rem;
     word-break: keep-all;
+  }
+`;
+
+export const SmallText = styled.p<{ textAlign?: string }>`
+  text-align: ${(props) =>
+    props.textAlign ? props.textAlign : 'initial'};
+  font-size: 1rem;
+  font-family: ${(props) => props.theme.fonts.secondary};
+  font-weight: 200;
+  color: ${(props) => props.theme.colors.placeholder};
+  line-height: 1.15;
+  @media ${mediaQueries.tabletHorizontal} {
+    font-size: 1.2rem;
+  }
+  @media ${mediaQueries.desktop} {
+    font-size: 1.5;
   }
 `;

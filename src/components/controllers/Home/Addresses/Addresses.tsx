@@ -1,30 +1,78 @@
 import { Container } from '@/components/views/styledContainers';
 import { useAppTheme } from '@/utils/theme';
 import Tile from '../Tile';
+import { Text } from '@/components/views/styledTexts';
+import Pin from './Pin';
 
 export default function Addresses() {
-  const { colors, borderRadius, boxShadow } = useAppTheme();
   return (
-    <Tile mobileWidth="100%" minHeight="20rem">
-      <Container
-        mobileFlexDirection="row"
-        mobileJustifyContent="space-between"
-        mobileAlignItems="stretch"
-        mobileWidth="100%"
-        flex={1}
-      >
-        <Container flex={1}>1 adres</Container>
-        <Container
-          mobileWidth="0.2rem"
-          backgroundColor="black"
-        ></Container>
-        <Container flex={1}> 2 adres</Container>
+    <Tile mobileWidth="50%" minHeight="20rem">
+      <Container mobileWidth="100%" flex={1} mobileAlignItems="flex-start">
+        {addresses.map((el, i) => (
+          <Item {...el} key={i} index={i} />
+        ))}
       </Container>
     </Tile>
   );
 }
 
-const addresses = [
+const Item = ({
+  index,
+  name,
+  address,
+  postCode,
+  city,
+  country,
+}: {
+  index: number;
+  name: string;
+  address: string;
+  postCode: string;
+  city: string;
+  country: string;
+}) => {
+  const { colors, borderRadius, boxShadow } = useAppTheme();
+  const borderStyle = `1px solid ${colors.text}`;
+  const isEvenNumber = index % 2 === 0;
+  return (
+    <Container
+      mobileWidth="100%"
+      mobileMargin="0 0 2rem 0"
+      mobileAlignItems={isEvenNumber ? 'flex-start' : 'flex-end'}
+    >
+      <Container
+        borderLeft={!isEvenNumber ? borderStyle : 'initial'}
+        borderRight={isEvenNumber ? borderStyle : 'initial'}
+        mobileAlignItems={isEvenNumber ? 'flex-end' : 'flex-start'}
+        mobileWidth="50%"
+      >
+        <Container
+          mobilePadding="2rem"
+          mobileWidth="30rem"
+          mobileAlignItems={isEvenNumber ? 'flex-end' : 'flex-start'}
+        >
+          <Container mobileMargin="0 0 2rem 0">
+            <Pin />
+          </Container>
+          <Text>{name}</Text>
+          <Text>{address}</Text>
+          <Text>{postCode}</Text>
+          <Text>{city}</Text>
+          <Text>{country}</Text>
+        </Container>
+      </Container>
+    </Container>
+  );
+};
+
+const addresses: {
+  name: string;
+  address: string;
+  postCode: string;
+  city: string;
+  country: string;
+  gps: number[];
+}[] = [
   {
     name: 'Castorama',
     address: 'Żwirki wigury 4',

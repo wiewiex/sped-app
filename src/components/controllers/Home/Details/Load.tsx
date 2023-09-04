@@ -12,19 +12,18 @@ export default function Load() {
         mobileWidth="100%"
         justifyContent="space-around"
       >
-        <Item text="Waga" />
-        <Item text="Ilość" />
-        <Item text="Kilometry" />
+        <Item label="Waga" />
+        <Item label="Ilość" />
+        <Item label="Kilometry" />
       </Container>
     </Tile>
   );
 }
 
-const Item = ({ text }: { text: string }) => (
+const Item = ({ label }: { label: string }) => (
   <Container>
-    <H4>{text}</H4>
     <Container width="20rem">
-      <PrimaryTextInput />
+      <PrimaryTextInput label={label} />
     </Container>
   </Container>
 );

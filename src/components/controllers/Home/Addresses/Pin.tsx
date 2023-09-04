@@ -2,8 +2,8 @@ export default function Pin() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="70"
+      width="30"
+      height="30"
       viewBox="0 0 20 35"
       fill="#808080"
     >

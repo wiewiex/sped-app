@@ -1,15 +1,30 @@
 import { Container } from '@/components/views/styledContainers';
 import { useAppTheme } from '@/utils/theme';
 import Tile from '../Tile';
-import { Text } from '@/components/views/styledTexts';
+import { H3, H4, H5, Text } from '@/components/views/styledTexts';
 import Pin from './Pin';
+import { Fragment } from 'react';
+import Arrow from './Arrow';
 
 export default function Addresses() {
   return (
-    <Tile mobileWidth="50%" minHeight="20rem">
-      <Container mobileWidth="100%" flex={1} mobileAlignItems="flex-start">
+    <Tile mobileWidth="100%">
+      <Container
+        mobileWidth="100%"
+        flex={1}
+        mobileAlignItems="stretch"
+        mobileFlexDirection="row"
+        mobileJustifyContent="space-around"
+      >
         {addresses.map((el, i) => (
-          <Item {...el} key={i} index={i} />
+          <Fragment key={i}>
+            <Item {...el} index={i} />
+            {i < addresses.length - 1 && (
+              <Container style={{ transform: 'rotate(-90deg)' }}>
+                <Arrow />
+              </Container>
+            )}
+          </Fragment>
         ))}
       </Container>
     </Tile>
@@ -32,34 +47,29 @@ const Item = ({
   country: string;
 }) => {
   const { colors, borderRadius, boxShadow } = useAppTheme();
-  const borderStyle = `1px solid ${colors.text}`;
+  const borderStyle = `1px solid ${colors.placeholder}`;
   const isEvenNumber = index % 2 === 0;
   return (
     <Container
-      mobileWidth="100%"
       mobileMargin="0 0 2rem 0"
-      mobileAlignItems={isEvenNumber ? 'flex-start' : 'flex-end'}
+      mobileJustifyContent={isEvenNumber ? 'flex-start' : 'flex-end'}
     >
       <Container
-        borderLeft={!isEvenNumber ? borderStyle : 'initial'}
-        borderRight={isEvenNumber ? borderStyle : 'initial'}
-        mobileAlignItems={isEvenNumber ? 'flex-end' : 'flex-start'}
-        mobileWidth="50%"
+        // borderBottom={isEvenNumber ? borderStyle : 'initial'}
+        // borderTop={!isEvenNumber ? borderStyle : 'initial'}
+        mobilePadding="2rem"
+        mobileAlignItems="flex-start"
       >
-        <Container
-          mobilePadding="2rem"
-          mobileWidth="30rem"
-          mobileAlignItems={isEvenNumber ? 'flex-end' : 'flex-start'}
-        >
-          <Container mobileMargin="0 0 2rem 0">
-            <Pin />
-          </Container>
-          <Text>{name}</Text>
-          <Text>{address}</Text>
-          <Text>{postCode}</Text>
-          <Text>{city}</Text>
-          <Text>{country}</Text>
+        <Container mobileMargin="0 0 2rem 0" alignSelf="center">
+          <Pin />
         </Container>
+        <Container mobileMargin="0 0 0.5rem 0">
+          <H5>{name}</H5>
+        </Container>
+        <Text>{address}</Text>
+        <Text>{postCode}</Text>
+        <Text>{city}</Text>
+        <Text>{country}</Text>
       </Container>
     </Container>
   );

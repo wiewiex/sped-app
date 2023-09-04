@@ -17,12 +17,10 @@ export default function ClientAndCarrier() {
       <Tile mobileWidth="100%" width="48%">
         <H3>Klient</H3>
         <SelectWithPlus
-          name="klient"
           placeholder="Wybierz klienta"
           options={['Tesco', 'Aldi', 'Lidl']}
         />
         <SelectWithPlus
-          name="osoba-kontaktowa"
           placeholder="Wybierz osobę kontaktową"
           options={['Manager', 'Driver']}
         />
@@ -30,17 +28,14 @@ export default function ClientAndCarrier() {
       <Tile mobileWidth="100%" width="48%">
         <H3>Przewoźnik</H3>
         <SelectWithPlus
-          name="przewoznik"
           placeholder="Wybierz przewoźnika"
           options={['DHL', 'UPS', 'GSL']}
         />
         <SelectWithPlus
-          name="kontakt"
           placeholder="Wybierz osobę kontaktową"
           options={['DHL', 'UPS', 'GSL']}
         />
         <SelectWithPlus
-          name="kierowca"
           placeholder="Wybierz kierowcę"
           options={['Marek', 'Józek', 'Krzysiek']}
         />

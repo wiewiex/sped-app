@@ -2,11 +2,9 @@ import CustomSelect from '@/components/reusable/CustomSelect';
 import { Container } from '@/components/views/styledContainers';
 
 export default function SelectWithPlus({
-  name,
   options,
   placeholder,
 }: {
-  name: string;
   options: string[];
   placeholder?: string;
 }) {
@@ -17,7 +15,6 @@ export default function SelectWithPlus({
       mobileWidth="100%"
     >
       <CustomSelect
-        name={name}
         placeholder={placeholder}
         options={options}
         width="100%"

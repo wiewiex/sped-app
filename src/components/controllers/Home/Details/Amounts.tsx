@@ -27,7 +27,7 @@ const Column = ({
 }) => (
   <Container mobileWidth="70%">
     <Container mobileWidth="12rem">
-      <PrimaryTextInput label={label} />
+      <PrimaryTextInput label={label} type="number" />
     </Container>
     <Container mobileAlignItems="flex-end">
       <CustomSelect

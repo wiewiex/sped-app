@@ -5,7 +5,7 @@ import PrimaryTextInput from '@/components/reusable/PrimaryTextInput';
 
 export default function Load() {
   return (
-    <Tile minHeight="25rem" mobileWidth="100%">
+    <Tile minHeight="22rem" mobileWidth="100%">
       <H3>Ładunek</H3>
       <Container
         flexDirection="row"

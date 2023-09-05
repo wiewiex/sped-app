@@ -24,6 +24,7 @@ export default function Tile({
       minHeight={minHeight}
       mobilePadding="3rem"
       mobileMargin="0 0 4rem 0"
+      relative
     >
       {children}
     </Container>

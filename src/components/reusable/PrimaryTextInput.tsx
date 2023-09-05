@@ -45,7 +45,9 @@ export const PrimaryTextInputContainer = styled.input<{ error: boolean }>`
   border: none;
   border-bottom: 1px solid
     ${(props) =>
-      props.error ? props.theme.colors.error : props.theme.colors.text};
+      props.error
+        ? props.theme.colors.error
+        : props.theme.colors.placeholder};
   font-weight: 400;
   font-family: ${(props) => props.theme.fonts.secondary};
   font-size: 1.5rem;

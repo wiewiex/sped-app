@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
   html {
-    font-size: 10px;
+    font-size: 11px;
     font-family: ${(props: { theme: ITheme }) =>
       props.theme.fonts.primary};
     color: ${(props: { theme: ITheme }) => props.theme.colors.text};

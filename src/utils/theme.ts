@@ -27,7 +27,7 @@ export const themeLight: ITheme = {
     mainBackground: '#fff',
     boxBackground: '#ffffff80',
     text: '#212427',
-    accent: '#454545',
+    accent: '#63666A',
     secondaryAccent: '#6f9d22',
     footer: '#f3f2ec',
     placeholder: '#ADA4A5',

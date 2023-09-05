@@ -6,7 +6,7 @@ import CustomSelect from '@/components/reusable/CustomSelect';
 
 export default function Other() {
   return (
-    <Tile mobileWidth="100%" minHeight="35rem">
+    <Tile mobileWidth="100%" minHeight="30rem">
       <H3>Inne</H3>
       <Container flexDirection="row">
         <Item text="Rodzaj pojazdu:" selectOptions={['BUS', 'TIR']} />

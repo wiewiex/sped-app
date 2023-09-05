@@ -6,7 +6,7 @@ import CustomSelect from '@/components/reusable/CustomSelect';
 
 export default function Amounts() {
   return (
-    <Tile mobileWidth="100%" minHeight="30rem">
+    <Tile mobileWidth="100%" minHeight="25rem">
       <H3>Kwoty</H3>
       <Container mobileWidth="100%" mobileFlexDirection="row">
         <Column label="Klient" selectOptions={['EURO', 'PRZELEW']} />
@@ -30,11 +30,7 @@ const Column = ({
       <PrimaryTextInput label={label} type="number" />
     </Container>
     <Container mobileAlignItems="flex-end">
-      <CustomSelect
-        width="130px"
-        name={'amounts_' + label}
-        options={selectOptions}
-      />
+      <CustomSelect width="130px" options={selectOptions} />
     </Container>
   </Container>
 );

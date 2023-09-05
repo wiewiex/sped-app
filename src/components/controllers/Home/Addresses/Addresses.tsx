@@ -1,10 +1,14 @@
-import { Container } from '@/components/views/styledContainers';
+import {
+  Container,
+  ElementPositionWrapper,
+} from '@/components/views/styledContainers';
 import { useAppTheme } from '@/utils/theme';
 import Tile from '../Tile';
-import { H3, H4, H5, Text } from '@/components/views/styledTexts';
+import { H5, Text } from '@/components/views/styledTexts';
 import Pin from './Pin';
 import { Fragment } from 'react';
 import Arrow from './Arrow';
+import PlusOnQuarter from './PlusOnQuarter';
 
 export default function Addresses() {
   return (
@@ -27,6 +31,9 @@ export default function Addresses() {
           </Fragment>
         ))}
       </Container>
+      <ElementPositionWrapper mobileRight="0" mobileBottom="0">
+        <PlusOnQuarter />
+      </ElementPositionWrapper>
     </Tile>
   );
 }
@@ -38,6 +45,7 @@ const Item = ({
   postCode,
   city,
   country,
+  isUnload,
 }: {
   index: number;
   name: string;
@@ -45,26 +53,29 @@ const Item = ({
   postCode: string;
   city: string;
   country: string;
+  isUnload: boolean;
 }) => {
   const { colors, borderRadius, boxShadow } = useAppTheme();
-  const borderStyle = `1px solid ${colors.placeholder}`;
   const isEvenNumber = index % 2 === 0;
+  const blue = '#89CFF090';
+  const green = '#77DD7790';
   return (
     <Container
       mobileMargin="0 0 2rem 0"
       mobileJustifyContent={isEvenNumber ? 'flex-start' : 'flex-end'}
     >
       <Container
-        // borderBottom={isEvenNumber ? borderStyle : 'initial'}
-        // borderTop={!isEvenNumber ? borderStyle : 'initial'}
+        borderBottom={`2px solid ${isUnload ? blue : green}`}
+        borderTop={`2px solid ${isUnload ? blue : green}`}
         mobilePadding="2rem"
         mobileAlignItems="flex-start"
+        borderRadius={borderRadius}
       >
         <Container mobileMargin="0 0 2rem 0" alignSelf="center">
           <Pin />
         </Container>
         <Container mobileMargin="0 0 0.5rem 0">
-          <H5>{name}</H5>
+          <H5 color="#63666A">{name}</H5>
         </Container>
         <Text>{address}</Text>
         <Text>{postCode}</Text>
@@ -82,6 +93,7 @@ const addresses: {
   city: string;
   country: string;
   gps: number[];
+  isUnload: boolean;
 }[] = [
   {
     name: 'Castorama',
@@ -90,6 +102,7 @@ const addresses: {
     city: 'Warszawa',
     country: 'Poland',
     gps: [37.7749, -122.4194],
+    isUnload: false,
   },
   {
     name: 'Przykładowa Firma',
@@ -98,6 +111,7 @@ const addresses: {
     city: 'Warszawa',
     country: 'Poland',
     gps: [52.2297, 21.0122],
+    isUnload: true,
   },
   {
     name: 'Sklep AGD',
@@ -106,6 +120,7 @@ const addresses: {
     city: 'Łódź',
     country: 'Poland',
     gps: [51.7704, 19.4562],
+    isUnload: false,
   },
   {
     name: 'Meble Domowe',
@@ -114,6 +129,7 @@ const addresses: {
     city: 'Kraków',
     country: 'Poland',
     gps: [50.0647, 19.945],
+    isUnload: false,
   },
   {
     name: 'Sklep Elektroniczny',
@@ -122,5 +138,6 @@ const addresses: {
     city: 'Warszawa',
     country: 'Poland',
     gps: [52.2321, 21.016],
+    isUnload: true,
   },
 ];

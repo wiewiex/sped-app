@@ -1,5 +1,5 @@
-import Home from '@/components/controllers/Home';
+import Main from '@/components/controllers/Main';
 
-export default function IndexPage() {
-  return <Home />;
+export default function MainPage() {
+  return <Main />;
 }

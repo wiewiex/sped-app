@@ -31,21 +31,14 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html>
+      <Html style={{ fontSize: '10px' }}>
         <Head>
-          <link rel="manifest" href="/manifest.json" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            rel="apple-touch-icon"
-            href="\assets\logo\logo-vector-2-144px.png"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
           />
-          <meta name="theme-color" content="#fff" />
-          <meta property="og:url" content="PLACEHOLDER" />
-          <meta property="og:image" content="PLACEHOLDER" />
-          <meta property="og:type" content="cv" />
-          <meta property="og:title" content="PLACEHOLDER" />
-          <meta name="twitter:card" content="PLACEHOLDER" />
-          <meta property="og:description" content="PLACEHOLDER" />
-          <meta property="og:image" content="PLACEHOLDER" />
         </Head>
         <body>
           <Main />

@@ -5,6 +5,8 @@ export const Container = styled.div(
   (props: {
     mobileWidth?: string;
     width?: string;
+    mobileMinWidth?: string;
+    minWidth?: string;
     mobileMaxWidth?: string;
     maxWidth?: string;
     mobileHeight?: string;
@@ -57,6 +59,7 @@ export const Container = styled.div(
     align-self: ${props.mobileAlignSelf ? props.mobileAlignSelf : 'auto'};
     width: ${props.mobileWidth ? props.mobileWidth : 'auto'};
     max-width: ${props.mobileMaxWidth ? props.mobileMaxWidth : 'initial'};
+    min-width: ${props.mobileMinWidth ? props.mobileMinWidth : 'initial'};
     max-height: ${props.mobileMaxHeight
       ? props.mobileMaxHeight
       : 'initial'};
@@ -97,6 +100,9 @@ export const Container = styled.div(
 
     @media ${mediaQueries.tabletHorizontal} {
       width: ${props.width ? props.width : props.mobileWidth || 'auto'};
+      max-width: ${props.minWidth
+        ? props.minWidth
+        : props.mobileMinWidth || 'initial'};
       max-width: ${props.maxWidth
         ? props.maxWidth
         : props.mobileMaxWidth || 'initial'};

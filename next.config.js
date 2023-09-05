@@ -1,4 +1,6 @@
 const nextConfig = {
+  assetPrefix: '.',
+  output: 'export',
   reactStrictMode: true,
   compiler: {
     styledComponents: true,

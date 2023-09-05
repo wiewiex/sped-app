@@ -6,8 +6,8 @@ import { Container } from '../views/styledContainers';
 
 interface IPrimaryTextInput {
   label: string;
-  onChange: ChangeEventHandler<HTMLInputElement>;
-  value: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  value?: string;
   error?: undefined | string | boolean;
   onBlur?: (e: any) => void;
   type?: 'text' | 'number';

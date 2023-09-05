@@ -9,8 +9,11 @@ import Pin from './Pin';
 import { Fragment } from 'react';
 import Arrow from './Arrow';
 import PlusOnQuarter from './PlusOnQuarter';
+import { useAppContext } from '@/context/AppContext';
 
 export default function Addresses() {
+  const { setShowAddAddressModal } = useAppContext();
+
   return (
     <Tile mobileWidth="100%">
       <Container
@@ -31,7 +34,11 @@ export default function Addresses() {
           </Fragment>
         ))}
       </Container>
-      <ElementPositionWrapper mobileRight="0" mobileBottom="0">
+      <ElementPositionWrapper
+        mobileRight="0"
+        mobileBottom="0"
+        onClick={() => setShowAddAddressModal(true)}
+      >
         <PlusOnQuarter />
       </ElementPositionWrapper>
     </Tile>

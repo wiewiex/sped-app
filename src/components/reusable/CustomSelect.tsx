@@ -1,5 +1,6 @@
 import Select from 'react-select';
 import styled from 'styled-components';
+import { useId } from 'react';
 
 export default function CustomSelect({
   options,
@@ -15,10 +16,14 @@ export default function CustomSelect({
   const customStyles = {
     control: (provided: any) => ({
       ...provided,
-
       boxShadow: '2px 2px 2px #00000010',
       cursor: 'pointer',
       border: `1px solid #ADA4A520`,
+      fontFamily: 'Montserrat',
+    }),
+    option: (provided: any) => ({
+      ...provided,
+      fontFamily: 'Montserrat',
     }),
   };
 
@@ -29,6 +34,7 @@ export default function CustomSelect({
         styles={customStyles}
         placeholder={placeholder}
         defaultValue={!placeholder && convertedOptions[0]}
+        instanceId={useId()}
       />
     </CustomSelectContainer>
   );

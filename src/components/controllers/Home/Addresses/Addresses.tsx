@@ -4,18 +4,20 @@ import {
 } from '@/components/views/styledContainers';
 import { useAppTheme } from '@/utils/theme';
 import Tile from '../Tile';
-import { H5, Text } from '@/components/views/styledTexts';
+import { H5, SmallText, Text } from '@/components/views/styledTexts';
 import Pin from './Pin';
 import { Fragment } from 'react';
 import Arrow from './Arrow';
 import PlusOnQuarter from './PlusOnQuarter';
 import { useAppContext } from '@/context/AppContext';
 
+const blue = '#89CFF090';
+const green = '#77DD7790';
+
 export default function Addresses() {
   const { setShowAddAddressModal } = useAppContext();
-
   return (
-    <Tile mobileWidth="100%">
+    <Tile mobileWidth="100%" minHeight="35rem">
       <Container
         mobileWidth="100%"
         flex={1}
@@ -35,6 +37,10 @@ export default function Addresses() {
           </Fragment>
         ))}
       </Container>
+      <Container mobileFlexDirection="row" mobileMargin="0 0 1rem 0">
+        <ColorLegend color={blue} text="rozładunek" />
+        <ColorLegend color={green} text="załadunek" />
+      </Container>
       <ElementPositionWrapper
         mobileRight="0"
         mobileBottom="0"
@@ -45,6 +51,20 @@ export default function Addresses() {
     </Tile>
   );
 }
+
+const ColorLegend = ({ color, text }: { color: string; text: string }) => {
+  return (
+    <Container mobileFlexDirection="row" mobileMargin="0.5rem">
+      <Container
+        mobileWidth="2rem"
+        mobileHeight="2rem"
+        backgroundColor={color}
+        mobileMargin="0 0.4rem 0 0"
+      />
+      <SmallText>- {text}</SmallText>
+    </Container>
+  );
+};
 
 const Item = ({
   index,
@@ -63,15 +83,10 @@ const Item = ({
   country: string;
   isUnload: boolean;
 }) => {
-  const { colors, borderRadius, boxShadow } = useAppTheme();
-  const isEvenNumber = index % 2 === 0;
-  const blue = '#89CFF090';
-  const green = '#77DD7790';
+  const { borderRadius } = useAppTheme();
+  // const isEvenNumber = index % 2 === 0;
   return (
-    <Container
-      mobileMargin="0 0 2rem 0"
-      mobileJustifyContent={isEvenNumber ? 'flex-start' : 'flex-end'}
-    >
+    <Container mobileMargin="0 0 2rem 0" mobileJustifyContent="center">
       <Container
         borderBottom={`2px solid ${isUnload ? blue : green}`}
         borderTop={`2px solid ${isUnload ? blue : green}`}

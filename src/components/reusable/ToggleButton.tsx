@@ -4,7 +4,7 @@ import {
   ElementPositionWrapper,
 } from '../views/styledContainers';
 import styled from 'styled-components';
-import { H5 } from '../views/styledTexts';
+import { Text } from '../views/styledTexts';
 import { useRef } from 'react';
 
 export default function ToggleButton({
@@ -14,7 +14,7 @@ export default function ToggleButton({
   offText: string;
   onText: string;
 }) {
-  const { colors } = useAppTheme();
+  const { colors, borderRadius } = useAppTheme();
   const checkboxId = `toggle-button_${offText}_${onText}`;
   const width = 25;
 
@@ -23,7 +23,7 @@ export default function ToggleButton({
   return (
     <Container
       backgroundGradient
-      borderRadius="3rem"
+      borderRadius={borderRadius}
       mobileWidth={width + 'rem'}
       mobileHeight="5rem"
       relative
@@ -36,8 +36,8 @@ export default function ToggleButton({
           zIndex={2}
           cursor="pointer"
         >
-          <H5>{offText}</H5>
-          <H5>{onText}</H5>
+          <Text>{offText}</Text>
+          <Text>{onText}</Text>
         </Container>
         <input ref={checkboxRef} id={checkboxId} type="checkbox" />
         <ElementPositionWrapper
@@ -51,7 +51,7 @@ export default function ToggleButton({
             backgroundColor={colors.mainBackground}
             mobileWidth={width / 2 + 'rem'}
             flex={1}
-            borderRadius="3rem"
+            borderRadius={borderRadius}
             className="marker"
           />
         </ElementPositionWrapper>

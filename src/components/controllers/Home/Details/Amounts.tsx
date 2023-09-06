@@ -8,7 +8,7 @@ export default function Amounts() {
   return (
     <Tile mobileWidth="100%" minHeight="25rem">
       <H3>Kwoty</H3>
-      <Container mobileWidth="100%" mobileFlexDirection="row">
+      <Container mobileWidth="100%" flexDirection="row">
         <Column label="Klient" selectOptions={['EURO', 'PRZELEW']} />
         <Column label="Termin" selectOptions={['EURO', 'PRZELEW']} />
         <Column label="Przewoźnik" selectOptions={['EURO', 'PRZELEW']} />

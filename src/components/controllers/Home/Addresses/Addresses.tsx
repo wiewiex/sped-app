@@ -22,6 +22,7 @@ export default function Addresses() {
         mobileAlignItems="stretch"
         mobileFlexDirection="row"
         mobileJustifyContent="space-around"
+        style={{ overflowX: 'auto' }}
       >
         {addresses.map((el, i) => (
           <Fragment key={i}>

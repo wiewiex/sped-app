@@ -176,6 +176,6 @@ export const GlassBackground = styled.div`
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8.4px);
+  backdrop-filter: blur(6.4px);
   -webkit-backdrop-filter: blur(8.4px);
 `;

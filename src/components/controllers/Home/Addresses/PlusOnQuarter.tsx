@@ -39,7 +39,7 @@ export default function PlusOnQuarter() {
 
 const PlusContainer = styled.div`
   &&:active {
-    transform: scaleY(-1);
+    transform: scale(1.2);
     transition: 1s;
   }
 `;

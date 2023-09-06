@@ -6,6 +6,8 @@ import { ReactNode } from 'react';
 import { GlassBackground } from '@/components/views/styledContainers';
 import { useAppTheme } from '@/utils/theme';
 import CloseIcon from './CloseIcon';
+import AnimationWrapper from '@/utils/AnimationWrapper';
+import { fadeIn } from '@/utils/keyframes';
 
 export default function Modal({
   children,
@@ -25,25 +27,31 @@ export default function Modal({
     >
       <Container mobileHeight="100vh" mobileWidth="100%">
         <GlassBackground>
-          <Container
-            mobileMinHeight="20rem"
-            mobileMinWidth="20rem"
-            backgroundColor={colors.mainBackground}
-            boxShadow={boxShadow}
+          <AnimationWrapper
+            keyframe={fadeIn}
+            duration={2}
+            style={{ padding: '2rem' }}
           >
-            <Container mobileWidth="100%" mobileAlignItems="flex-end">
-              <Container
-                mobilePadding="1rem"
-                cursor="pointer"
-                onClick={() => closeModal()}
-              >
-                <CloseIcon />
+            <Container
+              mobileMinHeight="20rem"
+              mobileMinWidth="20rem"
+              backgroundColor={colors.mainBackground}
+              boxShadow={boxShadow}
+            >
+              <Container mobileWidth="100%" mobileAlignItems="flex-end">
+                <Container
+                  mobilePadding="1rem"
+                  cursor="pointer"
+                  onClick={() => closeModal()}
+                >
+                  <CloseIcon />
+                </Container>
+              </Container>
+              <Container flex={1} mobilePadding="1rem">
+                {children}
               </Container>
             </Container>
-            <Container flex={1} mobilePadding="1rem">
-              {children}
-            </Container>
-          </Container>
+          </AnimationWrapper>
         </GlassBackground>
       </Container>
     </ElementPositionWrapper>

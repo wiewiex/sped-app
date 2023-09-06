@@ -1,5 +1,6 @@
 import { useAppTheme } from '@/utils/theme';
 import React from 'react';
+import { Container } from '../views/styledContainers';
 
 export default function CustomSelect({
   offText,
@@ -8,10 +9,14 @@ export default function CustomSelect({
   offText: string;
   onText: string;
 }) {
-  const { fonts } = useAppTheme();
+  const { fonts, colors } = useAppTheme();
 
   return (
-    <div>
+    <Container
+      backgroundGradient
+      borderRadius="3rem"
+      mobilePadding="0.2rem"
+    >
       <div className="switch-button">
         <input className="switch-button-checkbox" type="checkbox"></input>
         <label className="switch-button-label" htmlFor="">
@@ -24,16 +29,17 @@ export default function CustomSelect({
           overflow: hidden;
           width: 240px;
           text-align: center;
-          font-size: 1.5rem;
+          font-size: 1.4rem;
           letter-spacing: 1px;
           font-family: ${fonts.primary};
           position: relative;
           padding-right: 120px;
           position: relative;
           font-family: arial;
+          color: ${colors.accent};
         }
         .switch-button:before {
-          content: 'LTL';
+          content: 'Rozładunek';
           position: absolute;
           top: 0;
           bottom: 0;
@@ -85,6 +91,6 @@ export default function CustomSelect({
           position: relative;
         }
       `}</style>
-    </div>
+    </Container>
   );
 }

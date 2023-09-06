@@ -15,13 +15,7 @@ export default function Other() {
           selectOptions={['PLANDEKA', 'BLACHA']}
         />
       </Container>
-      <Container
-        backgroundGradient
-        borderRadius="3rem"
-        mobilePadding="0.2rem"
-      >
-        <ToggleButton offText="FTL" onText="LTL" />
-      </Container>
+      <ToggleButton offText="FTL" onText="LTL" />
     </Tile>
   );
 }

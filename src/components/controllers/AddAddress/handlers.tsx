@@ -1,6 +1,7 @@
 import * as yup from 'yup';
 
 export interface IAddress {
+  name: string;
   address: string;
   postCode: string;
   city: string;
@@ -18,6 +19,7 @@ export interface IAddress {
 const initialDate = new Date();
 
 export const initialValues: IAddress = {
+  name: '',
   address: '',
   postCode: '',
   city: '',
@@ -32,13 +34,23 @@ export const initialValues: IAddress = {
   isUnload: false,
 };
 
+const errMsg = 'wymagane pole';
+
 export const validationSchema = yup.object({
-  fullName: yup.string().required('required field'),
-  address: yup.string().required('required field'),
+  name: yup.string().required(errMsg),
+  address: yup.string().required(errMsg),
   postCode: yup
     .string()
-    .matches(/\d{2}-\d{3}/, 'Zip code must be in xx-xxx format')
-    .required('required field'),
-  city: yup.string().required('required field'),
-  phoneNumber: yup.string().required('required field'),
+    // .matches(/\d{2}-\d{3}/, 'Zip code must be in xx-xxx format')
+    .required(errMsg),
+  city: yup.string().required(errMsg),
+  country: yup.string().required(errMsg),
+  gps: yup.string().required(errMsg),
+  info: yup.string().required(errMsg),
+  dateFrom: yup.string().required(errMsg),
+  dateTo: yup.string().required(errMsg),
+  timeFrom: yup.string().required(errMsg),
+  timeTo: yup.string().required(errMsg),
+  isLoad: yup.string().required(errMsg),
+  isUnload: yup.string().required(errMsg),
 });

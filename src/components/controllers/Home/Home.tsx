@@ -15,7 +15,7 @@ export default function Home() {
       <Addresses />
       <Details />
       <Container mobilePadding="2rem 0" mobileWidth="100%">
-        <SecondaryButton text="zapisz" />
+        <SecondaryButton text="zapisz" width="100%" />
       </Container>
     </Container>
   );

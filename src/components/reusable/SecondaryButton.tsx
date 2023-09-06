@@ -5,6 +5,16 @@ import { H5 } from '../views/styledTexts';
 import ReactLoading from 'react-loading';
 import { useState } from 'react';
 
+interface ISecondaryButton {
+  disabled?: boolean;
+  handler?: () => void;
+  text: string;
+  type?: 'button' | 'submit';
+  loaded?: boolean;
+  hideSpinner?: boolean;
+  width?: string;
+}
+
 const SecondaryButton = ({
   disabled,
   handler,
@@ -12,6 +22,7 @@ const SecondaryButton = ({
   type = 'button',
   hideSpinner,
   loaded,
+  width,
 }: ISecondaryButton) => {
   const { colors } = useAppTheme();
   const [loadingState, setLoadingState] = useState<boolean>(false);
@@ -26,6 +37,7 @@ const SecondaryButton = ({
       }}
       disabled={disabled}
       type={type}
+      width={width}
     >
       <Container>
         {!hideSpinner && loading ? (
@@ -36,11 +48,7 @@ const SecondaryButton = ({
             width="20px"
           />
         ) : (
-          <H5
-            textAlign="center"
-            color={colors.mainBackground}
-            style={{ cursor: 'pointer' }}
-          >
+          <H5 textAlign="center" style={{ cursor: 'pointer' }}>
             {text.toUpperCase()}
           </H5>
         )}
@@ -49,23 +57,16 @@ const SecondaryButton = ({
   );
 };
 
-interface ISecondaryButton {
-  disabled?: boolean;
-  handler?: () => void;
-  text: string;
-  type?: 'button' | 'submit';
-  loaded?: boolean;
-  hideSpinner?: boolean;
-}
-
-export const SecondaryButtonContainer = styled.button`
+export const SecondaryButtonContainer = styled.button<{ width?: string }>`
   background-color: ${(props) =>
-    props.disabled ? '#cec9c9' : props.theme.colors.accent};
+    props.disabled ? '#cec9c9' : props.theme.colors.mainBackground};
   height: 50px;
-  width: 100%;
+  width: ${(props) => (props.width ? props.width : '15rem')};
   border: none;
   border-radius: ${(props) => props.theme.borderRadius};
   cursor: pointer;
+  border: 1px solid #00000020;
+  box-shadow: 2px 2px 2px #00000020;
 
   &&:active {
     transition: 0.2s;

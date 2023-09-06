@@ -1,15 +1,17 @@
 import Select from 'react-select';
 import styled from 'styled-components';
-import { useId } from 'react';
+import { ChangeEvent, useId } from 'react';
 
 export default function CustomSelect({
   options,
   placeholder,
   width,
+  onChange,
 }: {
   options: string[];
   placeholder?: string;
   width?: string;
+  onChange?: (e: ChangeEvent<any>) => void;
 }) {
   const convertedOptions = options.map((el) => ({ value: el, label: el }));
 
@@ -35,6 +37,7 @@ export default function CustomSelect({
         placeholder={placeholder}
         defaultValue={!placeholder && convertedOptions[0]}
         instanceId={useId()}
+        onChange={onChange}
       />
     </CustomSelectContainer>
   );

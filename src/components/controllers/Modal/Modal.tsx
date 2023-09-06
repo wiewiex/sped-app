@@ -16,7 +16,7 @@ export default function Modal({
   children: ReactNode;
   closeModal: () => void;
 }) {
-  const { colors, boxShadow } = useAppTheme();
+  const { colors, boxShadow, borderRadius } = useAppTheme();
   return (
     <ElementPositionWrapper
       mobileTop="0"
@@ -29,7 +29,7 @@ export default function Modal({
         <GlassBackground>
           <AnimationWrapper
             keyframe={fadeIn}
-            duration={2}
+            duration={1}
             style={{ padding: '2rem' }}
           >
             <Container
@@ -37,6 +37,7 @@ export default function Modal({
               mobileMinWidth="20rem"
               backgroundColor={colors.mainBackground}
               boxShadow={boxShadow}
+              borderRadius={borderRadius}
             >
               <Container mobileWidth="100%" mobileAlignItems="flex-end">
                 <Container

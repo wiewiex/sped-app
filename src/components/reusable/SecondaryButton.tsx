@@ -43,13 +43,13 @@ const SecondaryButton = ({
         {!hideSpinner && loading ? (
           <ReactLoading
             type="spin"
-            color={colors.mainBackground}
+            color={colors.text}
             height="20px"
             width="20px"
           />
         ) : (
           <H5 textAlign="center" style={{ cursor: 'pointer' }}>
-            {text.toUpperCase()}
+            {text}
           </H5>
         )}
       </Container>
@@ -60,7 +60,7 @@ const SecondaryButton = ({
 export const SecondaryButtonContainer = styled.button<{ width?: string }>`
   background-color: ${(props) =>
     props.disabled ? '#cec9c9' : props.theme.colors.mainBackground};
-  height: 50px;
+  height: 4.5rem;
   width: ${(props) => (props.width ? props.width : '15rem')};
   border: none;
   border-radius: ${(props) => props.theme.borderRadius};

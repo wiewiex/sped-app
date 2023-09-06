@@ -13,7 +13,12 @@ import CustomTextArea from '@/components/reusable/CustomTextArea';
 
 export default function AddAddress() {
   return (
-    <Container mobileWidth="90vw" width="50vw" mobileMinHeight="70rem">
+    <Container
+      mobileWidth="90vw"
+      width="50vw"
+      mobileMinHeight="70rem"
+      minWidth="70rem"
+    >
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -54,7 +59,7 @@ export default function AddAddress() {
                 flexDirection="row"
                 alignItems="stretch"
                 mobileJustifyContent="space-between"
-                mobileMargin="3rem 0 0 0"
+                mobileMargin="5rem 0 3rem 0"
               >
                 <Container mobileWidth="50%" mobilePadding="0 5rem">
                   <Container
@@ -134,7 +139,7 @@ export default function AddAddress() {
                     </Container>
                     <CustomTextArea />
                   </Container>
-                  <ToggleButton offText="Załadunek" onText="s" />
+                  <ToggleButton offText="Załadunek" onText="Rozładunek" />
                   <SecondaryButton text="Zapisz" />
                 </Container>
               </Container>

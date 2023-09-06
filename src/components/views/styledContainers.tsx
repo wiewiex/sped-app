@@ -100,7 +100,7 @@ export const Container = styled.div(
 
     @media ${mediaQueries.tabletHorizontal} {
       width: ${props.width ? props.width : props.mobileWidth || 'auto'};
-      max-width: ${props.minWidth
+      min-width: ${props.minWidth
         ? props.minWidth
         : props.mobileMinWidth || 'initial'};
       max-width: ${props.maxWidth

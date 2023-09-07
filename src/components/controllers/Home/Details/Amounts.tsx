@@ -8,29 +8,35 @@ export default function Amounts() {
   return (
     <Tile mobileWidth="100%" minHeight="25rem">
       <H3>Kwoty</H3>
-      <Container mobileWidth="100%" flexDirection="row">
-        <Column label="Klient" selectOptions={['EURO', 'PRZELEW']} />
-        <Column label="Termin" selectOptions={['EURO', 'PRZELEW']} />
-        <Column label="Przewoźnik" selectOptions={['EURO', 'PRZELEW']} />
-        <Column label="Term" selectOptions={['EURO', 'PRZELEW']} />
+      <Container
+        mobileWidth="100%"
+        flexDirection="row"
+        justifyContent="space-around"
+      >
+        <Item label="Klient" selectOptions={['EURO', 'PRZELEW']} />
+        <Item label="Termin" selectOptions={['EURO', 'PRZELEW']} />
+        <Item label="Przewoźnik" selectOptions={['EURO', 'PRZELEW']} />
+        <Item label="Term" selectOptions={['EURO', 'PRZELEW']} />
       </Container>
     </Tile>
   );
 }
 
-const Column = ({
+const Item = ({
   label,
   selectOptions,
 }: {
   label: string;
   selectOptions: string[];
 }) => (
-  <Container mobileWidth="70%">
-    <Container mobileWidth="12rem">
-      <PrimaryTextInput label={label} type="number" />
-    </Container>
-    <Container mobileAlignItems="flex-end">
-      <CustomSelect width="130px" options={selectOptions} />
+  <Container
+    mobileFlexDirection="row"
+    mobileWidth="40rem"
+    mobileAlignItems="flex-end"
+  >
+    <PrimaryTextInput label={label} type="number" width="13rem" />
+    <Container mobilePadding="2rem">
+      <CustomSelect width="13rem" options={selectOptions} />
     </Container>
   </Container>
 );

@@ -1,5 +1,4 @@
 import { Formik } from 'formik';
-import { Dispatch, SetStateAction, useState } from 'react';
 import { Container } from '@/components/views/styledContainers';
 import PrimaryTextInput from '@/components/reusable/PrimaryTextInput';
 import SecondaryButton from '@/components/reusable/SecondaryButton';
@@ -14,7 +13,7 @@ export default function AddClient() {
     <Container
       mobileWidth="90vw"
       width="45vw"
-      mobileMinHeight="55rem"
+      mobileMinHeight="50rem"
       minWidth="60rem"
     >
       <Formik

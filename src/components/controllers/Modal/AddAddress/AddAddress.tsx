@@ -16,7 +16,7 @@ export default function AddAddress() {
     <Container
       mobileWidth="90vw"
       width="50vw"
-      mobileMinHeight="70rem"
+      mobileMinHeight="60rem"
       minWidth="70rem"
     >
       <Formik

@@ -6,12 +6,14 @@ import '@fontsource/playfair-display/500.css';
 import '@fontsource/montserrat/800.css';
 import '@fontsource/montserrat/300.css';
 
+export const remSize = '11px';
+
 const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
 }
   html {
-    /* font-size: 10px; */
+    font-size: ${remSize};
     font-family: ${(props: { theme: ITheme }) =>
       props.theme.fonts.primary};
     color: ${(props: { theme: ITheme }) => props.theme.colors.text};

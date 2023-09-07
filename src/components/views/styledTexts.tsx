@@ -67,7 +67,7 @@ export const H5 = styled.h5<{
   font-size: 1.5rem;
   font-weight: 700;
   color: ${(props) =>
-    props.color ? props.color : props.theme.colors.text};
+    props.color ? props.color : props.theme.colors.accent};
   text-align: ${(props) =>
     props.textAlign ? props.textAlign : 'initial'};
   line-height: 1.1;

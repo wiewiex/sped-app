@@ -1,3 +1,4 @@
+import { remSize } from '@/utils/GlobalStyle';
 import Document, {
   DocumentContext,
   Head,
@@ -31,7 +32,7 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html style={{ fontSize: '10px' }}>
+      <Html style={{ fontSize: remSize }}>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />

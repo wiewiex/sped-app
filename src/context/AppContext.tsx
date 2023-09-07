@@ -8,13 +8,21 @@ import {
 } from 'react';
 
 interface IAppContext {
-  showAddAddressModal: boolean;
-  setShowAddAddressModal: Dispatch<SetStateAction<boolean>>;
+  showAddressModal: boolean;
+  setShowAddressModal: Dispatch<SetStateAction<boolean>>;
+  showClientModal: boolean;
+  setShowClientModal: Dispatch<SetStateAction<boolean>>;
+  showCarrierModal: boolean;
+  setShowCarrierModal: Dispatch<SetStateAction<boolean>>;
 }
 
 const AppContext = createContext<IAppContext>({
-  showAddAddressModal: false,
-  setShowAddAddressModal: () => {},
+  showAddressModal: false,
+  setShowAddressModal: () => {},
+  showClientModal: false,
+  setShowClientModal: () => {},
+  showCarrierModal: false,
+  setShowCarrierModal: () => {},
 });
 
 export const useAppContext = () => useContext(AppContext) as IAppContext;
@@ -24,12 +32,20 @@ export const AppContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
-  const [showAddAddressModal, setShowAddAddressModal] =
-    useState<boolean>(false);
+  const [showAddressModal, setShowAddressModal] = useState<boolean>(false);
+  const [showClientModal, setShowClientModal] = useState<boolean>(false);
+  const [showCarrierModal, setShowCarrierModal] = useState<boolean>(false);
 
   return (
     <AppContext.Provider
-      value={{ showAddAddressModal, setShowAddAddressModal }}
+      value={{
+        showAddressModal,
+        setShowAddressModal,
+        showClientModal,
+        setShowClientModal,
+        showCarrierModal,
+        setShowCarrierModal,
+      }}
     >
       {children}
     </AppContext.Provider>

@@ -2,19 +2,38 @@ import { Container } from '@/components/views/styledContainers';
 import Home from '../Home';
 import { useAppContext } from '@/context/AppContext';
 import Modal from '../Modal';
-import AddAddress from '../AddAddress';
+import AddAddress from '../Modal/AddAddress';
+import AddClient from '../Modal/AddClient';
+import AddCarrier from '../Modal/AddCarrier';
 
 export default function Main() {
-  const { showAddAddressModal, setShowAddAddressModal } = useAppContext();
+  const {
+    showAddressModal,
+    setShowAddressModal,
+    showCarrierModal,
+    setShowCarrierModal,
+    showClientModal,
+    setShowClientModal,
+  } = useAppContext();
 
   return (
     <Container relative>
-      {showAddAddressModal && (
-        <Modal closeModal={() => setShowAddAddressModal(false)}>
+      <Home />
+      {showAddressModal && (
+        <Modal closeModal={() => setShowAddressModal(false)}>
           <AddAddress />
         </Modal>
       )}
-      <Home />
+      {showClientModal && (
+        <Modal closeModal={() => setShowClientModal(false)}>
+          <AddClient />
+        </Modal>
+      )}
+      {showCarrierModal && (
+        <Modal closeModal={() => setShowCarrierModal(false)}>
+          <AddCarrier />
+        </Modal>
+      )}
     </Container>
   );
 }

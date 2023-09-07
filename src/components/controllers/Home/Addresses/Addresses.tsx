@@ -15,7 +15,7 @@ const blue = '#89CFF090';
 const green = '#77DD7790';
 
 export default function Addresses() {
-  const { setShowAddAddressModal } = useAppContext();
+  const { setShowAddressModal } = useAppContext();
   return (
     <Tile mobileWidth="100%" minHeight="35rem">
       <Container
@@ -28,7 +28,7 @@ export default function Addresses() {
       >
         {addresses.map((el, i) => (
           <Fragment key={i}>
-            <Item {...el} index={i} />
+            <Item {...el} />
             {i < addresses.length - 1 && (
               <Container style={{ transform: 'rotate(-90deg)' }}>
                 <Arrow />
@@ -44,7 +44,7 @@ export default function Addresses() {
       <ElementPositionWrapper
         mobileRight="0"
         mobileBottom="0"
-        onClick={() => setShowAddAddressModal(true)}
+        onClick={() => setShowAddressModal(true)}
       >
         <PlusOnQuarter />
       </ElementPositionWrapper>
@@ -67,7 +67,6 @@ const ColorLegend = ({ color, text }: { color: string; text: string }) => {
 };
 
 const Item = ({
-  index,
   name,
   address,
   postCode,
@@ -75,7 +74,6 @@ const Item = ({
   country,
   isUnload,
 }: {
-  index: number;
   name: string;
   address: string;
   postCode: string;

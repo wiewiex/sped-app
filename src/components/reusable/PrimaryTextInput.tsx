@@ -11,6 +11,7 @@ interface IPrimaryTextInput {
   error?: undefined | string | boolean;
   onBlur?: (e: any) => void;
   type?: 'text' | 'number';
+  width?: string;
 }
 
 const PrimaryTextInput = ({
@@ -20,9 +21,14 @@ const PrimaryTextInput = ({
   error,
   onBlur,
   type = 'text',
+  width,
 }: IPrimaryTextInput) => {
   return (
-    <Container relative mobileWidth="100%" mobileHeight="70px">
+    <Container
+      relative
+      mobileWidth={width ? width : '100%'}
+      mobileHeight="70px"
+    >
       {label && (
         <ElementPositionWrapper mobileTop="2px" mobileLeft="2px">
           <SmallText>{label}</SmallText>
@@ -40,7 +46,9 @@ const PrimaryTextInput = ({
   );
 };
 
-export const PrimaryTextInputContainer = styled.input<{ error: boolean }>`
+export const PrimaryTextInputContainer = styled.input<{
+  error: boolean;
+}>`
   padding: 2rem 0 1rem 0.5rem;
   border: none;
   border-bottom: 1px solid

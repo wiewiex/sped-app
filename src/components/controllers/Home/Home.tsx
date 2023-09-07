@@ -2,8 +2,8 @@ import { Container } from '@/components/views/styledContainers';
 import ClientAndCarrier from './ClientAndCarrier';
 import Addresses from './Addresses';
 import { H3 } from '@/components/views/styledTexts';
-import SecondaryButton from '@/components/reusable/SecondaryButton';
 import Details from './Details';
+import PrimaryButton from '@/components/reusable/PrimaryButton';
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
       <Addresses />
       <Details />
       <Container mobilePadding="2rem 0" mobileWidth="100%">
-        <SecondaryButton text="Zapisz" width="100%" />
+        <PrimaryButton text="Zapisz" url="/" />
       </Container>
     </Container>
   );

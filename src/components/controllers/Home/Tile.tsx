@@ -20,8 +20,8 @@ export default function Tile({
       width={width}
       borderRadius={borderRadius}
       boxShadow={boxShadow}
-      justifyContent="space-around"
       minHeight={minHeight}
+      mobileJustifyContent="space-around"
       mobilePadding="3rem"
       mobileMargin="0 0 4rem 0"
       relative

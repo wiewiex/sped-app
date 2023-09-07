@@ -37,7 +37,6 @@ export default function CustomSelect({
         placeholder={placeholder}
         defaultValue={!placeholder && convertedOptions[0]}
         instanceId={useId()}
-        onChange={onChange}
       />
     </CustomSelectContainer>
   );

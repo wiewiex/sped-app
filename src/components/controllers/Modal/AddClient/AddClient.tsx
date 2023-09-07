@@ -45,7 +45,7 @@ export default function AddClient() {
 
           return (
             <Container flex={1} mobileWidth="100%">
-              <H4>Informacje o kliencie</H4>
+              <H4>Dodaj klienta</H4>
               <Container
                 id="add-address-form"
                 flex={1}

@@ -1,23 +1,19 @@
 import { Formik } from 'formik';
-import { Dispatch, SetStateAction, useState } from 'react';
 import { Container } from '@/components/views/styledContainers';
 import PrimaryTextInput from '@/components/reusable/PrimaryTextInput';
 import SecondaryButton from '@/components/reusable/SecondaryButton';
-import { H4, SmallText, Text } from '@/components/views/styledTexts';
-
+import { H2, H4, Text, SmallText } from '@/components/views/styledTexts';
+import Switcher from '@/components/reusable/Switcher';
 import { initialValues, validationSchema } from './handlers';
 import CustomSelect from '@/components/reusable/CustomSelect';
-import CustomDateInput from '@/components/reusable/CustomDateInput';
-import ToggleButton from '@/components/reusable/ToggleButton';
-import CustomTextArea from '@/components/reusable/CustomTextArea';
 
 export default function AddCarrier() {
   return (
     <Container
       mobileWidth="90vw"
-      width="50vw"
-      mobileMinHeight="70rem"
-      minWidth="70rem"
+      width="60vw"
+      mobileMinHeight="75rem"
+      minWidth="85rem"
     >
       <Formik
         initialValues={initialValues}
@@ -39,19 +35,21 @@ export default function AddCarrier() {
             postCode,
             city,
             country,
-            gps,
-            info,
-            dateFrom,
-            dateTo,
-            timeFrom,
-            timeTo,
-            isLoad,
-            isUnload,
+            email,
+            nip,
+            phone,
+            contactPersonFullName,
+            contactPersonPhone,
+            contactPersonEmail,
+            driverFullName,
+            driverPhone,
+            driverRegistrationNumber,
+            driverLicenseNumber,
           } = values;
 
           return (
             <Container flex={1} mobileWidth="100%">
-              <H4>Dodaj adres</H4>
+              <H4>Dodaj przewoźnika</H4>
               <Container
                 id="add-address-form"
                 flex={1}
@@ -67,10 +65,9 @@ export default function AddCarrier() {
                     mobileWidth="100%"
                     mobileJustifyContent="space-between"
                   >
-                    <CustomSelect
-                      placeholder="Wybierz istniejący adres"
-                      options={['test1', 'test2']}
-                    />
+                    <Container mobileMargin="0 0 2rem 0">
+                      <Text>Dane przewoźnika</Text>
+                    </Container>
                     <PrimaryTextInput
                       label="Nazwa"
                       onChange={handleChange('name')}
@@ -90,37 +87,90 @@ export default function AddCarrier() {
                       flexDirection="row"
                       justifyContent="space-between"
                     >
-                      <Container width="47%">
-                        <PrimaryTextInput
-                          label="Kod pocztowy"
-                          onChange={handleChange('postCode')}
-                          onBlur={handleBlur('postCode')}
-                          value={postCode}
-                          error={touched.postCode && errors.postCode}
-                        />
-                      </Container>
-                      <Container width="47%">
-                        <PrimaryTextInput
-                          label="Miasto"
-                          onChange={handleChange('city')}
-                          onBlur={handleBlur('city')}
-                          value={city}
-                          error={touched.city && errors.city}
-                        />
+                      <PrimaryTextInput
+                        label="Kod pocztowy"
+                        onChange={handleChange('postCode')}
+                        onBlur={handleBlur('postCode')}
+                        value={postCode}
+                        error={touched.postCode && errors.postCode}
+                        width="47%"
+                      />
+                      <PrimaryTextInput
+                        label="Miasto"
+                        onChange={handleChange('city')}
+                        onBlur={handleBlur('city')}
+                        value={city}
+                        error={touched.city && errors.city}
+                        width="47%"
+                      />
+                    </Container>
+                    <Container
+                      mobileWidth="100%"
+                      flexDirection="row"
+                      justifyContent="space-between"
+                    >
+                      <CustomSelect
+                        placeholder="Wybierz kraj"
+                        options={['test1', 'test2']}
+                        width="47%"
+                      />
+                      <Container
+                        mobileFlexDirection="row"
+                        mobileWidth="47%"
+                      >
+                        <H2 style={{ fontSize: '3rem' }}>VAT</H2>
+                        <Switcher checked={true} handleChange={() => {}} />
                       </Container>
                     </Container>
-                    <CustomSelect
-                      placeholder="Wybierz kraj"
-                      options={['test1', 'test2']}
+                    <PrimaryTextInput
+                      label="NIP"
+                      onChange={handleChange('nip')}
+                      onBlur={handleBlur('nip')}
+                      value={nip}
+                      error={touched.nip && errors.nip}
                     />
                     <PrimaryTextInput
-                      label="GPS"
-                      onChange={handleChange('gps')}
-                      onBlur={handleBlur('gps')}
-                      value={gps}
-                      error={touched.gps && errors.gps}
+                      label="Telefon"
+                      onChange={handleChange('phone')}
+                      onBlur={handleBlur('phone')}
+                      value={phone}
+                      error={touched.phone && errors.phone}
                     />
-                    <SecondaryButton text="Wyczyść" />
+                    <PrimaryTextInput
+                      label="Email"
+                      onChange={handleChange('email')}
+                      onBlur={handleBlur('email')}
+                      value={email}
+                      error={touched.email && errors.email}
+                    />
+                    <Container
+                      mobileWidth="100%"
+                      flexDirection="row"
+                      justifyContent="space-between"
+                    >
+                      <Container
+                        mobileFlexDirection="row"
+                        mobileWidth="47%"
+                        mobileJustifyContent="flex-start"
+                      >
+                        <SmallText>Komunikacja Email</SmallText>
+                        <Switcher checked={true} handleChange={() => {}} />
+                      </Container>
+                      <Container
+                        mobileFlexDirection="row"
+                        mobileWidth="47%"
+                        mobileJustifyContent="flex-end"
+                      >
+                        <SmallText>Komunikacja klasyczna</SmallText>
+                        <Switcher checked={true} handleChange={() => {}} />
+                      </Container>
+                    </Container>
+                    <Container
+                      alignSelf="flex-start"
+                      mobileMargin="2rem 0 0 0"
+                    >
+                      <SecondaryButton text="Wyczyść" />
+                    </Container>
                   </Container>
                 </Container>
                 <Container
@@ -128,19 +178,86 @@ export default function AddCarrier() {
                   mobilePadding="0 5rem"
                   mobileJustifyContent="space-between"
                 >
-                  <CustomDateInput text="Data i godzina rozpoczęcia załadunku" />
-                  <CustomDateInput text="Data i godzina rozpoczęcia rozładunku" />
-                  <Container
-                    mobileWidth="100%"
-                    mobileAlignItems="flex-start"
-                  >
-                    <Container mobileMargin="0 0 1rem 0">
-                      <SmallText>Dodatkowe informacje</SmallText>
+                  <Container mobileWidth="100%">
+                    <Container mobileMargin="0 0 2rem 0">
+                      <Text>Dane osoby kontaktowej</Text>
                     </Container>
-                    <CustomTextArea />
+                    <PrimaryTextInput
+                      label="Imię i nazwisko"
+                      onChange={handleChange('contactPersonFullName')}
+                      onBlur={handleBlur('contactPersonFullName')}
+                      value={contactPersonFullName}
+                      error={
+                        touched.contactPersonFullName &&
+                        errors.contactPersonFullName
+                      }
+                    />
+                    <PrimaryTextInput
+                      label="Telefon"
+                      onChange={handleChange('contactPersonPhone')}
+                      onBlur={handleBlur('contactPersonPhone')}
+                      value={contactPersonPhone}
+                      error={
+                        touched.contactPersonPhone &&
+                        errors.contactPersonPhone
+                      }
+                    />
+                    <PrimaryTextInput
+                      label="Email"
+                      onChange={handleChange('contactPersonEmail')}
+                      onBlur={handleBlur('contactPersonEmail')}
+                      value={contactPersonEmail}
+                      error={
+                        touched.contactPersonEmail &&
+                        errors.contactPersonEmail
+                      }
+                    />
                   </Container>
-                  <ToggleButton offText="Załadunek" onText="Rozładunek" />
-                  <SecondaryButton text="Zapisz" />
+                  <Container mobileWidth="100%">
+                    <Container mobileMargin="0 0 2rem 0">
+                      <Text>Dane kierowcy</Text>
+                    </Container>
+                    <PrimaryTextInput
+                      label="Imię i nazwisko"
+                      onChange={handleChange('driverFullName')}
+                      onBlur={handleBlur('driverFullName')}
+                      value={driverFullName}
+                      error={
+                        touched.driverFullName && errors.driverFullName
+                      }
+                    />
+                    <PrimaryTextInput
+                      label="Telefon"
+                      onChange={handleChange('driverPhone')}
+                      onBlur={handleBlur('driverPhone')}
+                      value={driverPhone}
+                      error={touched.driverPhone && errors.driverPhone}
+                    />
+
+                    <PrimaryTextInput
+                      label="Numer rejestracyjny"
+                      onChange={handleChange('driverRegistrationNumber')}
+                      onBlur={handleBlur('driverRegistrationNumber')}
+                      value={driverRegistrationNumber}
+                      error={
+                        touched.driverRegistrationNumber &&
+                        errors.driverRegistrationNumber
+                      }
+                    />
+                    <PrimaryTextInput
+                      label="Numer rejestracyjny"
+                      onChange={handleChange('driverLicenseNumber')}
+                      onBlur={handleBlur('driverLicenseNumber')}
+                      value={driverLicenseNumber}
+                      error={
+                        touched.driverLicenseNumber &&
+                        errors.driverLicenseNumber
+                      }
+                    />
+                  </Container>
+                  <Container alignSelf="flex-end">
+                    <SecondaryButton text="Zapisz" />
+                  </Container>
                 </Container>
               </Container>
             </Container>

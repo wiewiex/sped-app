@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { H3 } from '../views/styledTexts';
+import { H4 } from '../views/styledTexts';
 import { Container } from '../views/styledContainers';
 import { useAppTheme } from '@/utils/theme';
 
@@ -15,7 +15,7 @@ export default function PrimaryButton({ text, url }: IPrimaryButton) {
       cursor="pointer"
     >
       <Link href={url}>
-        <H3>{text}</H3>
+        <H4 color={colors.accent}>{text}</H4>
       </Link>
     </Container>
   );

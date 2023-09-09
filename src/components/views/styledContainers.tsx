@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import mediaQueries from '@/utils/mediaQueries';
+import { ITheme } from '@/utils/theme';
 
 export const Container = styled.div(
   (props: {
@@ -45,7 +46,6 @@ export const Container = styled.div(
     borderLeft?: string;
     borderRight?: string;
   }) => css`
-    position: ${props.relative ? 'relative' : 'initial'};
     display: flex;
     justify-content: ${props.mobileJustifyContent
       ? props.mobileJustifyContent
@@ -56,46 +56,40 @@ export const Container = styled.div(
     flex-direction: ${props.mobileFlexDirection
       ? props.mobileFlexDirection
       : 'column'};
-    align-self: ${props.mobileAlignSelf ? props.mobileAlignSelf : 'auto'};
-    width: ${props.mobileWidth ? props.mobileWidth : 'auto'};
-    max-width: ${props.mobileMaxWidth ? props.mobileMaxWidth : 'initial'};
-    min-width: ${props.mobileMinWidth ? props.mobileMinWidth : 'initial'};
-    max-height: ${props.mobileMaxHeight
-      ? props.mobileMaxHeight
-      : 'initial'};
-    min-height: ${props.mobileMinHeight
-      ? props.mobileMinHeight
-      : 'initial'};
-    padding: ${props.mobilePadding ? props.mobilePadding : 'initial'};
-    margin: ${props.mobileMargin ? props.mobileMargin : 'initial'};
-    flex-wrap: ${props.$wrap ? 'wrap' : 'nowrap'};
-    height: ${props.mobileHeight ? props.mobileHeight : 'auto'};
-    background-color: ${props.backgroundColor
-      ? props.backgroundColor
-      : 'transparent'};
-    flex: ${props.flex ? props.flex : 'initial'};
-    border-radius: ${props.borderRadius ? props.borderRadius : 'initial'};
-    opacity: ${props.opacity ? props.opacity : 'initial'};
-    border: ${props.border ? props.border : 'initial'};
-    cursor: ${props.cursor ? props.cursor : 'initial'};
-    z-index: ${props.zIndex ? props.zIndex : 'initial'};
-    box-shadow: ${props.boxShadow ? props.boxShadow : 'initial'};
-    background-image: ${props.backgroundGradient
-      ? (props) => props.theme.backgroundGradient
-      : 'initial'};
-    border-top: ${props.borderTop ? props.borderTop : 'initial'};
-    border-bottom: ${props.borderBottom ? props.borderBottom : 'initial'};
-    border-left: ${props.borderLeft ? props.borderLeft : 'initial'};
-    border-right: ${props.borderRight ? props.borderRight : 'initial'};
+    ${props.relative && 'position: relative;'}
+    ${props.mobileAlignSelf && `align-self: ${props.mobileAlignSelf};`}
+    ${props.mobileWidth && `width: ${props.mobileWidth};`}
+    ${props.mobileHeight && `height: ${props.mobileHeight};`}
+    ${props.mobileMaxWidth && `max-width: ${props.mobileMaxWidth};`}
+    ${props.mobileMinWidth && `min-width: ${props.mobileMinWidth};`}
+    ${props.mobileMaxHeight && `max-height: ${props.mobileMaxHeight};`}
+    ${props.mobileMinHeight && `min-height: ${props.mobileMinHeight};`}
+    ${props.mobilePadding && `padding: ${props.mobilePadding};`}
+    ${props.mobileMargin && `margin: ${props.mobileMargin};`}
+    ${props.$wrap && 'flex-wrap: wrap;'}    
+    ${props.flex && `flex: ${props.flex};`}
+    ${props.opacity && `opacity: ${props.opacity};`}
+    ${props.border && `border: ${props.border};`}
+    ${props.borderRadius && `border-radius: ${props.borderRadius};`}
+    ${props.cursor && `cursor: ${props.cursor};`}
+    ${props.zIndex && `z-index: ${props.zIndex};`}
+    ${props.boxShadow && `box-shadow: ${props.boxShadow};`}   
+    ${props.borderTop && `border-top: ${props.borderTop};`}
+    ${props.borderBottom && `border-bottom: ${props.borderBottom};`}
+    ${props.borderLeft && `border-left: ${props.borderLeft};`}
+    ${props.borderRight && `border-right: ${props.borderRight};`}
+    ${props.backgroundColor &&
+    `background-color: ${props.backgroundColor};`}
+    ${props.backgroundGradient &&
+    `background-image: ${({ theme }: { theme: ITheme }) =>
+      theme.backgroundGradient};`}
 
     > img {
       object-position: ${props.imgPosition ? props.imgPosition : 'center'};
       width: 100%;
       height: 100%;
       object-fit: ${props.imgFit ? props.imgFit : 'contain'};
-      border-radius: ${props.borderRadius
-        ? props.borderRadius
-        : 'initial'};
+      ${props.borderRadius && `border-radius: ${props.borderRadius};`}
     }
 
     @media ${mediaQueries.tabletHorizontal} {

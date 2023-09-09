@@ -4,6 +4,7 @@ import { ITheme } from '@/utils/theme';
 
 export const Container = styled.div(
   (props: {
+    theme: ITheme;
     mobileWidth?: string;
     width?: string;
     mobileMinWidth?: string;
@@ -81,8 +82,7 @@ export const Container = styled.div(
     ${props.backgroundColor &&
     `background-color: ${props.backgroundColor};`}
     ${props.backgroundGradient &&
-    `background-image: ${({ theme }: { theme: ITheme }) =>
-      theme.backgroundGradient};`}
+    `background-image: ${props.theme.backgroundGradient};`}
 
     > img {
       object-position: ${props.imgPosition ? props.imgPosition : 'center'};

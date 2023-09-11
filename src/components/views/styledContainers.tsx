@@ -127,7 +127,7 @@ export const ElementPositionWrapper = styled.div(
   }) => css`
     display: flex;
     flex-direction: column;
-    z-index: ${props.zIndex ? props.zIndex : 'initial'};
+    ${props.zIndex && `z-index: ${props.zIndex};`}
     position: ${props.position ? props.position : 'absolute'};
     top: ${props.mobileTop ? props.mobileTop : 'auto'};
     bottom: ${props.mobileBottom ? props.mobileBottom : 'auto'};

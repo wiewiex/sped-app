@@ -1,10 +1,8 @@
 import styled, { css } from 'styled-components';
 import mediaQueries from '@/utils/mediaQueries';
-import { ITheme } from '@/utils/theme';
 
 export const Container = styled.div(
   (props: {
-    theme: ITheme;
     mobileWidth?: string;
     width?: string;
     mobileMinWidth?: string;
@@ -46,6 +44,7 @@ export const Container = styled.div(
     borderBottom?: string;
     borderLeft?: string;
     borderRight?: string;
+    theme: any;
   }) => css`
     display: flex;
     justify-content: ${props.mobileJustifyContent
@@ -93,9 +92,7 @@ export const Container = styled.div(
         height: 100%;
         ${props.borderRadius && `border-radius: ${props.borderRadius};`}
       }
-    `}
-
-   
+    `}   
 
     @media ${mediaQueries.tabletHorizontal} {
       ${props.width && `width: ${props.width};`}

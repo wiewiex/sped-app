@@ -84,47 +84,33 @@ export const Container = styled.div(
     ${props.backgroundGradient &&
     `background-image: ${props.theme.backgroundGradient};`}
 
-    > img {
-      object-position: ${props.imgPosition ? props.imgPosition : 'center'};
-      width: 100%;
-      height: 100%;
-      object-fit: ${props.imgFit ? props.imgFit : 'contain'};
-      ${props.borderRadius && `border-radius: ${props.borderRadius};`}
-    }
+    ${props.imgFit &&
+    css`
+      > img {
+        ${props.imgFit && `object-fit: ${props.imgFit};`}
+        ${props.imgPosition && `object-position: ${props.imgPosition};`}
+        width: 100%;
+        height: 100%;
+        ${props.borderRadius && `border-radius: ${props.borderRadius};`}
+      }
+    `}
+
+   
 
     @media ${mediaQueries.tabletHorizontal} {
-      width: ${props.width ? props.width : props.mobileWidth || 'auto'};
-      min-width: ${props.minWidth
-        ? props.minWidth
-        : props.mobileMinWidth || 'initial'};
-      max-width: ${props.maxWidth
-        ? props.maxWidth
-        : props.mobileMaxWidth || 'initial'};
-      height: ${props.height
-        ? props.height
-        : props.mobileHeight || 'auto'};
-      max-height: ${props.maxHeight
-        ? props.maxHeight
-        : props.mobileMaxHeight || 'initial'};
-      min-height: ${props.minHeight
-        ? props.minHeight
-        : props.mobileMinHeight || 'initial'};
-      justify-content: ${props.justifyContent
-        ? props.justifyContent
-        : props.mobileJustifyContent || 'center'};
-      align-items: ${props.alignItems
-        ? props.alignItems
-        : props.mobileAlignItems || 'center'};
-      flex-direction: ${props.flexDirection
-        ? props.flexDirection
-        : props.mobileFlexDirection || 'column'};
-      align-self: ${props.alignSelf ? props.alignSelf : 'auto'};
-      padding: ${props.padding
-        ? props.padding
-        : props.mobilePadding || 'initial'};
-      margin: ${props.margin
-        ? props.margin
-        : props.mobileMargin || 'initial'};
+      ${props.width && `width: ${props.width};`}
+      ${props.height && `height: ${props.height};`}
+      ${props.maxWidth && `max-width: ${props.maxWidth};`}
+      ${props.minWidth && `min-width: ${props.minWidth};`}
+      ${props.maxHeight && `max-height: ${props.maxHeight};`}
+      ${props.minHeight && `min-height: ${props.minHeight};`}
+      ${props.padding && `padding: ${props.padding};`}
+      ${props.margin && `margin: ${props.margin};`}
+      ${props.alignSelf && `align-self: ${props.alignSelf};`}
+      ${props.justifyContent &&
+      `justify-content: ${props.justifyContent};`}
+      ${props.alignItems && `align-items: ${props.alignItems};`}
+      ${props.flexDirection && `flex-direction: ${props.flexDirection};`}
     }
   `
 );

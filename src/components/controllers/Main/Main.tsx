@@ -17,7 +17,7 @@ export default function Main() {
   } = useAppContext();
 
   return (
-    <Container relative>
+    <Container relative id="app-container">
       <Home />
       {showAddressModal && (
         <Modal closeModal={() => setShowAddressModal(false)}>

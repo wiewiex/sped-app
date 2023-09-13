@@ -7,12 +7,8 @@ import PrimaryButton from '@/components/reusable/PrimaryButton';
 
 export default function Home() {
   return (
-    <Container mobileWidth="90%" margin="0 auto" className="app-container">
-      <Container
-        mobilePadding="4rem 0"
-        alignSelf="flex-start"
-        className="task-title"
-      >
+    <Container mobileWidth="90%" margin="0 auto" id="home-page">
+      <Container mobilePadding="4rem 0" alignSelf="flex-start">
         <H3>Zlecenie nr: 79/BP/08/2023</H3>
       </Container>
       <ClientAndCarrier />

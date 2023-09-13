@@ -1,6 +1,7 @@
-import Select from 'react-select';
 import styled from 'styled-components';
-import { ChangeEvent, useId } from 'react';
+import { ChangeEvent } from 'react';
+import Form from 'react-bootstrap/Form';
+import { useAppTheme } from '@/utils/theme';
 
 export default function CustomSelect({
   options,
@@ -13,35 +14,26 @@ export default function CustomSelect({
   width?: string;
   onChange?: (e: ChangeEvent<any>) => void;
 }) {
-  const convertedOptions = options.map((el) => ({ value: el, label: el }));
-
-  const customStyles = {
-    control: (provided: any) => ({
-      ...provided,
-      boxShadow: '2px 2px 2px #00000010',
-      cursor: 'pointer',
-      border: `1px solid #ADA4A520`,
-      fontFamily: 'Montserrat',
-    }),
-    option: (provided: any) => ({
-      ...provided,
-      fontFamily: 'Montserrat',
-    }),
-  };
-
   return (
     <CustomSelectContainer width={width}>
-      <Select
-        options={convertedOptions}
-        styles={customStyles}
-        placeholder={placeholder}
-        defaultValue={!placeholder && convertedOptions[0]}
-        instanceId={useId()}
-      />
+      {placeholder && (
+        <option value="" hidden>
+          {placeholder}
+        </option>
+      )}
+      {options.map((el, i) => (
+        <option key={i} value={el}>
+          {el}
+        </option>
+      ))}
     </CustomSelectContainer>
   );
 }
 
-const CustomSelectContainer = styled.div<{ width?: string }>`
+const CustomSelectContainer = styled(Form.Select)<{ width?: string }>`
   width: ${(props) => (props.width ? props.width : '100%')};
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 1px solid ${(props) => props.theme.colors.placeholder + '50'};
+  font-size: 1%.5;
 `;

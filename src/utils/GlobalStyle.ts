@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import 'react-toastify/dist/ReactToastify.css';
 import { ITheme } from './theme';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fontsource/playfair-display/700.css';
 import '@fontsource/playfair-display/500.css';
 import '@fontsource/montserrat/800.css';
@@ -11,6 +12,8 @@ export const remSize = '11px';
 const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
   html {
     font-size: ${remSize};

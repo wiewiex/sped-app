@@ -5,13 +5,13 @@ export default function PlusOnQuarter() {
   return (
     <PlusContainer>
       <Container
-        mobileWidth="7rem"
-        mobileHeight="7rem"
+        mobileWidth="8rem"
+        mobileHeight="8rem"
         backgroundGradient
         style={{ borderTopLeftRadius: '100%' }}
         mobileAlignItems="flex-end"
         mobileJustifyContent="flex-end"
-        mobilePadding="2rem"
+        mobilePadding="2.2rem"
         cursor="pointer"
       >
         <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">

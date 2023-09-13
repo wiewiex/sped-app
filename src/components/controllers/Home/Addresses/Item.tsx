@@ -25,7 +25,11 @@ export default function Item({
   const { borderRadius } = useAppTheme();
   // const isEvenNumber = index % 2 === 0;
   return (
-    <Container mobileJustifyContent="center" mobileMinWidth="30rem">
+    <Container
+      mobileJustifyContent="center"
+      mobileMinWidth="30rem"
+      mobileMargin="2rem 0"
+    >
       <Container
         borderBottom={`2px solid ${isUnload ? blue : green}`}
         borderTop={`2px solid ${isUnload ? blue : green}`}

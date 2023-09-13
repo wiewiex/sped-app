@@ -19,7 +19,7 @@ export default function Layout() {
         <Container width="20%" backgroundColor="red">
           {!isMobile && <Sidebar />}
         </Container>
-        <Container flex={1}>
+        <Container flex={1} mobileWidth="100%" width="auto">
           <Main />
         </Container>
       </Container>

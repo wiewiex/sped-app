@@ -26,7 +26,8 @@ export const Container = styled.div(
     mobileJustifyContent?: string;
     mobileAlignItems?: string;
     mobileFlexDirection?: string;
-    $wrap?: boolean;
+    $mobileWrap?: boolean;
+    $wrap?: 'wrap' | 'nowrap';
     mobileAlignSelf?: string;
     alignSelf?: string;
     flex?: number;
@@ -66,7 +67,7 @@ export const Container = styled.div(
     ${props.mobileMinHeight && `min-height: ${props.mobileMinHeight};`}
     ${props.mobilePadding && `padding: ${props.mobilePadding};`}
     ${props.mobileMargin && `margin: ${props.mobileMargin};`}
-    ${props.$wrap && 'flex-wrap: wrap;'}    
+    ${props.$mobileWrap && 'flex-wrap: wrap;'}    
     ${props.flex && `flex: ${props.flex};`}
     ${props.opacity && `opacity: ${props.opacity};`}
     ${props.border && `border: ${props.border};`}
@@ -108,6 +109,7 @@ export const Container = styled.div(
       `justify-content: ${props.justifyContent};`}
       ${props.alignItems && `align-items: ${props.alignItems};`}
       ${props.flexDirection && `flex-direction: ${props.flexDirection};`}
+      ${props.$wrap && `flex-wrap: ${props.$wrap};`}
     }
   `
 );
@@ -155,24 +157,4 @@ export const GlassBackground = styled.div`
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(6.4px);
   -webkit-backdrop-filter: blur(8.4px);
-`;
-
-export const ScrollbarContainer = styled.div`
-  width: 100%;
-  flex: 1;
-  z-index: 1;
-
-  > div::-webkit-scrollbar {
-    width: 2rem;
-    height: 1rem;
-  }
-
-  > div::-webkit-scrollbar-track {
-  }
-
-  > div::-webkit-scrollbar-thumb {
-    background-color: white;
-    border-radius: 10px;
-    background-image: ${(props) => props.theme.backgroundGradient};
-  }
 `;

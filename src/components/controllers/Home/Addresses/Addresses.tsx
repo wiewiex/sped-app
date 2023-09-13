@@ -1,7 +1,6 @@
 import {
   Container,
   ElementPositionWrapper,
-  ScrollbarContainer,
 } from '@/components/views/styledContainers';
 import Tile from '@/components/reusable/Tile';
 import { SmallText } from '@/components/views/styledTexts';
@@ -10,6 +9,7 @@ import Arrow from './Arrow';
 import PlusOnQuarter from '../PlusOnQuarter';
 import { useAppContext } from '@/context/AppContext';
 import Item from './Item';
+import ScrollbarContainer from '@/components/reusable/ScrollbarContainer';
 
 const blue = '#89CFF090';
 const green = '#77DD7790';
@@ -21,11 +21,15 @@ export default function Addresses() {
       <ScrollbarContainer>
         <Container
           mobileWidth="100%"
-          mobileHeight="100%"
-          mobileAlignItems="stretch"
+          maxWidth="70vw"
+          flex={1}
+          alignItems="stretch"
           mobileFlexDirection="row"
-          mobileJustifyContent="flex-start"
+          mobileJustifyContent="space-around"
           style={{ overflowX: 'auto' }}
+          mobilePadding="8rem 2rem"
+          $mobileWrap
+          $wrap="nowrap"
         >
           {addresses.map((el, i) => (
             <Fragment key={i}>
@@ -50,7 +54,7 @@ export default function Addresses() {
           mobileFlexDirection="row"
           mobileJustifyContent="space-between"
         >
-          <Container mobileFlexDirection="row" mobileMargin="2rem 5rem">
+          <Container mobileFlexDirection="row" margin="0 5rem">
             <ColorLegend color={blue} text="rozładunek" />
             <ColorLegend color={green} text="załadunek" />
           </Container>

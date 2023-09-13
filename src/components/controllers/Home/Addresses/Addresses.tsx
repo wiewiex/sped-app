@@ -26,6 +26,7 @@ export default function Addresses() {
           alignItems="stretch"
           mobileFlexDirection="row"
           mobileJustifyContent="space-around"
+          justifyContent="flex-start"
           style={{ overflowX: 'auto' }}
           mobilePadding="8rem 2rem"
           $mobileWrap

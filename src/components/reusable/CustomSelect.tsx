@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { ChangeEvent } from 'react';
 import Form from 'react-bootstrap/Form';
-import { useAppTheme } from '@/utils/theme';
 
 export default function CustomSelect({
   options,
@@ -35,5 +34,6 @@ const CustomSelectContainer = styled(Form.Select)<{ width?: string }>`
   padding-top: 1rem;
   padding-bottom: 1rem;
   border: 1px solid ${(props) => props.theme.colors.placeholder + '50'};
-  font-size: 1%.5;
+  font-size: 1.2rem;
+  color: gray;
 `;

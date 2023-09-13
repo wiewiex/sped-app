@@ -1,5 +1,5 @@
-import Main from '@/components/controllers/Main';
+import Layout from '@/components/controllers/Layout';
 
 export default function MainPage() {
-  return <Main />;
+  return <Layout />;
 }

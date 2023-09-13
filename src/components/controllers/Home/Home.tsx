@@ -13,10 +13,10 @@ export default function Home() {
       </Container>
       <ClientAndCarrier />
       <Addresses />
-      <Details />
-      <Container mobilePadding="2rem 0" mobileWidth="100%">
+      {/* <Details /> */}
+      {/* <Container mobilePadding="2rem 0" mobileWidth="100%">
         <PrimaryButton text="Zapisz" url="/" />
-      </Container>
+      </Container> */}
     </Container>
   );
 }

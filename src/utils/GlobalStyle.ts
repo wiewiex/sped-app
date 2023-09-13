@@ -10,7 +10,7 @@ import '@fontsource/montserrat/300.css';
 export const remSize = '11px';
 
 const GlobalStyle = createGlobalStyle`
-* {
+*, p {
   box-sizing: border-box;
   padding: 0;
   margin: 0;

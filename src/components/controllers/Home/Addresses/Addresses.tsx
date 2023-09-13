@@ -1,15 +1,15 @@
 import {
   Container,
   ElementPositionWrapper,
+  ScrollbarContainer,
 } from '@/components/views/styledContainers';
-import { useAppTheme } from '@/utils/theme';
-import Tile from '../Tile';
-import { H5, SmallText, Text } from '@/components/views/styledTexts';
-import Pin from './Pin';
+import Tile from '@/components/reusable/Tile';
+import { SmallText } from '@/components/views/styledTexts';
 import { Fragment } from 'react';
 import Arrow from './Arrow';
-import PlusOnQuarter from './PlusOnQuarter';
+import PlusOnQuarter from '../PlusOnQuarter';
 import { useAppContext } from '@/context/AppContext';
+import Item from './Item';
 
 const blue = '#89CFF090';
 const green = '#77DD7790';
@@ -17,36 +17,45 @@ const green = '#77DD7790';
 export default function Addresses() {
   const { setShowAddressModal } = useAppContext();
   return (
-    <Tile mobileWidth="100%" minHeight="35rem">
-      <Container
-        mobileWidth="100%"
-        flex={1}
-        mobileAlignItems="stretch"
-        mobileFlexDirection="row"
-        mobileJustifyContent="space-around"
-        style={{ overflowX: 'auto' }}
-      >
-        {addresses.map((el, i) => (
-          <Fragment key={i}>
-            <Item {...el} />
-            {i < addresses.length - 1 && (
-              <Container style={{ transform: 'rotate(-90deg)' }}>
-                <Arrow />
-              </Container>
-            )}
-          </Fragment>
-        ))}
-      </Container>
-      <Container mobileFlexDirection="row" mobileMargin="0 0 1rem 0">
-        <ColorLegend color={blue} text="rozładunek" />
-        <ColorLegend color={green} text="załadunek" />
-      </Container>
+    <Tile mobileWidth="100%" minHeight="40rem" padding="0">
+      <ScrollbarContainer>
+        <Container
+          mobileWidth="100%"
+          mobileHeight="100%"
+          mobileAlignItems="stretch"
+          mobileFlexDirection="row"
+          mobileJustifyContent="flex-start"
+          style={{ overflowX: 'auto' }}
+        >
+          {addresses.map((el, i) => (
+            <Fragment key={i}>
+              <Item blue={blue} green={green} {...el} />
+              {i < addresses.length - 1 && (
+                <Container style={{ transform: 'rotate(-90deg)' }}>
+                  <Arrow />
+                </Container>
+              )}
+            </Fragment>
+          ))}
+        </Container>
+      </ScrollbarContainer>
       <ElementPositionWrapper
         mobileRight="0"
         mobileBottom="0"
+        mobileLeft="0"
         onClick={() => setShowAddressModal(true)}
       >
-        <PlusOnQuarter />
+        <Container
+          mobileWidth="100%"
+          mobileFlexDirection="row"
+          mobileJustifyContent="space-between"
+        >
+          <Container mobileFlexDirection="row" mobileMargin="2rem 5rem">
+            <ColorLegend color={blue} text="rozładunek" />
+            <ColorLegend color={green} text="załadunek" />
+          </Container>
+          <PlusOnQuarter />
+        </Container>
       </ElementPositionWrapper>
     </Tile>
   );
@@ -61,48 +70,7 @@ const ColorLegend = ({ color, text }: { color: string; text: string }) => {
         backgroundColor={color}
         mobileMargin="0 0.4rem 0 0"
       />
-      <SmallText>- {text}</SmallText>
-    </Container>
-  );
-};
-
-const Item = ({
-  name,
-  address,
-  postCode,
-  city,
-  country,
-  isUnload,
-}: {
-  name: string;
-  address: string;
-  postCode: string;
-  city: string;
-  country: string;
-  isUnload: boolean;
-}) => {
-  const { borderRadius } = useAppTheme();
-  // const isEvenNumber = index % 2 === 0;
-  return (
-    <Container mobileMargin="0 0 2rem 0" mobileJustifyContent="center">
-      <Container
-        borderBottom={`2px solid ${isUnload ? blue : green}`}
-        borderTop={`2px solid ${isUnload ? blue : green}`}
-        mobilePadding="2rem"
-        mobileAlignItems="flex-start"
-        borderRadius={borderRadius}
-      >
-        <Container mobileMargin="0 0 2rem 0" alignSelf="center">
-          <Pin />
-        </Container>
-        <Container mobileMargin="0 0 0.5rem 0">
-          <H5 color="#63666A">{name}</H5>
-        </Container>
-        <Text>{address}</Text>
-        <Text>{postCode}</Text>
-        <Text>{city}</Text>
-        <Text>{country}</Text>
-      </Container>
+      <SmallText> - {text}</SmallText>
     </Container>
   );
 };

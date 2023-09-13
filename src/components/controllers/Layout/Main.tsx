@@ -1,10 +1,10 @@
 import { Container } from '@/components/views/styledContainers';
 import Home from '../Home';
-import { useAppContext } from '@/context/AppContext';
 import Modal from '../Modal';
 import AddAddress from '../Modal/AddAddress';
 import AddClient from '../Modal/AddClient';
 import AddCarrier from '../Modal/AddCarrier';
+import { useAppContext } from '@/context/AppContext';
 
 export default function Main() {
   const {
@@ -17,7 +17,7 @@ export default function Main() {
   } = useAppContext();
 
   return (
-    <Container relative id="app-container">
+    <Container mobileWidth="100%">
       <Home />
       {showAddressModal && (
         <Modal closeModal={() => setShowAddressModal(false)}>

@@ -7,15 +7,15 @@ export default function PrimaryButton({ text, url }: IPrimaryButton) {
   const { borderRadius, boxShadow, colors } = useAppTheme();
   return (
     <Container
-      backgroundGradient
       mobileWidth="100%"
       mobilePadding="1.5rem 0"
       borderRadius={borderRadius}
       boxShadow="2px 2px 2px #00000010"
       cursor="pointer"
+      backgroundColor={colors.text}
     >
       <Link href={url}>
-        <H4 color={colors.accent}>{text}</H4>
+        <H4 color={colors.mainBackground}>{text}</H4>
       </Link>
     </Container>
   );

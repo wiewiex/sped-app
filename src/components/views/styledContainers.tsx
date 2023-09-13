@@ -156,3 +156,23 @@ export const GlassBackground = styled.div`
   backdrop-filter: blur(6.4px);
   -webkit-backdrop-filter: blur(8.4px);
 `;
+
+export const ScrollbarContainer = styled.div`
+  width: 100%;
+  flex: 1;
+  z-index: 1;
+
+  > div::-webkit-scrollbar {
+    width: 2rem;
+    height: 1rem;
+  }
+
+  > div::-webkit-scrollbar-track {
+  }
+
+  > div::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+    background-image: ${(props) => props.theme.backgroundGradient};
+  }
+`;

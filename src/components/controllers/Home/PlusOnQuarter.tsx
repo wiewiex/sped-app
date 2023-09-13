@@ -20,7 +20,7 @@ export default function PlusOnQuarter() {
             y1="10"
             x2="20"
             y2="10"
-            stroke="gray"
+            stroke="white"
             strokeWidth="3"
           />
           <line
@@ -28,7 +28,7 @@ export default function PlusOnQuarter() {
             y1="0"
             x2="10"
             y2="20"
-            stroke="gray"
+            stroke="white"
             strokeWidth="3"
           />
         </svg>
@@ -38,6 +38,7 @@ export default function PlusOnQuarter() {
 }
 
 const PlusContainer = styled.div`
+  z-index: 2;
   &&:active {
     transform: scale(1.2);
     transition: 1s;

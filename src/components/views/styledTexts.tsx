@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import mediaQueries from '@/utils/mediaQueries';
 
-export const Text = styled.p<{ textAlign?: string }>`
+export const Text = styled.p<{ textAlign?: string; color?: string }>`
   text-align: ${(props) =>
     props.textAlign ? props.textAlign : 'initial'};
   font-size: 1.5rem;
   font-family: ${(props) => props.theme.fonts.secondary};
   font-weight: 200;
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.accent};
   line-height: 1.15;
   @media ${mediaQueries.tabletHorizontal} {
     font-size: 1.5rem;
@@ -134,6 +135,6 @@ export const SmallText = styled.p<{ textAlign?: string }>`
     font-size: 1.2rem;
   }
   @media ${mediaQueries.desktop} {
-    font-size: 1.5;
+    font-size: 1.5rem;
   }
 `;

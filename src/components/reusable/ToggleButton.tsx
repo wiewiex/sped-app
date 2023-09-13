@@ -37,7 +37,7 @@ export default function ToggleButton({
           cursor="pointer"
         >
           <Text>{offText}</Text>
-          <Text>{onText}</Text>
+          <Text color="white">{onText}</Text>
         </Container>
         <input ref={checkboxRef} id={checkboxId} type="checkbox" />
         <ElementPositionWrapper

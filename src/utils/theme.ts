@@ -34,7 +34,7 @@ export const themeLight: ITheme = {
     error: '#B22222',
     success: '#6f9d22',
   },
-  backgroundGradient: `linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)`,
+  backgroundGradient: `linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);`,
   boxShadow: '0px 0px 10px 5px #f3f2ec',
   borderRadius: '1rem',
   fonts: {

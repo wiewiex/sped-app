@@ -1,9 +1,8 @@
 import { Container } from '@/components/views/styledContainers';
 import { H3 } from '@/components/views/styledTexts';
 import { ElementPositionWrapper } from '@/components/views/styledContainers';
-import PlusOnQuarter from '../Addresses/PlusOnQuarter';
-
-import Tile from '../Tile';
+import PlusOnQuarter from '../PlusOnQuarter';
+import Tile from '@/components/reusable/Tile';
 import CustomSelect from '@/components/reusable/CustomSelect';
 import { useAppContext } from '@/context/AppContext';
 

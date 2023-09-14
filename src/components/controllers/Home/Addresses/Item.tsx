@@ -27,16 +27,13 @@ export default function Item({
   return (
     <Container
       mobileJustifyContent="center"
-      mobileMinWidth="30rem"
-      mobileMargin="2rem 0"
+      mobileWidth="22rem"
+      mobileMargin="2rem"
+      borderBottom={`2px solid ${isUnload ? blue : green}`}
+      borderTop={`2px solid ${isUnload ? blue : green}`}
+      borderRadius={borderRadius}
     >
-      <Container
-        borderBottom={`2px solid ${isUnload ? blue : green}`}
-        borderTop={`2px solid ${isUnload ? blue : green}`}
-        mobilePadding="2rem"
-        mobileAlignItems="flex-start"
-        borderRadius={borderRadius}
-      >
+      <Container mobilePadding="2rem" mobileAlignItems="flex-start">
         <Container mobileMargin="0 0 2rem 0" alignSelf="center">
           <Pin />
         </Container>

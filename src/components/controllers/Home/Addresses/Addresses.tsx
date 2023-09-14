@@ -54,7 +54,7 @@ export default function Addresses() {
           mobileFlexDirection="row"
           mobileJustifyContent="space-between"
         >
-          <Container mobileFlexDirection="row" margin="0 5rem">
+          <Container mobileFlexDirection="row" mobileMargin="0 5rem">
             <ColorLegend color={blue} text="rozładunek" />
             <ColorLegend color={green} text="załadunek" />
           </Container>

@@ -1,4 +1,3 @@
-import { Container } from '@/components/views/styledContainers';
 import { Text } from '@/components/views/styledTexts';
 import styled from 'styled-components';
 
@@ -10,19 +9,25 @@ export default function SubmenuItem({
   iconClassName: string;
 }) {
   return (
-    <Container
-      mobileWidth="80%"
-      mobileAlignSelf="flex-end"
-      mobileJustifyContent="flex-start"
-      mobileFlexDirection="row"
-      cursor="pointer"
-      mobilePadding="1rem 0"
-    >
+    <SubmenuItemContainer>
       <Icon className={iconClassName} />
       <Text color="white">{name}</Text>
-    </Container>
+    </SubmenuItemContainer>
   );
 }
+
+const SubmenuItemContainer = styled.div`
+  display: flex;
+  width: 80%;
+  align-self: flex-end;
+  justify-content: flex-start;
+  flex-direction: row;
+  cursor: pointer;
+  padding: 1rem;
+  &&:hover {
+    background-color: ${(props) => props.theme.colors.accent};
+  }
+`;
 
 const Icon = styled.i<{ submenu?: boolean }>`
   color: white;

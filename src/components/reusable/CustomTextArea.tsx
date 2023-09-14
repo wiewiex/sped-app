@@ -13,7 +13,6 @@ const CustomTextAreaContainer = styled.div`
   width: 100%;
   height: 10rem;
   border-radius: ${(props) => props.theme.borderRadius};
-  box-shadow: 2px 1px 1px #00000020;
 
   textarea {
     border: none;

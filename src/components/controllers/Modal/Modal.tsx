@@ -33,8 +33,10 @@ export default function Modal({
             style={{ padding: '2rem' }}
           >
             <Container
-              mobileMinHeight="20rem"
-              mobileMinWidth="20rem"
+              mobileMinHeight="100vh"
+              mobileMinWidth="100vw"
+              minHeight="20rem"
+              minWidth="20rem"
               backgroundColor={colors.mainBackground}
               boxShadow={boxShadow}
               borderRadius={borderRadius}
@@ -48,7 +50,7 @@ export default function Modal({
                   <CloseIcon />
                 </Container>
               </Container>
-              <Container flex={1} mobilePadding="1rem">
+              <Container flex={1} mobilePadding="1rem" mobileWidth="100%">
                 {children}
               </Container>
             </Container>

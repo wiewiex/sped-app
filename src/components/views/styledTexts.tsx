@@ -133,9 +133,9 @@ export const SmallText = styled.p<{ textAlign?: string }>`
   color: ${(props) => props.theme.colors.placeholder};
   line-height: 1.15;
   @media ${mediaQueries.tabletHorizontal} {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   @media ${mediaQueries.desktop} {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;

@@ -61,7 +61,7 @@ export const SecondaryButtonContainer = styled.button<{ width?: string }>`
   background-color: ${(props) =>
     props.disabled ? '#cec9c9' : props.theme.colors.mainBackground};
   height: 4.5rem;
-  width: ${(props) => (props.width ? props.width : '15rem')};
+  width: ${(props) => (props.width ? props.width : '12rem')};
   border: none;
   border-radius: ${(props) => props.theme.borderRadius};
   cursor: pointer;

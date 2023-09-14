@@ -38,10 +38,11 @@ export const H2 = styled.h2<{
   }
 `;
 
-export const H3 = styled.h3`
+export const H3 = styled.h3<{ color?: string }>`
   font-size: 2rem;
   font-family: ${(props) => props.theme.fonts.primary};
-  color: ${(props) => props.theme.colors.secondary};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.secondary};
   font-weight: 500;
   text-align: center;
   line-height: 1.1;

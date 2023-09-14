@@ -45,6 +45,8 @@ export const Container = styled.div(
     borderBottom?: string;
     borderLeft?: string;
     borderRight?: string;
+    hiddenOnDesktop?: boolean;
+    hiddenOnMobile?: boolean;
     theme: any;
   }) => css`
     display: flex;
@@ -83,6 +85,7 @@ export const Container = styled.div(
     `background-color: ${props.backgroundColor};`}
     ${props.backgroundGradient &&
     `background-image: ${props.theme.backgroundGradient};`}
+    ${props.hiddenOnMobile && `display: none;`} 
 
     ${props.imgFit &&
     css`
@@ -110,6 +113,8 @@ export const Container = styled.div(
       ${props.alignItems && `align-items: ${props.alignItems};`}
       ${props.flexDirection && `flex-direction: ${props.flexDirection};`}
       ${props.$wrap && `flex-wrap: ${props.$wrap};`}
+      ${props.hiddenOnMobile && `display: flex;`}
+      ${props.hiddenOnDesktop && `display: none;`}
     }
   `
 );

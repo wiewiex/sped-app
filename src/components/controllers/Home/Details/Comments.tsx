@@ -7,7 +7,7 @@ export default function Comments() {
     <Tile
       mobileWidth="100%"
       minHeight="23rem"
-      padding="2rem 0.5rem 0 0.5rem"
+      padding="2rem 0.5rem 0.5rem 0.5rem"
     >
       <H3>Uwagi</H3>
       <CustomTextArea />

@@ -21,9 +21,7 @@ export default function Load() {
 }
 
 const Item = ({ label }: { label: string }) => (
-  <Container>
-    <Container width="20rem">
-      <PrimaryTextInput label={label} type="number" />
-    </Container>
+  <Container width="20rem" mobileWidth="80%">
+    <PrimaryTextInput label={label} type="number" />
   </Container>
 );

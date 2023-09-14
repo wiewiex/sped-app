@@ -25,7 +25,7 @@ export default function Addresses() {
           flex={1}
           alignItems="stretch"
           mobileFlexDirection="row"
-          mobileJustifyContent="flex-start"
+          justifyContent="flex-start"
           style={{ overflowX: 'auto' }}
           mobilePadding="8rem 2rem"
           $mobileWrap
@@ -54,7 +54,7 @@ export default function Addresses() {
           mobileFlexDirection="row"
           mobileJustifyContent="space-between"
         >
-          <Container mobileFlexDirection="row" mobileMargin="0 5rem">
+          <Container flexDirection="row" mobileMargin="0 5rem">
             <ColorLegend color={blue} text="rozładunek" />
             <ColorLegend color={green} text="załadunek" />
           </Container>

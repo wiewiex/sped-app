@@ -2,14 +2,16 @@ import { Container } from '@/components/views/styledContainers';
 import MenuItem from './MenuItem';
 import SubmenuItem from './SubmenuItem';
 import { ReactNode } from 'react';
+import { useAppTheme } from '@/utils/theme';
 
 export default function Menu() {
+  const { colors } = useAppTheme();
   return (
     <Container
       mobileWidth="100%"
       flex={1}
       mobileJustifyContent="flex-start"
-      backgroundGradient
+      backgroundColor={colors.secondaryAccent}
     >
       <MenuItem name="Panel" iconClassName="fas fa-th-large" />
       <Category>

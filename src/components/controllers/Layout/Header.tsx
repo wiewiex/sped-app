@@ -1,5 +1,5 @@
 import { Container } from '@/components/views/styledContainers';
-import { H3, H4 } from '@/components/views/styledTexts';
+import { H4 } from '@/components/views/styledTexts';
 import { useAppTheme } from '@/utils/theme';
 
 export default function Header() {
@@ -9,17 +9,18 @@ export default function Header() {
       mobileWidth="100%"
       mobilePadding="0 2rem"
       mobileFlexDirection="row"
-      backgroundColor={colors.accent}
+      backgroundColor={colors.secondaryAccent}
       mobileJustifyContent="space-between"
     >
       <Container cursor="pointer">
-        <H3 color={colors.mainBackground}>PL</H3>
+        <H4 color={colors.mainBackground}>PL</H4>
       </Container>
       <Container
         cursor="pointer"
         imgFit="contain"
         mobilePadding="2rem"
-        mobileWidth="20rem"
+        mobileMaxWidth="20rem"
+        mobileWidth="40vw"
       >
         <img src="/logo_vbs.png" alt="logo" />
       </Container>

@@ -39,7 +39,7 @@ export const H2 = styled.h2<{
 `;
 
 export const H3 = styled.h3<{ color?: string }>`
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: ${(props) => props.theme.fonts.primary};
   color: ${(props) =>
     props.color ? props.color : props.theme.colors.secondary};
@@ -47,7 +47,7 @@ export const H3 = styled.h3<{ color?: string }>`
   text-align: center;
   line-height: 1.1;
   @media ${mediaQueries.tabletHorizontal} {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 `;
 

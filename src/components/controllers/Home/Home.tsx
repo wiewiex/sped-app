@@ -14,7 +14,7 @@ export default function Home() {
       <ClientAndCarrier />
       <Addresses />
       <Details />
-      <Container mobilePadding="2rem 0" mobileAlignSelf="flex-end">
+      <Container mobilePadding="2rem 0">
         <PrimaryButton text="Zapisz" url="/" />
       </Container>
     </Container>

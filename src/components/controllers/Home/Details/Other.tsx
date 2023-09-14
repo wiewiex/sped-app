@@ -37,6 +37,6 @@ const Item = ({
     mobileMargin="0 0 1rem 0"
   >
     <Text style={{ whiteSpace: 'nowrap' }}>{text}</Text>
-    <CustomSelect options={selectOptions} width="15rem" />
+    <CustomSelect options={selectOptions} width="12rem" />
   </Container>
 );

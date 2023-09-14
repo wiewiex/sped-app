@@ -1,5 +1,5 @@
-import Tile from '../Tile';
-import { H3, H4 } from '@/components/views/styledTexts';
+import Tile from '@/components/reusable/Tile';
+import { H3 } from '@/components/views/styledTexts';
 import { Container } from '@/components/views/styledContainers';
 import PrimaryTextInput from '@/components/reusable/PrimaryTextInput';
 

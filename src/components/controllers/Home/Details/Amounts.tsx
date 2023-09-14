@@ -1,14 +1,15 @@
 import { H3, Text } from '@/components/views/styledTexts';
-import Tile from '../Tile';
+import Tile from '@/components/reusable/Tile';
 import { Container } from '@/components/views/styledContainers';
 import PrimaryTextInput from '@/components/reusable/PrimaryTextInput';
 import CustomSelect from '@/components/reusable/CustomSelect';
 
 export default function Amounts() {
   return (
-    <Tile mobileWidth="100%" minHeight="25rem">
+    <Tile mobileWidth="100%" minHeight="25rem" mobileMinHeight="70rem">
       <H3>Kwoty</H3>
       <Container
+        $mobileWrap
         mobileWidth="100%"
         flexDirection="row"
         justifyContent="space-around"
@@ -29,11 +30,7 @@ const Item = ({
   label: string;
   selectOptions: string[];
 }) => (
-  <Container
-    mobileFlexDirection="row"
-    mobileWidth="40rem"
-    mobileAlignItems="flex-end"
-  >
+  <Container flexDirection="row" width="40rem" mobileWidth="100%">
     <PrimaryTextInput label={label} type="number" width="13rem" />
     <Container mobilePadding="2rem">
       <CustomSelect width="13rem" options={selectOptions} />

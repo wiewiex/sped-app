@@ -11,12 +11,12 @@ export default function Home() {
       <Container mobilePadding="4rem 0" alignSelf="flex-start">
         <H3>Zlecenie nr: 79/BP/08/2023</H3>
       </Container>
-      {/* <ClientAndCarrier /> */}
+      <ClientAndCarrier />
       <Addresses />
-      {/* <Details /> */}
-      {/* <Container mobilePadding="2rem 0" mobileWidth="100%">
+      <Details />
+      <Container mobilePadding="2rem 0" mobileAlignSelf="flex-end">
         <PrimaryButton text="Zapisz" url="/" />
-      </Container> */}
+      </Container>
     </Container>
   );
 }

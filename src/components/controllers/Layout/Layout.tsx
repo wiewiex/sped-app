@@ -16,10 +16,8 @@ export default function Layout() {
         justifyContent="flex-start"
         alignItems="stretch"
       >
-        <Container width="20%" backgroundColor="red">
-          {!isMobile && <Sidebar />}
-        </Container>
-        <Container flex={1} mobileWidth="100%" width="auto">
+        <Container width="15%">{!isMobile && <Sidebar />}</Container>
+        <Container width="85%" mobileWidth="100%">
           <Main />
         </Container>
       </Container>

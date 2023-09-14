@@ -13,14 +13,15 @@ export default function ClientAndCarrier() {
       flexDirection="row"
       justifyContent="space-between"
       mobileWidth="100%"
-      mobileMinHeight="30rem"
       alignItems="stretch"
     >
       <Tile mobileWidth="100%" width="48%">
         <Container
           flex={1}
           mobileWidth="90%"
-          justifyContent="space-around"
+          mobileJustifyContent="space-around"
+          mobileMinHeight="20rem"
+          minHeight="25rem"
         >
           <H3>Klient</H3>
           <CustomSelect
@@ -46,7 +47,8 @@ export default function ClientAndCarrier() {
         <Container
           flex={1}
           mobileWidth="90%"
-          justifyContent="space-around"
+          mobileJustifyContent="space-around"
+          mobileMinHeight="20rem"
         >
           <H3>Przewoźnik</H3>
           <CustomSelect

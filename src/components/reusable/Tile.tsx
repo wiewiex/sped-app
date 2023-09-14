@@ -7,12 +7,14 @@ export default function Tile({
   mobileWidth,
   width,
   minHeight,
+  mobileMinHeight,
   padding,
 }: {
   children: ReactNode;
   width?: string;
   mobileWidth: string;
   minHeight?: string;
+  mobileMinHeight?: string;
   padding?: string;
 }) {
   const { borderRadius, boxShadow } = useAppTheme();
@@ -23,6 +25,7 @@ export default function Tile({
       borderRadius={borderRadius}
       boxShadow={boxShadow}
       minHeight={minHeight}
+      mobileMinHeight={mobileMinHeight}
       mobileJustifyContent="space-around"
       mobilePadding={padding ? padding : '3rem'}
       mobileMargin="0 0 4rem 0"

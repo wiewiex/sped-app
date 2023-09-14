@@ -25,7 +25,7 @@ export default function Addresses() {
           flex={1}
           alignItems="stretch"
           mobileFlexDirection="row"
-          mobileJustifyContent="space-around"
+          mobileJustifyContent="space-evenly"
           justifyContent="flex-start"
           style={{ overflowX: 'auto' }}
           mobilePadding="8rem 2rem"

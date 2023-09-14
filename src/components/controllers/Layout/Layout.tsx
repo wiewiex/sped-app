@@ -1,6 +1,6 @@
 import { Container } from '@/components/views/styledContainers';
 import Header from './Header';
-import Sidebar from './Sidebar';
+import Menu from './Menu';
 import Main from './Main';
 
 export default function Layout() {
@@ -14,7 +14,7 @@ export default function Layout() {
         alignItems="stretch"
       >
         <Container width="15%" minWidth="20rem" hiddenOnMobile>
-          <Sidebar />
+          <Menu />
         </Container>
         <Container width="85%" mobileWidth="100%">
           <Main />

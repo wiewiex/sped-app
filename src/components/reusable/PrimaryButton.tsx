@@ -24,6 +24,7 @@ const PrimaryButtonContainer = styled.button`
   cursor: pointer;
   background-image: ${(props) => props.theme.backgroundGradient};
   z-index: 2;
+  border: none;
   &&:active {
     transform: scale(1.2);
     transition: 1s;

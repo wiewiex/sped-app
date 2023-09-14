@@ -22,36 +22,40 @@ export default function Modal({
       mobileTop="0"
       mobileLeft="0"
       mobileRight="0"
+      mobileBottom="0"
       zIndex={99}
       position="fixed"
+      mobilePosition="absolute"
     >
-      <Container mobileHeight="100vh" mobileWidth="100%">
+      <Container flex={1} mobileMinHeight="100vh" mobileWidth="100%">
         <GlassBackground>
-          <AnimationWrapper
-            keyframe={fadeIn}
-            duration={1}
-            style={{ padding: '2rem' }}
-          >
-            <Container
-              mobileMinHeight="100vh"
-              mobileMinWidth="100vw"
-              minHeight="20rem"
-              minWidth="20rem"
-              backgroundColor={colors.mainBackground}
-              boxShadow={boxShadow}
-              borderRadius={borderRadius}
-            >
-              <Container mobileWidth="100%" mobileAlignItems="flex-end">
-                <Container
-                  mobilePadding="1rem"
-                  cursor="pointer"
-                  onClick={() => closeModal()}
-                >
-                  <CloseIcon />
+          <AnimationWrapper keyframe={fadeIn} duration={1}>
+            <Container padding="2rem">
+              <Container
+                mobileMinHeight="100vh"
+                mobileMinWidth="100vw"
+                minHeight="20rem"
+                minWidth="20rem"
+                backgroundColor={colors.mainBackground}
+                boxShadow={boxShadow}
+                borderRadius={borderRadius}
+              >
+                <Container mobileWidth="100%" mobileAlignItems="flex-end">
+                  <Container
+                    mobilePadding="1rem"
+                    cursor="pointer"
+                    onClick={() => closeModal()}
+                  >
+                    <CloseIcon />
+                  </Container>
                 </Container>
-              </Container>
-              <Container flex={1} mobilePadding="1rem" mobileWidth="100%">
-                {children}
+                <Container
+                  flex={1}
+                  mobilePadding="1rem"
+                  mobileWidth="100%"
+                >
+                  {children}
+                </Container>
               </Container>
             </Container>
           </AnimationWrapper>

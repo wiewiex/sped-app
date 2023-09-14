@@ -14,6 +14,7 @@ export default function AddCarrier() {
       width="60vw"
       minHeight="75rem"
       minWidth="85rem"
+      mobileMinHeight="150rem"
     >
       <Formik
         initialValues={initialValues}
@@ -59,7 +60,12 @@ export default function AddCarrier() {
                 mobileJustifyContent="space-between"
                 mobileMargin="5rem 0 3rem 0"
               >
-                <Container mobileWidth="50%" mobilePadding="0 5rem">
+                <Container
+                  width="50%"
+                  mobileWidth="100%"
+                  padding="0 5rem"
+                  flex={1}
+                >
                   <Container
                     flex={1}
                     mobileWidth="100%"
@@ -87,33 +93,36 @@ export default function AddCarrier() {
                       flexDirection="row"
                       justifyContent="space-between"
                     >
-                      <PrimaryTextInput
-                        label="Kod pocztowy"
-                        onChange={handleChange('postCode')}
-                        onBlur={handleBlur('postCode')}
-                        value={postCode}
-                        error={touched.postCode && errors.postCode}
-                        width="47%"
-                      />
-                      <PrimaryTextInput
-                        label="Miasto"
-                        onChange={handleChange('city')}
-                        onBlur={handleBlur('city')}
-                        value={city}
-                        error={touched.city && errors.city}
-                        width="47%"
-                      />
+                      <Container width="47%" mobileWidth="100%">
+                        <PrimaryTextInput
+                          label="Kod pocztowy"
+                          onChange={handleChange('postCode')}
+                          onBlur={handleBlur('postCode')}
+                          value={postCode}
+                          error={touched.postCode && errors.postCode}
+                        />
+                      </Container>
+                      <Container width="47%" mobileWidth="100%">
+                        <PrimaryTextInput
+                          label="Miasto"
+                          onChange={handleChange('city')}
+                          onBlur={handleBlur('city')}
+                          value={city}
+                          error={touched.city && errors.city}
+                        />
+                      </Container>
                     </Container>
                     <Container
                       mobileWidth="100%"
-                      flexDirection="row"
+                      mobileFlexDirection="row"
                       justifyContent="space-between"
                     >
-                      <CustomSelect
-                        placeholder="Wybierz kraj"
-                        options={['test1', 'test2']}
-                        width="47%"
-                      />
+                      <Container mobileWidth="47%">
+                        <CustomSelect
+                          placeholder="Wybierz kraj"
+                          options={['test1', 'test2']}
+                        />
+                      </Container>
                       <Container
                         mobileFlexDirection="row"
                         mobileWidth="47%"
@@ -150,36 +159,34 @@ export default function AddCarrier() {
                     >
                       <Container
                         mobileFlexDirection="row"
-                        mobileWidth="47%"
-                        mobileJustifyContent="flex-start"
+                        width="47%"
+                        mobileWidth="100%"
+                        justifyContent="flex-start"
                       >
                         <H5>KOMUNIKACJA EMAIL</H5>
                         <Switcher checked={true} handleChange={() => {}} />
                       </Container>
                       <Container
                         mobileFlexDirection="row"
-                        mobileWidth="47%"
-                        mobileJustifyContent="flex-end"
+                        width="47%"
+                        mobileWidth="100%"
+                        justifyContent="flex-end"
                       >
                         <H5>KOMUNIKACJA KLASYCZNA</H5>
                         <Switcher checked={true} handleChange={() => {}} />
                       </Container>
                     </Container>
-                    <Container
-                      alignSelf="flex-start"
-                      mobileMargin="2rem 0 0 0"
-                    >
-                      <SecondaryButton text="Wyczyść" />
-                    </Container>
                   </Container>
                 </Container>
                 <Container
-                  mobileWidth="50%"
-                  mobilePadding="0 5rem"
+                  width="50%"
+                  flex={1}
+                  mobileWidth="100%"
+                  padding="0 5rem"
                   mobileJustifyContent="space-between"
                 >
                   <Container mobileWidth="100%">
-                    <Container mobileMargin="0 0 2rem 0">
+                    <Container mobileMargin="5rem 0 " margin="0 0 2rem 0">
                       <Text>Dane osoby kontaktowej</Text>
                     </Container>
                     <PrimaryTextInput
@@ -255,7 +262,13 @@ export default function AddCarrier() {
                       }
                     />
                   </Container>
-                  <Container alignSelf="flex-end">
+                  <Container
+                    alignSelf="flex-end"
+                    mobileFlexDirection="row"
+                  >
+                    <Container mobileMargin="0 2rem">
+                      <SecondaryButton text="Wyczyść" />
+                    </Container>
                     <SecondaryButton text="Zapisz" />
                   </Container>
                 </Container>

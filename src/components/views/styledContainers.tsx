@@ -121,6 +121,7 @@ export const Container = styled.div(
 
 export const ElementPositionWrapper = styled.div(
   (props: {
+    mobilePosition?: string;
     position?: string;
     zIndex?: number;
     mobileTop?: string;
@@ -135,13 +136,14 @@ export const ElementPositionWrapper = styled.div(
     display: flex;
     flex-direction: column;
     ${props.zIndex && `z-index: ${props.zIndex};`}
-    position: ${props.position ? props.position : 'absolute'};
+    position: ${props.mobilePosition ? props.mobilePosition : 'absolute'};
     top: ${props.mobileTop ? props.mobileTop : 'auto'};
     bottom: ${props.mobileBottom ? props.mobileBottom : 'auto'};
     left: ${props.mobileLeft ? props.mobileLeft : 'auto'};
     right: ${props.mobileRight ? props.mobileRight : 'auto'};
 
     @media ${mediaQueries.tabletHorizontal} {
+      ${props.position && `position: ${props.position};`}
       top: ${props.top ? props.top : props.mobileTop || 'auto'};
       bottom: ${props.bottom
         ? props.bottom
@@ -158,8 +160,11 @@ export const GlassBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6.4px);
+  backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(8.4px);
+  @media ${mediaQueries.tabletHorizontal} {
+    justify-content: center;
+  }
 `;

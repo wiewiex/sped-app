@@ -2,7 +2,7 @@ import { Formik } from 'formik';
 import { Container } from '@/components/views/styledContainers';
 import PrimaryTextInput from '@/components/reusable/PrimaryTextInput';
 import SecondaryButton from '@/components/reusable/SecondaryButton';
-import { H2, H4, Text } from '@/components/views/styledTexts';
+import { H2, H4 } from '@/components/views/styledTexts';
 
 import { initialValues, validationSchema } from './handlers';
 import CustomSelect from '@/components/reusable/CustomSelect';
@@ -13,6 +13,7 @@ export default function AddClient() {
     <Container
       width="45vw"
       mobileWidth="100%"
+      mobileMinHeight="60rem"
       minHeight="50rem"
       minWidth="60rem"
       flex={1}
@@ -99,7 +100,12 @@ export default function AddClient() {
                           error={touched.city && errors.city}
                         />
                       </Container>
-                      <Container width="30%" mobileWidth="100%">
+                      <Container
+                        width="30%"
+                        mobileWidth="100%"
+                        mobileMargin="2rem 0 0  0"
+                        margin="0"
+                      >
                         <CustomSelect
                           placeholder="Wybierz kraj"
                           options={['test1', 'test2']}
@@ -133,6 +139,7 @@ export default function AddClient() {
                         />
                       </Container>
                       <Container
+                        mobileMargin="3rem 0"
                         mobileFlexDirection="row"
                         mobileWidth="30%"
                       >

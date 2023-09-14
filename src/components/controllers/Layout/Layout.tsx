@@ -13,7 +13,7 @@ export default function Layout() {
         justifyContent="flex-start"
         alignItems="stretch"
       >
-        <Container width="15%" hiddenOnMobile>
+        <Container width="15%" minWidth="20rem" hiddenOnMobile>
           <Sidebar />
         </Container>
         <Container width="85%" mobileWidth="100%">

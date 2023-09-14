@@ -29,15 +29,14 @@ const Item = ({
 }) => (
   <Container
     mobileFlexDirection="row"
-    width="40rem"
+    maxWidth="30rem"
     mobileWidth="100%"
-    mobileMargin="0 0 2rem 0"
     mobileJustifyContent="space-between"
     justifyContent="space-around"
+    $wrap="wrap"
+    mobileMargin="0 0 1rem 0"
   >
-    <Text style={{ whiteSpace: 'nowrap', margin: '0 2rem 0 0' }}>
-      {text}
-    </Text>
+    <Text style={{ whiteSpace: 'nowrap' }}>{text}</Text>
     <CustomSelect options={selectOptions} width="15rem" />
   </Container>
 );

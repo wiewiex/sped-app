@@ -2,7 +2,7 @@ import { Formik } from 'formik';
 import { Container } from '@/components/views/styledContainers';
 import PrimaryTextInput from '@/components/reusable/PrimaryTextInput';
 import SecondaryButton from '@/components/reusable/SecondaryButton';
-import { H2, H4, Text, H5 } from '@/components/views/styledTexts';
+import { H2, H4, Text, H5, H6 } from '@/components/views/styledTexts';
 import Switcher from '@/components/reusable/Switcher';
 import { initialValues, validationSchema } from './handlers';
 import CustomSelect from '@/components/reusable/CustomSelect';
@@ -162,8 +162,9 @@ export default function AddCarrier() {
                         width="47%"
                         mobileWidth="100%"
                         justifyContent="flex-start"
+                        mobileJustifyContent="space-between"
                       >
-                        <H5>KOMUNIKACJA EMAIL</H5>
+                        <H6>KOMUNIKACJA EMAIL</H6>
                         <Switcher checked={true} handleChange={() => {}} />
                       </Container>
                       <Container
@@ -171,8 +172,9 @@ export default function AddCarrier() {
                         width="47%"
                         mobileWidth="100%"
                         justifyContent="flex-end"
+                        mobileJustifyContent="space-between"
                       >
-                        <H5>KOMUNIKACJA KLASYCZNA</H5>
+                        <H6>KOMUNIKACJA KLASYCZNA</H6>
                         <Switcher checked={true} handleChange={() => {}} />
                       </Container>
                     </Container>

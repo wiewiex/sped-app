@@ -16,7 +16,8 @@ export default function AddAddress() {
     <Container
       mobileWidth="90vw"
       width="50vw"
-      mobileMinHeight="60rem"
+      mobileMinHeight="100rem"
+      minHeight="50rem"
       minWidth="70rem"
     >
       <Formik
@@ -61,7 +62,7 @@ export default function AddAddress() {
                 mobileJustifyContent="space-between"
                 mobileMargin="5rem 0 3rem 0"
               >
-                <Container mobileWidth="50%" mobilePadding="0 5rem">
+                <Container width="50%" mobileWidth="100%" padding="0 5rem">
                   <Container
                     flex={1}
                     mobileWidth="100%"
@@ -90,7 +91,7 @@ export default function AddAddress() {
                       flexDirection="row"
                       justifyContent="space-between"
                     >
-                      <Container width="47%">
+                      <Container width="47%" mobileWidth="100%">
                         <PrimaryTextInput
                           label="Kod pocztowy"
                           onChange={handleChange('postCode')}
@@ -99,7 +100,7 @@ export default function AddAddress() {
                           error={touched.postCode && errors.postCode}
                         />
                       </Container>
-                      <Container width="47%">
+                      <Container width="47%" mobileWidth="100%">
                         <PrimaryTextInput
                           label="Miasto"
                           onChange={handleChange('city')}
@@ -120,13 +121,14 @@ export default function AddAddress() {
                       value={gps}
                       error={touched.gps && errors.gps}
                     />
-                    <SecondaryButton text="Wyczyść" />
                   </Container>
                 </Container>
                 <Container
-                  mobileWidth="50%"
-                  mobilePadding="0 5rem"
+                  width="50%"
+                  mobileWidth="100%"
+                  padding="0 5rem"
                   mobileJustifyContent="space-between"
+                  flex={1}
                 >
                   <CustomDateInput text="Data i godzina rozpoczęcia załadunku" />
                   <CustomDateInput text="Data i godzina rozpoczęcia rozładunku" />
@@ -140,7 +142,14 @@ export default function AddAddress() {
                     <CustomTextArea />
                   </Container>
                   <ToggleButton offText="Załadunek" onText="Rozładunek" />
-                  <SecondaryButton text="Zapisz" />
+                  <Container
+                    mobileFlexDirection="row"
+                    mobileWidth="100%"
+                    mobileJustifyContent="space-between"
+                  >
+                    <SecondaryButton text="Wyczyść" />
+                    <SecondaryButton text="Zapisz" />
+                  </Container>
                 </Container>
               </Container>
             </Container>

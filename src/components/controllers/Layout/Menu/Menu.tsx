@@ -11,7 +11,7 @@ export default function Menu() {
       mobileWidth="100%"
       flex={1}
       mobileJustifyContent="flex-start"
-      backgroundColor={colors.secondaryAccent}
+      backgroundColor={colors.navBackground}
     >
       <MenuItem name="Panel" iconClassName="fas fa-th-large" />
       <Category>

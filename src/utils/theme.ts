@@ -5,6 +5,7 @@ export interface ITheme {
   colors: {
     mainBackground: string;
     boxBackground: string;
+    navBackground: string;
     text: string;
     accent: string;
     secondaryAccent: string;
@@ -16,6 +17,7 @@ export interface ITheme {
   boxShadow: string;
   backgroundGradient: string;
   borderRadius: string;
+
   fonts: {
     primary: string;
     secondary: string;
@@ -26,6 +28,7 @@ export const themeLight: ITheme = {
   colors: {
     mainBackground: '#fff',
     boxBackground: '#ffffff80',
+    navBackground: '#7A3685',
     text: '#212427',
     accent: '#3a3e58',
     secondaryAccent: '#6c7098',

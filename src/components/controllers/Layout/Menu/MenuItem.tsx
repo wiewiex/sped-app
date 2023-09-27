@@ -1,6 +1,6 @@
 import { Container } from '@/components/views/styledContainers';
 import { H4 } from '@/components/views/styledTexts';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 
 export default function MenuItem({
   name,
@@ -11,6 +11,7 @@ export default function MenuItem({
   iconClassName: string;
   submenu?: boolean;
 }) {
+  const { colors } = useTheme();
   return (
     <MenuItemContainer>
       <Container
@@ -18,7 +19,7 @@ export default function MenuItem({
         mobileJustifyContent="flex-start"
       >
         <Icon className={iconClassName} />
-        <H4 color="white">{name}</H4>
+        <H4 color={colors.mainBackground}>{name}</H4>
       </Container>
       {submenu && <Icon submenu className="fas fa-angle-up" />}
     </MenuItemContainer>
@@ -39,9 +40,9 @@ const MenuItemContainer = styled.div`
 `;
 
 const Icon = styled.i<{ submenu?: boolean }>`
+  font-size: 1.5rem;
+  width: 1rem;
   color: white;
-  font-size: 2rem;
-  width: 2rem;
   ${(props) =>
     props.submenu ? 'margin-left: 2rem' : 'margin-right: 2rem'};
 `;

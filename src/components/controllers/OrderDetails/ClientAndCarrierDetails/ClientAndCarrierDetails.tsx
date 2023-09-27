@@ -1,8 +1,7 @@
 import { Container } from '@/components/views/styledContainers';
-import { H3 } from '@/components/views/styledTexts';
+import { H3, H4, H5 } from '@/components/views/styledTexts';
 import { ElementPositionWrapper } from '@/components/views/styledContainers';
 import Tile from '@/components/reusable/Tile';
-import CustomSelect from '@/components/reusable/CustomSelect';
 import { useAppContext } from '@/context/AppContext';
 
 export default function ClientAndCarrierDetails() {
@@ -23,14 +22,7 @@ export default function ClientAndCarrierDetails() {
           minHeight="25rem"
         >
           <H3>Klient</H3>
-          <CustomSelect
-            placeholder="Wybierz klienta"
-            options={['Tesco', 'Aldi', 'Lidl']}
-          />
-          <CustomSelect
-            placeholder="Wybierz osobę kontaktową"
-            options={['Manager', 'Driver']}
-          />
+          <H5>Spedapp sp. z.o.o</H5>
         </Container>
         <ElementPositionWrapper
           mobileRight="0"
@@ -48,18 +40,6 @@ export default function ClientAndCarrierDetails() {
           mobileMinHeight="20rem"
         >
           <H3>Przewoźnik</H3>
-          <CustomSelect
-            placeholder="Wybierz przewoźnika"
-            options={['DHL', 'UPS', 'GSL']}
-          />
-          <CustomSelect
-            placeholder="Wybierz osobę kontaktową"
-            options={['DHL', 'UPS', 'GSL']}
-          />
-          <CustomSelect
-            placeholder="Wybierz kierowcę"
-            options={['Marek', 'Józek', 'Krzysiek']}
-          />
         </Container>
         <ElementPositionWrapper
           mobileRight="0"

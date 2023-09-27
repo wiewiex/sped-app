@@ -22,7 +22,7 @@ const PrimaryButtonContainer = styled.button`
   border-radius: ${(props) => props.theme.borderRadius};
   box-shadow: 2px 2px 2px #00000010;
   cursor: pointer;
-  background-image: ${(props) => props.theme.backgroundGradient};
+  background-color: ${(props) => props.theme.colors.navBackground};
   z-index: 2;
   border: none;
   &&:active {

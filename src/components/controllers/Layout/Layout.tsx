@@ -2,8 +2,10 @@ import { Container } from '@/components/views/styledContainers';
 import Header from './Header';
 import Menu from './Menu';
 import Main from './Main';
+import { useAppTheme } from '@/utils/theme';
 
 export default function Layout() {
+  const { navbarWidth } = useAppTheme();
   return (
     <Container relative id="app-container" mobileWidth="100%">
       <Header />
@@ -13,7 +15,7 @@ export default function Layout() {
         justifyContent="flex-start"
         alignItems="stretch"
       >
-        <Container width="15%" minWidth="20rem" hiddenOnMobile>
+        <Container width={navbarWidth} hiddenOnMobile>
           <Menu />
         </Container>
         <Container width="85%" mobileWidth="100%">

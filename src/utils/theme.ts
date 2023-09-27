@@ -17,7 +17,7 @@ export interface ITheme {
   boxShadow: string;
   backgroundGradient: string;
   borderRadius: string;
-
+  navbarWidth: string;
   fonts: {
     primary: string;
     secondary: string;
@@ -40,6 +40,7 @@ export const themeLight: ITheme = {
   backgroundGradient: `linear-gradient(177.9deg, rgb(108, 112, 152) 3.6%, rgb(189, 196, 215) 105.8%)`,
   boxShadow: '0px 0px 10px 5px #f3f2ec',
   borderRadius: '1rem',
+  navbarWidth: '22rem',
   fonts: {
     primary: 'Montserrat',
     secondary: 'Montserrat',

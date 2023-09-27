@@ -84,6 +84,7 @@ export const H6 = styled.h6<{
   font-family: ${(props) => props.theme.fonts.primary};
   font-size: 1.5rem;
   font-weight: 400;
+
   color: ${(props) => props.theme.colors.secondary};
   width: ${(props) => (props.width ? props.width : 'auto')};
 `;

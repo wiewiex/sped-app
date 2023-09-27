@@ -7,10 +7,10 @@ import '@fontsource/playfair-display/500.css';
 import '@fontsource/montserrat/800.css';
 import '@fontsource/montserrat/300.css';
 
-export const remSize = '11px';
+export const remSize = '10px';
 
 const GlobalStyle = createGlobalStyle`
-*, p, h1, h2,h3,h4,h5 {
+*, p, h1, h2,h3,h4,h5,h6 {
   box-sizing: border-box;
   padding: 0;
   margin: 0;

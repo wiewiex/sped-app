@@ -1,6 +1,7 @@
 import { Container } from '@/components/views/styledContainers';
 import { H4 } from '@/components/views/styledTexts';
-import styled, { useTheme } from 'styled-components';
+import styled from 'styled-components';
+import { useAppTheme } from '@/utils/theme';
 
 export default function MenuItem({
   name,
@@ -11,14 +12,14 @@ export default function MenuItem({
   iconClassName: string;
   submenu?: boolean;
 }) {
-  const { colors } = useTheme();
+  const { colors } = useAppTheme();
+
   return (
     <MenuItemContainer>
       <Container
         mobileFlexDirection="row"
         mobileJustifyContent="flex-start"
       >
-        <Icon className={iconClassName} />
         <H4 color={colors.mainBackground}>{name}</H4>
       </Container>
       {submenu && <Icon submenu className="fas fa-angle-up" />}
@@ -35,7 +36,7 @@ const MenuItemContainer = styled.div`
   justify-content: space-between;
 
   &&:hover {
-    background-color: ${(props) => props.theme.colors.accent};
+    background-color: ${(props) => props.theme.colors.accent + '40'};
   }
 `;
 

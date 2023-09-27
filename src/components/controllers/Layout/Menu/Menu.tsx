@@ -13,7 +13,7 @@ export default function Menu() {
       mobileJustifyContent="flex-start"
       backgroundColor={colors.navBackground}
     >
-      <MenuItem name="Panel" iconClassName="fas fa-th-large" />
+      <SubmenuItem name="Home" iconClassName="fas fa-th-large" />
       <Category>
         <MenuItem
           name="Spedycja"

@@ -19,13 +19,11 @@ export default function SubmenuItem({
 const SubmenuItemContainer = styled.div`
   display: flex;
   width: 80%;
-  align-self: flex-end;
-  justify-content: flex-start;
   flex-direction: row;
   cursor: pointer;
   padding: 1rem;
   &&:hover {
-    background-color: ${(props) => props.theme.colors.accent};
+    background-color: ${(props) => props.theme.colors.accent + '40'};
   }
 `;
 

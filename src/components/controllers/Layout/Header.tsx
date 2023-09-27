@@ -12,17 +12,17 @@ export default function Header() {
         mobileWidth="100%"
         mobileFlexDirection="row"
         mobileJustifyContent="space-between"
+        boxShadow="0px 0px 10px 5px rgba(0, 0, 0, 0.08)"
       >
         <Container
           cursor="pointer"
           width={navbarWidth}
-          mobilePadding="1rem"
+          mobilePadding="1.5rem 1rem"
         >
           <LogoContainer>
             <H4>Logisteo</H4>
           </LogoContainer>
         </Container>
-
         <Container mobileFlexDirection="row" mobilePadding="0 1rem">
           <H5>Witaj, user</H5>
           <Container cursor="pointer" mobileMargin="0 0.5rem">

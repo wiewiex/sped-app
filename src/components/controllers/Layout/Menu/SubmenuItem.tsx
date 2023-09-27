@@ -1,15 +1,27 @@
 import { Text } from '@/components/views/styledTexts';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 export default function SubmenuItem({
   name,
   iconClassName,
+  href,
 }: {
   name: string;
   iconClassName: string;
+  href?: string;
 }) {
+  const router = useRouter();
   return (
-    <SubmenuItemContainer>
+    <SubmenuItemContainer
+      onClick={
+        href
+          ? () => router.push(href)
+          : () => {
+              console.log('submenu item clicked');
+            }
+      }
+    >
       <Icon className={iconClassName} />
       <Text color="white">{name}</Text>
     </SubmenuItemContainer>

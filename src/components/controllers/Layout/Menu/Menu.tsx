@@ -20,8 +20,16 @@ export default function Menu() {
           iconClassName="fas fa-warehouse"
           submenu
         />
-        <SubmenuItem name="Nowe zlecenie" iconClassName="fas fa-plus" />
-        <SubmenuItem name="Zlecenia" iconClassName="fas fa-list" />
+        <SubmenuItem
+          href="/"
+          name="Nowe zlecenie"
+          iconClassName="fas fa-plus"
+        />
+        <SubmenuItem
+          href="/details"
+          name="Zlecenia"
+          iconClassName="fas fa-list"
+        />
         <SubmenuItem name="Klienci" iconClassName="fas fa-user-friends" />
         <SubmenuItem name="Przewoźnicy" iconClassName="fas fa-bus" />
       </Category>

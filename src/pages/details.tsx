@@ -1,5 +1,5 @@
-import Details from '@/components/controllers/Details';
+import OrderDetails from '@/components/controllers/OrderDetails';
 
 export default function DetailsPage() {
-  return <Details />;
+  return <OrderDetails />;
 }

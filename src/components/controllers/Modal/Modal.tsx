@@ -29,7 +29,7 @@ export default function Modal({
     >
       <Container flex={1} mobileMinHeight="100vh" mobileWidth="100%">
         <GlassBackground>
-          <AnimationWrapper keyframe={fadeIn} duration={1}>
+          <AnimationWrapper keyframe={fadeIn} duration={0.3}>
             <Container padding="2rem">
               <Container
                 mobileMinHeight="100vh"

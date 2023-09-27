@@ -1,4 +1,4 @@
-import Switch from 'react-switch';
+import styled from 'styled-components';
 
 export default function Switcher({
   checked,
@@ -8,20 +8,27 @@ export default function Switcher({
   handleChange: () => void;
 }) {
   return (
-    <Switch
-      checked={checked}
-      onChange={handleChange}
-      onColor="#86d3ff"
-      onHandleColor="#2693e6"
-      handleDiameter={30}
-      uncheckedIcon={false}
-      checkedIcon={false}
-      boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-      activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-      height={15}
-      width={36}
-      className="react-switch"
-      id="material-switch"
-    />
+    <SwitcherContainer>
+      <div className="form-check form-switch">
+        <input
+          className="form-check-input"
+          type="checkbox"
+          role="switch"
+          checked
+        />
+      </div>
+    </SwitcherContainer>
   );
 }
+
+const SwitcherContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  min-width: 5rem;
+  max-width: 8rem;
+
+  div {
+    transform: scale(1.8);
+  }
+`;

@@ -1,6 +1,6 @@
 import { Container } from '@/components/views/styledContainers';
 import ClientAndCarrier from './ClientAndCarrier';
-import Addresses from './Addresses';
+import Addresses from '@/components/reusable/Addresses';
 import { H3 } from '@/components/views/styledTexts';
 import Details from './Details';
 import PrimaryButton from '@/components/reusable/PrimaryButton';

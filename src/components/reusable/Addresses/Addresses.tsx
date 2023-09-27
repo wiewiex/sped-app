@@ -6,7 +6,7 @@ import Tile from '@/components/reusable/Tile';
 import { SmallText } from '@/components/views/styledTexts';
 import { Fragment } from 'react';
 import Arrow from './Arrow';
-import PlusOnQuarter from '../PlusOnQuarter';
+import PlusOnQuarter from '@/components/controllers/Home/PlusOnQuarter';
 import { useAppContext } from '@/context/AppContext';
 import Item from './Item';
 import ScrollbarContainer from '@/components/reusable/ScrollbarContainer';

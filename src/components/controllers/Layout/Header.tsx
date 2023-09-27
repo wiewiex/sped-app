@@ -17,7 +17,7 @@ export default function Header() {
       >
         <H4 color={colors.navBackground}>Logisteo</H4>
       </Container>
-      <Container mobileFlexDirection="row">
+      <Container mobileFlexDirection="row" mobilePadding="0 1rem">
         <H5>Witaj, user</H5>
         <Container cursor="pointer" mobileMargin="0 0.5rem">
           <svg

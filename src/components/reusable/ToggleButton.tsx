@@ -5,7 +5,7 @@ import {
 } from '../views/styledContainers';
 import styled from 'styled-components';
 import { Text } from '../views/styledTexts';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 export default function ToggleButton({
   offText,
@@ -17,12 +17,11 @@ export default function ToggleButton({
   const { colors, borderRadius } = useAppTheme();
   const checkboxId = `toggle-button_${offText}_${onText}`;
   const width = 25;
-
-  const checkboxRef = useRef<HTMLInputElement>(null); //do sprawdzenia
+  const [checked, setChecked] = useState(false);
 
   return (
     <Container
-      backgroundGradient
+      border={`1px solid ${colors.navBackground}`}
       borderRadius={borderRadius}
       mobileWidth={width + 'rem'}
       mobileHeight="5rem"
@@ -36,10 +35,14 @@ export default function ToggleButton({
           zIndex={2}
           cursor="pointer"
         >
-          <Text>{offText}</Text>
-          <Text>{onText}</Text>
+          <Text color={checked ? 'black' : 'white'}>{offText}</Text>
+          <Text color={!checked ? 'black' : 'white'}>{onText}</Text>
         </Container>
-        <input ref={checkboxRef} id={checkboxId} type="checkbox" />
+        <input
+          onChange={() => setChecked((prev) => !prev)}
+          id={checkboxId}
+          type="checkbox"
+        />
         <ElementPositionWrapper
           mobileTop="0.2rem"
           mobileBottom="0.2rem"
@@ -48,7 +51,7 @@ export default function ToggleButton({
           zIndex={1}
         >
           <Container
-            backgroundColor={colors.mainBackground}
+            backgroundColor={colors.navBackground}
             mobileWidth={width / 2 + 'rem'}
             flex={1}
             borderRadius={borderRadius}
@@ -75,6 +78,6 @@ const ToggleButtonContainer = styled.label<{ width: number }>`
 
   input:checked + div .marker {
     transform: translateX(${(props) => props.width / 2 - 0.5 + 'rem'});
-    transition: 0.5s;
+    transition: 0.8s;
   }
 `;

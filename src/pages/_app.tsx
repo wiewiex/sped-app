@@ -1,3 +1,4 @@
+import Layout from '@/components/controllers/Layout';
 import { AppContextProvider } from '@/context/AppContext';
 import GlobalStyle from '@/utils/GlobalStyle';
 import { themeDark } from '@/utils/theme';
@@ -9,7 +10,9 @@ function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={themeDark}>
       <AppContextProvider>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </AppContextProvider>
     </ThemeProvider>
   );

@@ -20,24 +20,28 @@ export default function AmountsRead() {
       >
         <Column>
           <Row> </Row>
-          <Row>Kwota:</Row>
-          <Row>Termin:</Row>
-          <Row>Data:</Row>
-          <Row>PLN:</Row>
+          <Row>Kwota od klienta</Row>
+          <Row>Kwota od klienta</Row>
         </Column>
         <Column>
-          <Row>Kwota od klienta</Row>
-          <Row>110 EUR</Row>
+          <Row>Kwota</Row>
           <Row>60 dni</Row>
           <Row>10.11.2023</Row>
-          <Row>552</Row>
         </Column>
         <Column>
-          <Row>Kwota od klienta</Row>
+          <Row>Termin</Row>
           <Row>130 EUR</Row>
           <Row>30 dni</Row>
-          <Row>13.11.2023</Row>
-          <Row>952</Row>
+        </Column>
+        <Column>
+          <Row>Data</Row>
+          <Row>130 EUR</Row>
+          <Row>30 dni</Row>
+        </Column>
+        <Column>
+          <Row>PLN</Row>
+          <Row>130 EUR</Row>
+          <Row>30 dni</Row>
         </Column>
       </Container>
       <ElementPositionWrapper mobileRight="0" mobileBottom="0">

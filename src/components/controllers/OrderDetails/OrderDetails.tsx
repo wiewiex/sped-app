@@ -3,6 +3,7 @@ import { H3 } from '@/components/views/styledTexts';
 import Addresses from '@/components/common/Addresses';
 import AmountsRead from '@/components/common/Amounts/AmountsRead';
 import ClientAndCarrierRead from '@/components/common/ClientAndCarrier/ClientAndCarrierRead';
+import DetailsRead from '@/components/common/Details/DetailsRead';
 
 export default function OrderDetails() {
   return (
@@ -19,6 +20,7 @@ export default function OrderDetails() {
       <ClientAndCarrierRead />
       <Addresses />
       <AmountsRead />
+      <DetailsRead />
     </Container>
   );
 }

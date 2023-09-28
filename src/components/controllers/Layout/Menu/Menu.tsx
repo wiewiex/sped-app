@@ -12,24 +12,13 @@ export default function Menu() {
       flex={1}
       mobileJustifyContent="flex-start"
       backgroundColor={colors.navBackground}
+      padding="2rem 0"
     >
       <SubmenuItem name="Home" iconClassName="fas fa-th-large" />
       <Category>
-        <MenuItem
-          name="Spedycja"
-          iconClassName="fas fa-warehouse"
-          submenu
-        />
-        <SubmenuItem
-          href="/"
-          name="Nowe zlecenie"
-          iconClassName="fas fa-plus"
-        />
-        <SubmenuItem
-          href="/details"
-          name="Zlecenia"
-          iconClassName="fas fa-list"
-        />
+        <MenuItem name="Spedycja" iconClassName="fas fa-warehouse" submenu />
+        <SubmenuItem href="/" name="Nowe zlecenie" iconClassName="fas fa-plus" />
+        <SubmenuItem href="/details" name="Zlecenia" iconClassName="fas fa-list" />
         <SubmenuItem name="Klienci" iconClassName="fas fa-user-friends" />
         <SubmenuItem name="Przewoźnicy" iconClassName="fas fa-bus" />
       </Category>

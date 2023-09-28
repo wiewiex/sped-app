@@ -7,12 +7,7 @@ import { ReactNode } from 'react';
 export default function Layout({ children }: { children: ReactNode }) {
   const { navbarWidth } = useAppTheme();
   return (
-    <Container
-      relative
-      id="app-container"
-      mobileWidth="100%"
-      minHeight="100vh"
-    >
+    <Container relative id="app-container" mobileWidth="100%" minHeight="100vh">
       <Header />
       <Container
         mobileWidth="100%"
@@ -21,12 +16,10 @@ export default function Layout({ children }: { children: ReactNode }) {
         alignItems="stretch"
         flex={1}
       >
-        <Container width={navbarWidth} hiddenOnMobile>
+        <Container minWidth={navbarWidth} hiddenOnMobile>
           <Menu />
         </Container>
-        <Container flex={1} mobileWidth="100%">
-          {children}
-        </Container>
+        <Container flex={1}>{children}</Container>
       </Container>
     </Container>
   );

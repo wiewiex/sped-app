@@ -6,7 +6,7 @@ import ClientAndCarrierWrite from '@/components/common/ClientAndCarrier/ClientAn
 import Addresses from '@/components/common/Addresses';
 import AmountsWrite from '@/components/common/Amounts/AmountsWrite';
 import Comments from '@/components/common/Comments';
-import Details from '@/components/common/Details';
+import DetailsWrite from '@/components/common/Details/DetailsWrite';
 
 import Modal from '../Modal';
 import AddAddress from '../Modal/AddAddress';
@@ -37,7 +37,7 @@ export default function Home() {
         <ClientAndCarrierWrite />
         <Addresses />
         <AmountsWrite />
-        <Details />
+        <DetailsWrite />
         <Comments />
         <Container mobilePadding="3rem">
           <PrimaryButton text="Dodaj" url="/" />

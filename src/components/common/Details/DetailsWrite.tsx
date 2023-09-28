@@ -5,7 +5,7 @@ import { Container } from '@/components/views/styledContainers';
 import CustomSelect from '@/components/common/_elements/CustomSelect';
 import PrimaryTextInput from '@/components/common/_elements/PrimaryTextInput';
 
-export default function Details() {
+export default function DetailsWrite() {
   return (
     <Tile minHeight="35rem" mobileWidth="100%">
       <H3>Szczegóły</H3>

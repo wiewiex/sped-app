@@ -53,12 +53,8 @@ export const Container = styled.div(
     justify-content: ${props.mobileJustifyContent
       ? props.mobileJustifyContent
       : 'center'};
-    align-items: ${props.mobileAlignItems
-      ? props.mobileAlignItems
-      : 'center'};
-    flex-direction: ${props.mobileFlexDirection
-      ? props.mobileFlexDirection
-      : 'column'};
+    align-items: ${props.mobileAlignItems ? props.mobileAlignItems : 'center'};
+    flex-direction: ${props.mobileFlexDirection ? props.mobileFlexDirection : 'column'};
     ${props.relative && 'position: relative;'}
     ${props.mobileAlignSelf && `align-self: ${props.mobileAlignSelf};`}
     ${props.mobileWidth && `width: ${props.mobileWidth};`}
@@ -81,10 +77,8 @@ export const Container = styled.div(
     ${props.borderBottom && `border-bottom: ${props.borderBottom};`}
     ${props.borderLeft && `border-left: ${props.borderLeft};`}
     ${props.borderRight && `border-right: ${props.borderRight};`}
-    ${props.backgroundColor &&
-    `background-color: ${props.backgroundColor};`}
-    ${props.backgroundGradient &&
-    `background-image: ${props.theme.backgroundGradient};`}
+    ${props.backgroundColor && `background-color: ${props.backgroundColor};`}
+    ${props.backgroundGradient && `background-image: ${props.theme.backgroundGradient};`}
     ${props.hiddenOnMobile && `display: none;`} 
 
     ${props.imgFit &&
@@ -108,8 +102,7 @@ export const Container = styled.div(
       ${props.padding && `padding: ${props.padding};`}
       ${props.margin && `margin: ${props.margin};`}
       ${props.alignSelf && `align-self: ${props.alignSelf};`}
-      ${props.justifyContent &&
-      `justify-content: ${props.justifyContent};`}
+      ${props.justifyContent && `justify-content: ${props.justifyContent};`}
       ${props.alignItems && `align-items: ${props.alignItems};`}
       ${props.flexDirection && `flex-direction: ${props.flexDirection};`}
       ${props.$wrap && `flex-wrap: ${props.$wrap};`}
@@ -145,9 +138,7 @@ export const ElementPositionWrapper = styled.div(
     @media ${mediaQueries.tabletHorizontal} {
       ${props.position && `position: ${props.position};`}
       top: ${props.top ? props.top : props.mobileTop || 'auto'};
-      bottom: ${props.bottom
-        ? props.bottom
-        : props.mobileBottom || 'auto'};
+      bottom: ${props.bottom ? props.bottom : props.mobileBottom || 'auto'};
       left: ${props.left ? props.left : props.mobileLeft || 'auto'};
       right: ${props.right ? props.right : props.mobileRight || 'auto'};
     }

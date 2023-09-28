@@ -6,6 +6,8 @@ import PlusOnQuarter from '@/components/common/_icons/PlusOnQuarter';
 import Item from './Item';
 import ScrollbarContainer from '@/components/common/_elements/ScrollbarContainer';
 import { useAppContext } from '@/context/AppContext';
+import styled from 'styled-components';
+import mediaQueries from '@/utils/mediaQueries';
 
 const blue = '#89CFF090';
 const green = '#77DD7790';
@@ -15,19 +17,9 @@ export default function Addresses() {
   return (
     <Tile mobileWidth="100%" minHeight="40rem" padding="0">
       <ScrollbarContainer>
-        <Container
-          mobileWidth="100%"
-          flex={1}
-          alignItems="stretch"
-          mobileFlexDirection="row"
-          justifyContent="flex-start"
-          style={{ overflowX: 'auto' }}
-          mobilePadding="8rem 2rem"
-          $mobileWrap
-          $wrap="nowrap"
-        >
+        <ItemsContainer>
           {addresses.map((el, i) => (
-            <Container key={i + Math.random()} mobileFlexDirection="row">
+            <Container key={i} mobileFlexDirection="row">
               <Item blue={blue} green={green} {...el} />
               {i < addresses.length - 1 && (
                 <Container style={{ transform: 'rotate(-90deg)' }}>
@@ -36,7 +28,7 @@ export default function Addresses() {
               )}
             </Container>
           ))}
-        </Container>
+        </ItemsContainer>
       </ScrollbarContainer>
       <ElementPositionWrapper
         mobileRight="0"
@@ -73,6 +65,29 @@ const ColorLegend = ({ color, text }: { color: string; text: string }) => {
     </Container>
   );
 };
+
+const ItemsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 1.3rem;
+  overflow-x: auto;
+  width: 100%;
+  flex: 1;
+  padding: 8rem 2rem;
+
+  @media ${mediaQueries.tabletHorizontal} {
+    align-items: stretch;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    max-width: 70vw;
+  }
+
+  @media ${mediaQueries.desktop} {
+    max-width: 80vw;
+  }
+`;
 
 const addresses: {
   name: string;

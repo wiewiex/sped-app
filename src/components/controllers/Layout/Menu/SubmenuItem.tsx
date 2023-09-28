@@ -30,16 +30,19 @@ export default function SubmenuItem({
 
 const SubmenuItemContainer = styled.div`
   display: flex;
-  width: 80%;
+  width: 85%;
   flex-direction: row;
   cursor: pointer;
   padding: 1rem;
+
   &&:hover {
     background-color: ${(props) => props.theme.colors.accent + '40'};
   }
 `;
 
 const Icon = styled.i<{ submenu?: boolean }>`
+  display: flex;
+  align-items: center;
   color: white;
   font-size: 1rem;
   width: 1rem;

@@ -1,23 +1,22 @@
 import { H3, Text, H5, SmallText } from '@/components/views/styledTexts';
 import Tile from '@/components/common/_elements/Tile';
 import { Container, ElementPositionWrapper } from '@/components/views/styledContainers';
-import PrimaryTextInput from '@/components/common/_elements/PrimaryTextInput';
-import CustomSelect from '@/components/common/_elements/CustomSelect';
 import PenOnQuarter from '../_icons/PenOnQuarter';
 import { ReactNode } from 'react';
 import { useAppTheme } from '@/utils/theme';
 import styled from 'styled-components';
+import mediaQueries from '@/utils/mediaQueries';
 
 export default function AmountsRead() {
   return (
     <Tile mobileWidth="100%" minHeight="25rem" mobileMinHeight="30rem">
       <H3>Kwoty</H3>
-      <Container mobileWidth="90%">
+      <Container mobileWidth="100%" minWidth="60rem">
         <Container
           flex={1}
           $mobileWrap
           mobileWidth="100%"
-          flexDirection="Row"
+          flexDirection="row"
           alignItems="stretch"
           mobileMargin="2rem 0 0 0"
         >
@@ -37,30 +36,33 @@ export default function AmountsRead() {
             <Row>
               <b>Kwota</b>
             </Row>
-            <Row>60 dni</Row>
-            <Row>10.11.2023</Row>
-            <Row>10.11.2023</Row>
+            <Row>200 EUR</Row>
+            <Row>20 EUR</Row>
+            <Row>180 EUR</Row>
           </Column>
           <Column>
             <Row>
               <b>Termin</b>
             </Row>
-            <Row>130 EUR</Row>
+            <Row>60 dni</Row>
             <Row>30 dni</Row>
+            <Row> </Row>
           </Column>
           <Column>
             <Row>
               <b>Data</b>
             </Row>
-            <Row>130 EUR</Row>
-            <Row>30 dni</Row>
+            <Row>21.12.2023</Row>
+            <Row>19.12.2023</Row>
+            <Row> </Row>
           </Column>
           <Column>
             <Row>
               <b>PLN</b>
             </Row>
-            <Row>130 EUR</Row>
-            <Row>30 dni</Row>
+            <Row>500</Row>
+            <Row>100</Row>
+            <Row> </Row>
           </Column>
         </Container>
         <Container mobileAlignSelf="flex-start" mobileMargin="1rem 0 0 0">
@@ -77,17 +79,15 @@ export default function AmountsRead() {
   );
 }
 
-const Item = ({ label, selectOptions }: { label: string; selectOptions: string[] }) => (
-  <Container mobileFlexDirection="Row" width="25rem" mobileWidth="100%">
-    <PrimaryTextInput label={label} type="number" />
-    <Container mobilePadding="2rem" mobileWidth="100%">
-      <CustomSelect options={selectOptions} />
-    </Container>
-  </Container>
-);
-
 const Column = ({ children }: { children: ReactNode }) => (
-  <Container flex={1} mobileJustifyContent="flex-start">
+  <Container
+    flex={1}
+    mobileJustifyContent="flex-start"
+    flexDirection="column"
+    mobileFlexDirection="row"
+    justifyContent="space-between"
+    mobileWidth="100%"
+  >
     {children}
   </Container>
 );
@@ -98,6 +98,6 @@ const Row = styled(Container).attrs(() => ({
   borderBottom: `1px solid #ADA4A520`,
   mobileAlignItems: 'flex-start',
 }))`
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: ${(props) => props.theme.colors.accent};
 `;

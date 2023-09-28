@@ -1,9 +1,9 @@
-import Tile from '@/components/reusable/Tile';
+import Tile from '@/components/common/_elements/Tile';
 import { H3, Text } from '@/components/views/styledTexts';
-import ToggleButton from '@/components/reusable/ToggleButton';
+import ToggleButton from '@/components/common/_elements/ToggleButton';
 import { Container } from '@/components/views/styledContainers';
-import CustomSelect from '@/components/reusable/CustomSelect';
-import PrimaryTextInput from '@/components/reusable/PrimaryTextInput';
+import CustomSelect from '@/components/common/_elements/CustomSelect';
+import PrimaryTextInput from '@/components/common/_elements/PrimaryTextInput';
 
 export default function Details() {
   return (

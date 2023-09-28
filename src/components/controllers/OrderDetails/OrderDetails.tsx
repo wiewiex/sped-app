@@ -1,7 +1,8 @@
 import { Container } from '@/components/views/styledContainers';
 import { H3 } from '@/components/views/styledTexts';
-import ClientAndCarrierDetails from './ClientAndCarrierDetails';
-import Addresses from '@/components/reusable/Addresses';
+import Addresses from '@/components/common/Addresses';
+import ClientAndCarrierWrite from '@/components/common/ClientAndCarrier/ClientAndCarrierWrite';
+import Amounts from '@/components/common/Amounts';
 
 export default function OrderDetails() {
   return (
@@ -15,8 +16,9 @@ export default function OrderDetails() {
       <Container mobilePadding="4rem 0" alignSelf="flex-start">
         <H3>Zlecenie nr: 79/BP/08/2023</H3>
       </Container>
-      <ClientAndCarrierDetails />
+      <ClientAndCarrierWrite />
       <Addresses />
+      <Amounts />
     </Container>
   );
 }

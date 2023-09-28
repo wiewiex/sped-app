@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { ChangeEventHandler } from 'react';
-import { ElementPositionWrapper } from '@/components/views/styledContainers';
-import { SmallText, ValidationText } from '../views/styledTexts';
-import { Container } from '../views/styledContainers';
+import {
+  ElementPositionWrapper,
+  Container,
+} from '@/components/views/styledContainers';
+import { SmallText, ValidationText } from '@/components/views/styledTexts';
 
 interface IPrimaryTextInput {
   label: string;

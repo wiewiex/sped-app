@@ -1,8 +1,8 @@
 import { Container } from '@/components/views/styledContainers';
 import { Text, H5, SmallText } from '@/components/views/styledTexts';
 import { useAppTheme } from '@/utils/theme';
-import Pin from './Pin';
 import styled from 'styled-components';
+import Pin from '../_icons/Pin';
 
 export default function Item({
   name,

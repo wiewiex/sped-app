@@ -1,5 +1,5 @@
-import CustomTextArea from '@/components/reusable/CustomTextArea';
-import Tile from '@/components/reusable/Tile';
+import CustomTextArea from '@/components/common/_elements/CustomTextArea';
+import Tile from '@/components/common/_elements/Tile';
 import { H3 } from '@/components/views/styledTexts';
 
 export default function Comments() {

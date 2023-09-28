@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { SmallText } from '../views/styledTexts';
-import { Container } from '../views/styledContainers';
+import { SmallText } from '@/components/views/styledTexts';
+import { Container } from 'react-bootstrap/lib/Tab';
 
 export default function CustomDateInput({ text }: { text: string }) {
   return (

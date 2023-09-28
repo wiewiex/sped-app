@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useAppTheme } from '@/utils/theme';
-import { Container } from '../views/styledContainers';
-import { H5 } from '../views/styledTexts';
+import { Container } from '@/components/views/styledContainers';
+import { H5 } from '@/components/views/styledTexts';
 import ReactLoading from 'react-loading';
 import { useState } from 'react';
 

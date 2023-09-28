@@ -1,17 +1,18 @@
 import { Container } from '@/components/views/styledContainers';
-import ClientAndCarrier from './ClientAndCarrier';
-import Addresses from '@/components/reusable/Addresses';
 import { H3 } from '@/components/views/styledTexts';
-import Details from './Details';
-import PrimaryButton from '@/components/reusable/PrimaryButton';
+import PrimaryButton from '@/components/common/_elements/PrimaryButton';
+
+import ClientAndCarrierRead from '@/components/common/ClientAndCarrier/ClientAndCarrierRead';
+import Addresses from '@/components/common/Addresses';
+import Details from '@/components/common/Details';
+import Amounts from '@/components/common/Amounts';
+import Comments from '@/components/common/Comments';
 
 import Modal from '../Modal';
 import AddAddress from '../Modal/AddAddress';
 import AddClient from '../Modal/AddClient';
 import AddCarrier from '../Modal/AddCarrier';
 import { useAppContext } from '@/context/AppContext';
-import Amounts from './Amounts';
-import Comments from './Comments';
 
 export default function Home() {
   const {
@@ -33,7 +34,7 @@ export default function Home() {
         <Container mobileMargin="0 0 4rem 0" alignSelf="flex-start">
           <H3>Zlecenie nr: 79/BP/08/2023</H3>
         </Container>
-        <ClientAndCarrier />
+        <ClientAndCarrierRead />
         <Addresses />
         <Details />
         <Amounts />

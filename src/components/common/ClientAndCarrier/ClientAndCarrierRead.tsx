@@ -1,12 +1,11 @@
-import { Container } from '@/components/views/styledContainers';
+import { Container, ElementPositionWrapper } from '@/components/views/styledContainers';
 import { H3 } from '@/components/views/styledTexts';
-import { ElementPositionWrapper } from '@/components/views/styledContainers';
-import PlusOnQuarter from '../PlusOnQuarter';
-import Tile from '@/components/reusable/Tile';
-import CustomSelect from '@/components/reusable/CustomSelect';
+import Tile from '@/components/common/_elements/Tile';
+import PlusOnQuarter from '../_icons/PlusOnQuarter';
+import CustomSelect from '@/components/common/_elements/CustomSelect';
 import { useAppContext } from '@/context/AppContext';
 
-export default function ClientAndCarrier() {
+export default function ClientAndCarrierRead() {
   const { setShowCarrierModal, setShowClientModal } = useAppContext();
   return (
     <Container

@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
 import { Container } from '@/components/views/styledContainers';
-import PrimaryTextInput from '@/components/reusable/PrimaryTextInput';
-import SecondaryButton from '@/components/reusable/SecondaryButton';
+import PrimaryTextInput from '@/components/common/_elements/PrimaryTextInput';
+import SecondaryButton from '@/components/common/_elements/SecondaryButton';
 import {
   H2,
   H4,
@@ -10,9 +10,9 @@ import {
   H6,
   SmallText,
 } from '@/components/views/styledTexts';
-import Switcher from '@/components/reusable/Switcher';
+import Switcher from '@/components/common/_elements/Switcher';
 import { initialValues, validationSchema } from './handlers';
-import CustomSelect from '@/components/reusable/CustomSelect';
+import CustomSelect from '@/components/common/_elements/CustomSelect';
 
 export default function AddCarrier() {
   return (

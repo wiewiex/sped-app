@@ -1,13 +1,10 @@
-import {
-  Container,
-  ElementPositionWrapper,
-} from '@/components/views/styledContainers';
-import { ReactNode } from 'react';
+import { Container, ElementPositionWrapper } from '@/components/views/styledContainers';
 import { GlassBackground } from '@/components/views/styledContainers';
-import { useAppTheme } from '@/utils/theme';
-import CloseIcon from './CloseIcon';
+import CloseIcon from '@/components/common/_icons/CloseIcon';
 import AnimationWrapper from '@/utils/AnimationWrapper';
 import { fadeIn } from '@/utils/keyframes';
+import { useAppTheme } from '@/utils/theme';
+import { ReactNode } from 'react';
 
 export default function Modal({
   children,
@@ -49,11 +46,7 @@ export default function Modal({
                     <CloseIcon />
                   </Container>
                 </Container>
-                <Container
-                  flex={1}
-                  mobilePadding="1rem"
-                  mobileWidth="100%"
-                >
+                <Container flex={1} mobilePadding="1rem" mobileWidth="100%">
                   {children}
                 </Container>
               </Container>

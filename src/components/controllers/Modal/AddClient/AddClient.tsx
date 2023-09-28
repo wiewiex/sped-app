@@ -1,12 +1,12 @@
 import { Formik } from 'formik';
 import { Container } from '@/components/views/styledContainers';
-import PrimaryTextInput from '@/components/reusable/PrimaryTextInput';
-import SecondaryButton from '@/components/reusable/SecondaryButton';
+import PrimaryTextInput from '@/components/common/_elements/PrimaryTextInput';
+import SecondaryButton from '@/components/common/_elements/SecondaryButton';
 import { H2, H4 } from '@/components/views/styledTexts';
 
 import { initialValues, validationSchema } from './handlers';
-import CustomSelect from '@/components/reusable/CustomSelect';
-import Switcher from '@/components/reusable/Switcher';
+import CustomSelect from '@/components/common/_elements/CustomSelect';
+import Switcher from '@/components/common/_elements/Switcher';
 
 export default function AddClient() {
   return (

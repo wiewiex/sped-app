@@ -1,8 +1,8 @@
 import { H3, Text } from '@/components/views/styledTexts';
-import Tile from '@/components/reusable/Tile';
+import Tile from '@/components/common/_elements/Tile';
 import { Container } from '@/components/views/styledContainers';
-import PrimaryTextInput from '@/components/reusable/PrimaryTextInput';
-import CustomSelect from '@/components/reusable/CustomSelect';
+import PrimaryTextInput from '@/components/common/_elements/PrimaryTextInput';
+import CustomSelect from '@/components/common/_elements/CustomSelect';
 
 export default function Amounts() {
   return (

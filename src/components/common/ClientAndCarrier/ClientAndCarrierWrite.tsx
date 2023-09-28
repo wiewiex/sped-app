@@ -1,18 +1,11 @@
-import { Container } from '@/components/views/styledContainers';
-import {
-  H3,
-  H4,
-  H5,
-  SmallText,
-  Text,
-} from '@/components/views/styledTexts';
-import { ElementPositionWrapper } from '@/components/views/styledContainers';
-import Tile from '@/components/reusable/Tile';
+import { Container, ElementPositionWrapper } from '@/components/views/styledContainers';
+import { H3, H5, SmallText, Text } from '@/components/views/styledTexts';
+import Tile from '@/components/common/_elements/Tile';
 import { useAppContext } from '@/context/AppContext';
-import PenOnQuarter from '../PenOnQuarter';
+import PenOnQuarter from '../_icons/PenOnQuarter';
 import { ReactNode } from 'react';
 
-export default function ClientAndCarrierDetails() {
+export default function ClientAndCarrierWrite() {
   const { setShowCarrierModal, setShowClientModal } = useAppContext();
   return (
     <Container
@@ -32,10 +25,7 @@ export default function ClientAndCarrierDetails() {
           <TitleContainer>
             <H3>Klient</H3>
           </TitleContainer>
-          <Container
-            mobileAlignItems="flex-start"
-            mobileJustifyContent="space-between"
-          >
+          <Container mobileAlignItems="flex-start" mobileJustifyContent="space-between">
             <H5>Spedapp sp. z.o.o</H5>
             <Text>ul. Nowosądecka 66</Text>
             <Text>00-001 Warszawa</Text>

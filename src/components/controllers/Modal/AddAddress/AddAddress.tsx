@@ -1,15 +1,15 @@
 import { Formik } from 'formik';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { Container } from '@/components/views/styledContainers';
-import PrimaryTextInput from '@/components/reusable/PrimaryTextInput';
-import SecondaryButton from '@/components/reusable/SecondaryButton';
+import PrimaryTextInput from '@/components/common/_elements/PrimaryTextInput';
+import SecondaryButton from '@/components/common/_elements/SecondaryButton';
 import { H4, SmallText, Text } from '@/components/views/styledTexts';
 
 import { initialValues, validationSchema } from './handlers';
-import CustomSelect from '@/components/reusable/CustomSelect';
-import CustomDateInput from '@/components/reusable/CustomDateInput';
-import ToggleButton from '@/components/reusable/ToggleButton';
-import CustomTextArea from '@/components/reusable/CustomTextArea';
+import CustomSelect from '@/components/common/_elements/CustomSelect';
+import CustomDateInput from '@/components/common/_elements/CustomDateInput';
+import ToggleButton from '@/components/common/_elements/ToggleButton';
+import CustomTextArea from '@/components/common/_elements/CustomTextArea';
 
 export default function AddAddress() {
   return (

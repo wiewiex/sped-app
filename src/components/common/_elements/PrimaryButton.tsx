@@ -1,4 +1,4 @@
-import { H4 } from '../views/styledTexts';
+import { H4 } from '@/components/views/styledTexts';
 import { useAppTheme } from '@/utils/theme';
 import styled from 'styled-components';
 

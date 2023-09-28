@@ -1,15 +1,11 @@
-import {
-  Container,
-  ElementPositionWrapper,
-} from '@/components/views/styledContainers';
-import Tile from '@/components/reusable/Tile';
+import { Container, ElementPositionWrapper } from '@/components/views/styledContainers';
+import Tile from '@/components/common/_elements/Tile';
 import { SmallText } from '@/components/views/styledTexts';
-import { Fragment } from 'react';
-import Arrow from './Arrow';
-import PlusOnQuarter from '@/components/controllers/Home/PlusOnQuarter';
-import { useAppContext } from '@/context/AppContext';
+import Arrow from '../_icons/Arrow';
+import PlusOnQuarter from '@/components/common/_icons/PlusOnQuarter';
 import Item from './Item';
-import ScrollbarContainer from '@/components/reusable/ScrollbarContainer';
+import ScrollbarContainer from '@/components/common/_elements/ScrollbarContainer';
+import { useAppContext } from '@/context/AppContext';
 
 const blue = '#89CFF090';
 const green = '#77DD7790';

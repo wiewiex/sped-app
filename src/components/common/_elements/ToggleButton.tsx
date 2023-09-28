@@ -2,10 +2,10 @@ import { useAppTheme } from '@/utils/theme';
 import {
   Container,
   ElementPositionWrapper,
-} from '../views/styledContainers';
+} from '@/components/views/styledContainers';
 import styled from 'styled-components';
-import { Text } from '../views/styledTexts';
-import { useRef, useState } from 'react';
+import { Text } from '@/components/views/styledTexts';
+import { useState } from 'react';
 
 export default function ToggleButton({
   offText,

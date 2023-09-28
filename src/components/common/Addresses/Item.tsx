@@ -28,8 +28,10 @@ export default function Item({
   return (
     <Container
       mobileJustifyContent="center"
-      mobileMinWidth="22rem"
+      mobileMinWidth="18rem"
+      mobileWidth="100%"
       mobileMargin="2rem"
+      width="22rem"
       borderBottom={`2px solid ${isUnload ? blue : green}`}
       borderTop={`2px solid ${isUnload ? blue : green}`}
       borderRadius={borderRadius}

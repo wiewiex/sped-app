@@ -25,7 +25,6 @@ export default function Addresses() {
           mobilePadding="8rem 2rem"
           $mobileWrap
           $wrap="nowrap"
-          maxWidth="70vw"
         >
           {addresses.map((el, i) => (
             <Container key={i + Math.random()} mobileFlexDirection="row">

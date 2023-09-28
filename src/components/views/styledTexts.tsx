@@ -2,14 +2,12 @@ import styled from 'styled-components';
 import mediaQueries from '@/utils/mediaQueries';
 
 export const Text = styled.p<{ textAlign?: string; color?: string }>`
-  text-align: ${(props) =>
-    props.textAlign ? props.textAlign : 'initial'};
+  text-align: ${(props) => (props.textAlign ? props.textAlign : 'initial')};
   font-size: 1.5rem;
   font-family: ${(props) => props.theme.fonts.secondary};
   font-weight: 200;
-  color: ${(props) =>
-    props.color ? props.color : props.theme.colors.accent};
-  line-height: 1.15;
+  color: ${(props) => (props.color ? props.color : props.theme.colors.accent)};
+  line-height: 1.3;
   @media ${mediaQueries.tabletHorizontal} {
     font-size: 1.5rem;
     line-height: 1.5;
@@ -23,8 +21,7 @@ export const H2 = styled.h2<{
   font-family: ${(props) => props.theme.fonts.secondary};
   font-size: 3rem;
   font-weight: 700;
-  color: ${(props) =>
-    props.color ? props.color : props.theme.colors.accent};
+  color: ${(props) => (props.color ? props.color : props.theme.colors.accent)};
   text-align: ${(props) => (props.textAlign ? props.textAlign : 'center')};
   line-height: 1.1;
 
@@ -42,8 +39,7 @@ export const H2 = styled.h2<{
 export const H3 = styled.h3<{ color?: string }>`
   font-size: 1.5rem;
   font-family: ${(props) => props.theme.fonts.primary};
-  color: ${(props) =>
-    props.color ? props.color : props.theme.colors.secondary};
+  color: ${(props) => (props.color ? props.color : props.theme.colors.secondary)};
   font-weight: 500;
   text-align: center;
   line-height: 1.1;
@@ -55,8 +51,7 @@ export const H3 = styled.h3<{ color?: string }>`
 export const H4 = styled.h4<{ color?: string; fontSize?: string }>`
   font-size: ${(props) => (props.fontSize ? props.fontSize : '2rem')};
   font-family: ${(props) => props.theme.fonts.primary};
-  color: ${(props) =>
-    props.color ? props.color : props.theme.colors.secondary};
+  color: ${(props) => (props.color ? props.color : props.theme.colors.secondary)};
   font-weight: 500;
   text-align: center;
   line-height: 1.1;
@@ -69,10 +64,8 @@ export const H5 = styled.h5<{
   font-family: ${(props) => props.theme.fonts.secondary};
   font-size: 1.5rem;
   font-weight: 700;
-  color: ${(props) =>
-    props.color ? props.color : props.theme.colors.accent};
-  text-align: ${(props) =>
-    props.textAlign ? props.textAlign : 'initial'};
+  color: ${(props) => (props.color ? props.color : props.theme.colors.accent)};
+  text-align: ${(props) => (props.textAlign ? props.textAlign : 'initial')};
   line-height: 1.5;
   @media ${mediaQueries.tabletHorizontal} {
     font-size: 1.5rem;
@@ -109,8 +102,7 @@ export const H1 = styled.h1<{
   font-family: ${(props) => props.theme.fonts.secondary};
   font-size: 3rem;
   font-weight: 600;
-  color: ${(props) =>
-    props.color ? props.color : props.theme.colors.secondary};
+  color: ${(props) => (props.color ? props.color : props.theme.colors.secondary)};
   text-align: ${(props) => (props.textAlign ? props.textAlign : 'center')};
   padding: 2.5rem 0;
   line-height: 1.1;
@@ -127,13 +119,12 @@ export const H1 = styled.h1<{
 `;
 
 export const SmallText = styled.p<{ textAlign?: string }>`
-  text-align: ${(props) =>
-    props.textAlign ? props.textAlign : 'initial'};
+  text-align: ${(props) => (props.textAlign ? props.textAlign : 'initial')};
   font-size: 1rem;
   font-family: ${(props) => props.theme.fonts.secondary};
   font-weight: 200;
   color: ${(props) => props.theme.colors.placeholder};
-  line-height: 1.15;
+  line-height: 1.3;
   @media ${mediaQueries.tabletHorizontal} {
     font-size: 1.1rem;
   }

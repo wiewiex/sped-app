@@ -9,11 +9,7 @@ export default function Details() {
   return (
     <Tile minHeight="35rem" mobileWidth="100%">
       <H3>Szczegóły</H3>
-      <Container
-        flexDirection="row"
-        mobileWidth="100%"
-        justifyContent="space-around"
-      >
+      <Container flexDirection="row" mobileWidth="100%" justifyContent="space-around">
         <InputBox label="Waga ładunku" />
         <InputBox label="Ilość ładunku" />
         <InputBox label="Kilometry" />
@@ -23,12 +19,10 @@ export default function Details() {
           flexDirection="row"
           mobileWidth="100%"
           justifyContent="space-around"
+          mobileMargin="0 0 3rem 0"
         >
           <Item text="Rodzaj pojazdu:" selectOptions={['BUS', 'TIR']} />
-          <Item
-            text="Rodzaj nadwozia:"
-            selectOptions={['PLANDEKA', 'BLACHA']}
-          />
+          <Item text="Rodzaj nadwozia:" selectOptions={['PLANDEKA', 'BLACHA']} />
         </Container>
         <ToggleButton offText="FTL" onText="LTL" />
       </Container>
@@ -42,13 +36,7 @@ const InputBox = ({ label }: { label: string }) => (
   </Container>
 );
 
-const Item = ({
-  text,
-  selectOptions,
-}: {
-  text: string;
-  selectOptions: string[];
-}) => (
+const Item = ({ text, selectOptions }: { text: string; selectOptions: string[] }) => (
   <Container
     mobileFlexDirection="row"
     maxWidth="30rem"

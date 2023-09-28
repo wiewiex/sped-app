@@ -4,7 +4,7 @@ import { Container } from '@/components/views/styledContainers';
 import PrimaryTextInput from '@/components/common/_elements/PrimaryTextInput';
 import CustomSelect from '@/components/common/_elements/CustomSelect';
 
-export default function Amounts() {
+export default function AmountsWrite() {
   return (
     <Tile mobileWidth="100%" minHeight="25rem" mobileMinHeight="30rem">
       <H3>Kwoty</H3>
@@ -23,13 +23,7 @@ export default function Amounts() {
   );
 }
 
-const Item = ({
-  label,
-  selectOptions,
-}: {
-  label: string;
-  selectOptions: string[];
-}) => (
+const Item = ({ label, selectOptions }: { label: string; selectOptions: string[] }) => (
   <Container mobileFlexDirection="row" width="25rem" mobileWidth="100%">
     <PrimaryTextInput label={label} type="number" />
     <Container mobilePadding="2rem" mobileWidth="100%">

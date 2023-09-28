@@ -10,6 +10,8 @@ import AddAddress from '../Modal/AddAddress';
 import AddClient from '../Modal/AddClient';
 import AddCarrier from '../Modal/AddCarrier';
 import { useAppContext } from '@/context/AppContext';
+import Amounts from './Amounts';
+import Comments from './Comments';
 
 export default function Home() {
   const {
@@ -22,14 +24,21 @@ export default function Home() {
   } = useAppContext();
   return (
     <>
-      <Container mobileWidth="90%" margin="0 auto" id="home-page">
-        <Container mobilePadding="4rem 0" alignSelf="flex-start">
+      <Container
+        mobileWidth="90%"
+        mobileMargin="0 auto"
+        mobilePadding="4rem 0 7rem 0"
+        id="home-page"
+      >
+        <Container mobileMargin="0 0 4rem 0" alignSelf="flex-start">
           <H3>Zlecenie nr: 79/BP/08/2023</H3>
         </Container>
         <ClientAndCarrier />
         <Addresses />
         <Details />
-        <Container mobilePadding="2rem 0">
+        <Amounts />
+        <Comments />
+        <Container mobilePadding="3rem">
           <PrimaryButton text="Zapisz" url="/" />
         </Container>
       </Container>

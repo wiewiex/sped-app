@@ -11,7 +11,7 @@ export default function AmountsWrite() {
       <Container
         $mobileWrap
         mobileWidth="100%"
-        flexDirection="row"
+        flexDirection="Row"
         justifyContent="space-around"
       >
         <Item label="Klient" selectOptions={['EURO', 'PRZELEW']} />
@@ -24,7 +24,7 @@ export default function AmountsWrite() {
 }
 
 const Item = ({ label, selectOptions }: { label: string; selectOptions: string[] }) => (
-  <Container mobileFlexDirection="row" width="25rem" mobileWidth="100%">
+  <Container mobileFlexDirection="Row" width="25rem" mobileWidth="100%">
     <PrimaryTextInput label={label} type="number" />
     <Container mobilePadding="2rem" mobileWidth="100%">
       <CustomSelect options={selectOptions} />

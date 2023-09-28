@@ -12,6 +12,7 @@ export const Text = styled.p<{ textAlign?: string; color?: string }>`
   line-height: 1.15;
   @media ${mediaQueries.tabletHorizontal} {
     font-size: 1.5rem;
+    line-height: 1.5;
   }
 `;
 
@@ -72,7 +73,7 @@ export const H5 = styled.h5<{
     props.color ? props.color : props.theme.colors.accent};
   text-align: ${(props) =>
     props.textAlign ? props.textAlign : 'initial'};
-  line-height: 1.1;
+  line-height: 1.5;
   @media ${mediaQueries.tabletHorizontal} {
     font-size: 1.5rem;
   }

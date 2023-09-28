@@ -17,12 +17,12 @@ export interface IPrimaryButton {
 }
 
 const PrimaryButtonContainer = styled.button`
-  width: 15rem;
+  width: 25rem;
   padding: 1rem 0;
   border-radius: ${(props) => props.theme.borderRadius};
   box-shadow: 2px 2px 2px #00000010;
   cursor: pointer;
-  background-color: ${(props) => props.theme.colors.navBackground};
+  background-color: ${(props) => props.theme.colors.accent};
   z-index: 2;
   border: none;
   &&:active {

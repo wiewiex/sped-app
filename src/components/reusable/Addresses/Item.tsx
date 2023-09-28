@@ -28,7 +28,7 @@ export default function Item({
   return (
     <Container
       mobileJustifyContent="center"
-      mobileWidth="22rem"
+      mobileMinWidth="22rem"
       mobileMargin="2rem"
       borderBottom={`2px solid ${isUnload ? blue : green}`}
       borderTop={`2px solid ${isUnload ? blue : green}`}
@@ -64,7 +64,6 @@ export default function Item({
         mobileHeight="2rem"
         mobileWidth="100%"
         mobileFlexDirection="row"
-        mobileJustifyContent="flex-end"
         mobileMargin="0 0 1rem 0"
       >
         <Icon className="fas fa-trash-alt" />
@@ -78,5 +77,5 @@ const Icon = styled.i`
   font-size: 1.5rem;
   cursor: pointer;
   color: ${(props) => props.theme.colors.accent};
-  margin: 1rem;
+  margin: 2rem;
 `;

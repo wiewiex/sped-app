@@ -21,7 +21,6 @@ export default function Addresses() {
       <ScrollbarContainer>
         <Container
           mobileWidth="100%"
-          maxWidth="70vw"
           flex={1}
           alignItems="stretch"
           mobileFlexDirection="row"
@@ -30,16 +29,17 @@ export default function Addresses() {
           mobilePadding="8rem 2rem"
           $mobileWrap
           $wrap="nowrap"
+          maxWidth="70vw"
         >
           {addresses.map((el, i) => (
-            <Fragment key={i}>
+            <Container key={i + Math.random()} mobileFlexDirection="row">
               <Item blue={blue} green={green} {...el} />
               {i < addresses.length - 1 && (
                 <Container style={{ transform: 'rotate(-90deg)' }}>
                   <Arrow />
                 </Container>
               )}
-            </Fragment>
+            </Container>
           ))}
         </Container>
       </ScrollbarContainer>

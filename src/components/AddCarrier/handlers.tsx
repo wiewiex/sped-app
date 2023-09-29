@@ -1,6 +1,5 @@
 import * as yup from 'yup';
-
-export interface IClient {
+export interface ICarrier {
   name: string;
   email: string;
   address: string;
@@ -9,17 +8,23 @@ export interface IClient {
   country: string;
   nip: string;
   phone: string;
-  vat: boolean;
+  vat?: boolean;
+}
+
+export interface IContactPerson {
   contactPersonFullName: string;
   contactPersonPhone: string;
   contactPersonEmail: string;
+}
+
+export interface IDriver {
   driverFullName: string;
   driverPhone: string;
   driverRegistrationNumber: string;
   driverLicenseNumber: string;
 }
 
-export const initialValues: IClient = {
+export const initialValues: ICarrier & IDriver & IContactPerson = {
   name: '',
   email: '',
   address: '',

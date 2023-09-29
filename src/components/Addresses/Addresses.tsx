@@ -40,7 +40,11 @@ export default function Addresses({ showModal }: { showModal: () => void }) {
           mobileFlexDirection="row"
           mobileJustifyContent="space-between"
         >
-          <Container flexDirection="row" mobileMargin="0 5rem">
+          <Container
+            flexDirection="row"
+            mobileMargin="0 5rem"
+            mobileAlignItems="flex-start"
+          >
             <ColorLegend color={blue} text="rozładunek" />
             <ColorLegend color={green} text="załadunek" />
           </Container>

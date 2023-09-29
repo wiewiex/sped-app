@@ -29,7 +29,7 @@ const PrimaryButtonContainer = styled.button<{ width?: string }>`
   z-index: 2;
   border: none;
   &&:active {
-    transform: scale(1.2);
+    transform: scale(1.05);
     transition: 1s;
   }
 `;

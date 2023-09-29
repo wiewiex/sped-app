@@ -26,7 +26,7 @@ export default function Tile({
       boxShadow={boxShadow}
       minHeight={minHeight}
       mobileMinHeight={mobileMinHeight}
-      mobileJustifyContent="space-around"
+      mobileJustifyContent="space-between"
       mobilePadding={padding ? padding : '3rem'}
       mobileMargin="0 0 4rem 0"
       relative

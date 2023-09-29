@@ -118,12 +118,12 @@ export const H1 = styled.h1<{
   }
 `;
 
-export const SmallText = styled.p<{ textAlign?: string }>`
+export const SmallText = styled.p<{ textAlign?: string; color?: string }>`
   text-align: ${(props) => (props.textAlign ? props.textAlign : 'initial')};
   font-size: 1rem;
   font-family: ${(props) => props.theme.fonts.secondary};
   font-weight: 200;
-  color: ${(props) => props.theme.colors.placeholder};
+  color: ${(props) => (props.color ? props.color : props.theme.colors.placeholder)};
   line-height: 1.3;
   @media ${mediaQueries.tabletHorizontal} {
     font-size: 1.1rem;

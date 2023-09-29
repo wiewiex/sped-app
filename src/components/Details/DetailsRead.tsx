@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 export default function DetailsRead() {
   return (
-    <Tile mobileMinHeight="34rem" minHeight="30rem" mobileWidth="100%">
+    <Tile mobileMinHeight="34rem" minHeight="20rem" mobileWidth="100%">
       <H3>Szczegóły</H3>
       <Container
         mobileFlexDirection="row"

@@ -1,7 +1,7 @@
 import { Text } from '@/components/_views/styledTexts';
 import Tile from '@/components/_elements/Tile';
 import { H3 } from '@/components/_views/styledTexts';
-import { ElementPositionWrapper } from '@/components/_views/styledContainers';
+import { Container, ElementPositionWrapper } from '@/components/_views/styledContainers';
 import PenOnQuarter from '../_icons/PenOnQuarter';
 
 export default function CommentsRead() {

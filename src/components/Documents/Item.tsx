@@ -1,63 +1,32 @@
-import { Container } from '@/components/_views/styledContainers';
-import { Text, SmallText, H4 } from '@/components/_views/styledTexts';
+import { Container, ElementPositionWrapper } from '@/components/_views/styledContainers';
+import { SmallText, H4 } from '@/components/_views/styledTexts';
 import { useAppTheme } from '@/utils/theme';
+import PlusOnQuarter from '../_icons/PlusOnQuarter';
 import styled from 'styled-components';
 
-export default function Item({
-  name,
-  address,
-  postCode,
-  city,
-}: {
-  name: string;
-  address: string;
-  postCode: string;
-  city: string;
-}) {
+export default function Item({ name }: { name: string }) {
   const { borderRadius, colors } = useAppTheme();
   return (
     <Container
       mobileJustifyContent="center"
       mobileMinWidth="18rem"
       mobileWidth="100%"
-      mobileMargin="2rem"
-      width="22rem"
+      mobileMargin="1rem"
+      width="25%"
+      border={`1px solid ${colors.placeholder + '50'}`}
+      borderRadius={borderRadius}
+      relative
     >
       <Container mobilePadding="1rem" mobileJustifyContent="space-between" flex={1}>
-        <H4>{name}</H4>
-        <Container
-          backgroundGradient
-          borderRadius={borderRadius}
-          mobileWidth="100%"
-          mobilePadding="1rem"
-          mobileMargin="0 0 1rem 0"
-          mobileAlignItems="space-between"
-        >
-          <Text color="white">{address}</Text>
-          <Text color="white">{postCode}</Text>
+        <Container mobileMargin="2rem 0">
+          <H4>{name}</H4>
         </Container>
-
-        <Text>{city}</Text>
-        <Container
-          mobileMargin="0.5rem 0"
-          mobileWidth="100%"
-          mobileAlignItems="flex-start"
-        >
-          <Text>Od: 11.09.2023 8:00</Text>
-          <Text>Do: 15.09.2023 16:00</Text>
-        </Container>
-        <SmallText>GPS: </SmallText>
-        <SmallText>Info:</SmallText>
+        <File filename="IMG_09.JPG" size="0.9MB" borderRadius={borderRadius} />
+        <File filename="file.pdf" size="1MB" borderRadius={borderRadius} />
       </Container>
-      <Container
-        mobileHeight="2rem"
-        mobileWidth="100%"
-        mobileFlexDirection="row"
-        mobileMargin="0 0 1rem 0"
-      >
-        <Icon className="fas fa-trash-alt" />
-        <Icon className="fas fa-download" />
-      </Container>
+      <ElementPositionWrapper mobileRight="0" mobileBottom="0">
+        <PlusOnQuarter />
+      </ElementPositionWrapper>
     </Container>
   );
 }
@@ -66,5 +35,36 @@ const Icon = styled.i`
   font-size: 1.5rem;
   cursor: pointer;
   color: ${(props) => props.theme.colors.accent};
-  margin: 2rem;
+  margin: 0.5rem;
 `;
+
+const File = ({
+  filename,
+  size,
+  borderRadius,
+}: {
+  filename: string;
+  size: string;
+  borderRadius: string;
+}) => {
+  return (
+    <Container
+      mobileFlexDirection="row"
+      backgroundGradient
+      borderRadius={borderRadius}
+      mobileWidth="100%"
+      mobileJustifyContent="space-between"
+      mobilePadding="1rem 2rem"
+      mobileMargin="1rem 0"
+    >
+      <Container mobileAlignItems="space-between">
+        <SmallText color="white">{filename}</SmallText>
+        <SmallText color="white">{size}</SmallText>
+      </Container>
+      <Container mobileFlexDirection="row">
+        <Icon className="fas fa-trash-alt" />
+        <Icon className="fas fa-download" />
+      </Container>
+    </Container>
+  );
+};

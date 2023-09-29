@@ -6,7 +6,7 @@ import CustomSelect from '@/components/_elements/CustomSelect';
 
 export default function AmountsWrite() {
   return (
-    <Tile mobileWidth="100%" minHeight="25rem" mobileMinHeight="30rem">
+    <Tile mobileWidth="100%" minHeight="20rem" mobileMinHeight="30rem">
       <H3>Kwoty</H3>
       <Container
         $mobileWrap

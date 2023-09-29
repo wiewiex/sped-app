@@ -19,7 +19,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         <Container minWidth={navbarWidth} hiddenOnMobile>
           <Menu />
         </Container>
-        <Container flex={1}>{children}</Container>
+        <Container flex={1} mobilePadding="4rem 0 7rem 0">
+          {children}
+        </Container>
       </Container>
     </Container>
   );

@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
-export default function CustomTextArea() {
+interface IProps {
+  padding?: string;
+}
+
+export default function CustomTextArea({ padding }: IProps) {
   return (
-    <CustomTextAreaContainer>
+    <CustomTextAreaContainer padding={padding}>
       <textarea />
     </CustomTextAreaContainer>
   );
 }
 
-const CustomTextAreaContainer = styled.div`
+const CustomTextAreaContainer = styled.div<IProps>`
   border: 1px solid #ada4a540;
   width: 100%;
   height: 10rem;
@@ -20,6 +24,6 @@ const CustomTextAreaContainer = styled.div`
     height: 100%;
     resize: none;
     border-radius: ${(props) => props.theme.borderRadius};
-    padding: 1rem;
+    padding: ${(props) => (props.padding ? props.padding : '1rem')};
   }
 `;

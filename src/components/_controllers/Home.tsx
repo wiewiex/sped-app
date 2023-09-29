@@ -7,11 +7,11 @@ import PrimaryButton from '@/components/_elements/PrimaryButton';
 import ClientAndCarrierWrite from '@/components/ClientAndCarrier/ClientAndCarrierWrite';
 import Addresses from '@/components/Addresses';
 import AmountsWrite from '@/components/Amounts/AmountsWrite';
-import { CommentsWrite } from '..//Comments';
+import { CommentsWrite } from '../Comments';
 import DetailsWrite from '@/components/Details/DetailsWrite';
-import AddCarrierModal from '..//AddCarrier';
-import AddAddressModal from '..//AddAddress';
-import AddClientModal from '..//AddClient';
+import AddCarrierModal from '../AddCarrier';
+import AddAddressModal from '../AddAddress';
+import AddClientModal from '../AddClient';
 
 const closeModal = (setState: Dispatch<SetStateAction<boolean>>) => {
   setState(false);
@@ -28,12 +28,7 @@ export default function Home() {
 
   return (
     <>
-      <Container
-        mobileWidth="90%"
-        mobileMargin="0 auto"
-        mobilePadding="4rem 0 7rem 0"
-        id="home-page"
-      >
+      <Container mobileWidth="90%" mobileMargin="0 auto" id="home-page">
         <Container mobileMargin="0 0 4rem 0" alignSelf="flex-start">
           <H3>Zlecenie nr: 79/BP/08/2023</H3>
         </Container>

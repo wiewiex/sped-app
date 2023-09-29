@@ -1,10 +1,12 @@
 import { Container } from '@/components/_views/styledContainers';
 import { H3 } from '@/components/_views/styledTexts';
 import Addresses from '../Addresses';
-import AmountsRead from '@/components/Amounts/AmountsRead';
-import ClientAndCarrierRead from '@/components/ClientAndCarrier/ClientAndCarrierRead';
-import DetailsRead from '@/components/Details/DetailsRead';
-import { CommentsRead } from '..//Comments';
+import { ClientAndCarrierRead } from '../ClientAndCarrier';
+import { AmountsRead } from '../Amounts';
+import { DetailsRead } from '../Details';
+import { CommentsRead } from '../Comments';
+import Message from '../Message';
+import Documents from '../Documents';
 
 export default function OrderDetails() {
   return (
@@ -15,7 +17,7 @@ export default function OrderDetails() {
       flex={1}
       mobileJustifyContent="flex-start"
     >
-      <Container mobilePadding="4rem 0" alignSelf="flex-start">
+      <Container mobileMargin="0 0 4rem 0" alignSelf="flex-start">
         <H3>Zlecenie nr: 79/BP/08/2023</H3>
       </Container>
       <ClientAndCarrierRead />
@@ -23,6 +25,10 @@ export default function OrderDetails() {
       <AmountsRead />
       <DetailsRead />
       <CommentsRead />
+      <Documents />
+      <Container mobileWidth="100%" maxWidth="70rem" alignSelf="flex-end">
+        <Message />
+      </Container>
     </Container>
   );
 }

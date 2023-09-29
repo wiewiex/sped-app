@@ -6,7 +6,7 @@ import PenOnQuarter from '../_icons/PenOnQuarter';
 
 export default function CommentsRead() {
   return (
-    <Tile mobileWidth="100%" mobileMinHeight="25rem">
+    <Tile mobileWidth="100%" mobileMinHeight="15rem">
       <H3>Uwagi</H3>
       <Text>Brak</Text>
       <ElementPositionWrapper mobileRight="0" mobileBottom="0">

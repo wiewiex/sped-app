@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 export default function DetailsRead() {
   return (
-    <Tile mobileMinHeight="34rem" minHeight="28rem" mobileWidth="100%">
+    <Tile mobileMinHeight="34rem" minHeight="30rem" mobileWidth="100%">
       <H3>Szczegóły</H3>
       <Container
         mobileFlexDirection="row"
@@ -41,7 +41,7 @@ const Item = ({
 }) => {
   const { colors } = useAppTheme();
   return (
-    <Container>
+    <Container mobilePadding="1rem">
       <Icon className={icon} lineColor={lineColor} />
       <Container
         mobileFlexDirection="row"
@@ -63,7 +63,7 @@ const Item = ({
 
 const Icon = styled.i<{ lineColor?: string }>`
   font-size: 1.5rem;
-  color: ${(props) => props.theme.colors.placeholder};
+  color: ${(props) => props.theme.colors.accent};
   border-bottom: 1px solid ${(props) => props.theme.colors.placeholder};
   border-radius: ${(props) => props.theme.borderRadius};
   padding: 1.5rem;

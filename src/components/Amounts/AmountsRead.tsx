@@ -3,13 +3,11 @@ import Tile from '@/components/_elements/Tile';
 import { Container, ElementPositionWrapper } from '@/components/_views/styledContainers';
 import PenOnQuarter from '../_icons/PenOnQuarter';
 import { ReactNode } from 'react';
-import { useAppTheme } from '@/utils/theme';
 import styled from 'styled-components';
-import mediaQueries from '@/utils/mediaQueries';
 
 export default function AmountsRead() {
   return (
-    <Tile mobileWidth="100%" minHeight="25rem" mobileMinHeight="30rem">
+    <Tile mobileWidth="100%" mobileMinHeight="37rem" minHeight="30rem">
       <H3>Kwoty</H3>
       <Container mobileWidth="100%" minWidth="60rem">
         <Container
@@ -65,7 +63,7 @@ export default function AmountsRead() {
             <Row> </Row>
           </Column>
         </Container>
-        <Container mobileAlignSelf="flex-start" mobileMargin="1rem 0 0 0">
+        <Container mobileAlignSelf="flex-start" mobileMargin="1.5rem 0 0 0">
           <SmallText>
             Prowizja jest naliczana po zatwierdzeniu dokumentów wymaganych do zakończenia
             zlecenia.

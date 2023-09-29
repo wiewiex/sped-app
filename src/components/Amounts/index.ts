@@ -1,2 +1,4 @@
-import Amounts from './Amounts';
-export default Amounts;
+import AmountsRead from './AmountsRead';
+import AmountsWrite from './AmountsWrite';
+
+export { AmountsRead, AmountsWrite };

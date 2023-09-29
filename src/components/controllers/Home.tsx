@@ -7,7 +7,7 @@ import PrimaryButton from '@/components/common/_elements/PrimaryButton';
 import ClientAndCarrierWrite from '@/components/common/ClientAndCarrier/ClientAndCarrierWrite';
 import Addresses from '@/components/common/Addresses';
 import AmountsWrite from '@/components/common/Amounts/AmountsWrite';
-import Comments from '@/components/common/Comments';
+import { CommentsWrite } from '../common/Comments';
 import DetailsWrite from '@/components/common/Details/DetailsWrite';
 import AddCarrierModal from '../common/AddCarrier';
 import AddAddressModal from '../common/AddAddress';
@@ -44,7 +44,7 @@ export default function Home() {
         <Addresses showModal={() => showModal(setShowAddAddress)} />
         <AmountsWrite />
         <DetailsWrite />
-        <Comments />
+        <CommentsWrite />
         <Container mobilePadding="3rem">
           <PrimaryButton text="Dodaj" url="/" />
         </Container>

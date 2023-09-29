@@ -1,2 +1,4 @@
-import Comments from './Comments';
-export default Comments;
+import CommentsRead from './CommentsRead';
+import CommentsWrite from './CommentsWrite';
+
+export { CommentsRead, CommentsWrite };

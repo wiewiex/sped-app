@@ -4,6 +4,7 @@ import Addresses from '../common/Addresses';
 import AmountsRead from '@/components/common/Amounts/AmountsRead';
 import ClientAndCarrierRead from '@/components/common/ClientAndCarrier/ClientAndCarrierRead';
 import DetailsRead from '@/components/common/Details/DetailsRead';
+import { CommentsRead } from '../common/Comments';
 
 export default function OrderDetails() {
   return (
@@ -21,6 +22,7 @@ export default function OrderDetails() {
       <Addresses showModal={console.log} />
       <AmountsRead />
       <DetailsRead />
+      <CommentsRead />
     </Container>
   );
 }

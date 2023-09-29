@@ -3,10 +3,11 @@ import { H3, H4, H5, Text } from '@/components/views/styledTexts';
 import { Container, ElementPositionWrapper } from '@/components/views/styledContainers';
 import PenOnQuarter from '../_icons/PenOnQuarter';
 import { useAppTheme } from '@/utils/theme';
+import styled from 'styled-components';
 
 export default function DetailsRead() {
   return (
-    <Tile mobileMinHeight="20rem" mobileWidth="100%">
+    <Tile mobileMinHeight="30rem" minHeight="26rem" mobileWidth="100%">
       <H3>Szczegóły</H3>
       <Container
         mobileFlexDirection="row"
@@ -14,11 +15,11 @@ export default function DetailsRead() {
         mobileJustifyContent="space-around"
         $mobileWrap
       >
-        <Item text="Ilość:" value="2000" />
-        <Item text="Waga:" value="5000" />
-        <Item text="Kilometry:" value="3000" />
-        <Item text="Pojazd:" value="BUS" />
-        <Item text="Typ pojazdu:" value="plandeka" />
+        <Item text="Ilość:" value="2000" icon="fas fa-hashtag" lineColor="blue" />
+        <Item text="Waga:" value="5000" icon="fas fa-weight" />
+        <Item text="Kilometry:" value="3000" icon="fas fa-road" />
+        <Item text="Pojazd:" value="BUS" icon="fas fa-bus" />
+        <Item text="Typ pojazdu:" value="plandeka" icon="fas fa-truck" />
       </Container>
       <ElementPositionWrapper mobileRight="0" mobileBottom="0">
         <PenOnQuarter />
@@ -27,22 +28,43 @@ export default function DetailsRead() {
   );
 }
 
-const Item = ({ text, value }: { text: string; value: string }) => {
+const Item = ({
+  text,
+  value,
+  icon,
+  lineColor,
+}: {
+  text: string;
+  value: string;
+  icon: string;
+  lineColor?: string;
+}) => {
   const { colors } = useAppTheme();
   return (
-    <Container
-      mobileFlexDirection="row"
-      mobileJustifyContent="space-between"
-      justifyContent="space-around"
-      $wrap="wrap"
-      mobileMargin="1rem 2rem"
-    >
-      <Container mobileMargin="0 1rem 0 0">
-        <H5>{text}</H5>
+    <Container>
+      <Icon className={icon} lineColor={lineColor} />
+      <Container
+        mobileFlexDirection="row"
+        mobileJustifyContent="space-between"
+        justifyContent="space-around"
+        $wrap="wrap"
+        mobileMargin="1rem 2rem"
+      >
+        <Container mobileMargin="0 1rem 0 0">
+          <H5>{text}</H5>
+        </Container>
+        <Text color={colors.accent}>
+          <b>{value}</b>
+        </Text>
       </Container>
-      <Text color={colors.accent}>
-        <b>{value}</b>
-      </Text>
     </Container>
   );
 };
+
+const Icon = styled.i<{ lineColor?: string }>`
+  font-size: 1.5rem;
+  color: ${(props) => props.theme.colors.accent};
+  border-bottom: 1px solid ${(props) => props.theme.colors.accent + 20};
+  border-radius: ${(props) => props.theme.borderRadius};
+  padding: 1.5rem;
+`;

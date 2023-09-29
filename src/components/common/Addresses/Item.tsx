@@ -42,7 +42,7 @@ export default function Item({
         mobileJustifyContent="space-between"
         flex={1}
       >
-        <Container mobileMargin="0 0 2rem 0" alignSelf="center">
+        <Container mobileMargin="0 0 2rem 0" mobileAlignSelf="center">
           <Pin />
         </Container>
         <Container mobileMargin="0 0 0.5rem 0">

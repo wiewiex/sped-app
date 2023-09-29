@@ -7,8 +7,17 @@ import { H2, H4 } from '@/components/views/styledTexts';
 import { initialValues, validationSchema } from './handlers';
 import CustomSelect from '@/components/common/_elements/CustomSelect';
 import Switcher from '@/components/common/_elements/Switcher';
+import Modal from '../Modal';
 
-export default function AddClient() {
+export default function AddClientModal({ closeModal }: { closeModal: () => void }) {
+  return (
+    <Modal closeModal={closeModal}>
+      <AddClient />
+    </Modal>
+  );
+}
+
+export function AddClient() {
   return (
     <Container
       width="45vw"
@@ -123,10 +132,7 @@ export default function AddClient() {
                           onChange={handleChange('paymentDeadline')}
                           onBlur={handleBlur('paymentDeadline')}
                           value={paymentDeadline}
-                          error={
-                            touched.paymentDeadline &&
-                            errors.paymentDeadline
-                          }
+                          error={touched.paymentDeadline && errors.paymentDeadline}
                         />
                       </Container>
                       <Container width="30%" mobileWidth="100%">

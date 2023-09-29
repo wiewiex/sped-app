@@ -5,15 +5,14 @@ import Arrow from '../_icons/Arrow';
 import PlusOnQuarter from '@/components/common/_icons/PlusOnQuarter';
 import Item from './Item';
 import ScrollbarContainer from '@/components/common/_elements/ScrollbarContainer';
-import { useAppContext } from '@/context/AppContext';
 import styled from 'styled-components';
 import mediaQueries from '@/utils/mediaQueries';
+import { addresses } from './data';
 
 const blue = '#89CFF090';
 const green = '#77DD7790';
 
-export default function Addresses() {
-  const { setShowAddressModal } = useAppContext();
+export default function Addresses({ showModal }: { showModal: () => void }) {
   return (
     <Tile mobileWidth="100%" minHeight="40rem" padding="0">
       <ScrollbarContainer>
@@ -34,7 +33,7 @@ export default function Addresses() {
         mobileRight="0"
         mobileBottom="0"
         mobileLeft="0"
-        onClick={() => setShowAddressModal(true)}
+        onClick={() => showModal()}
       >
         <Container
           mobileWidth="100%"
@@ -88,59 +87,3 @@ const ItemsContainer = styled.div`
     max-width: 80vw;
   }
 `;
-
-const addresses: {
-  name: string;
-  address: string;
-  postCode: string;
-  city: string;
-  country: string;
-  gps: number[];
-  isUnload: boolean;
-}[] = [
-  {
-    name: 'Castorama',
-    address: 'Żwirki wigury 4',
-    postCode: '39-890',
-    city: 'Warszawa',
-    country: 'Poland',
-    gps: [37.7749, -122.4194],
-    isUnload: false,
-  },
-  {
-    name: 'Przykładowa Firma',
-    address: 'Aleje Jerozolimskie 123',
-    postCode: '00-001',
-    city: 'Warszawa',
-    country: 'Poland',
-    gps: [52.2297, 21.0122],
-    isUnload: true,
-  },
-  {
-    name: 'Sklep AGD',
-    address: 'ul. Piotrkowska 56',
-    postCode: '90-001',
-    city: 'Łódź',
-    country: 'Poland',
-    gps: [51.7704, 19.4562],
-    isUnload: false,
-  },
-  {
-    name: 'Meble Domowe',
-    address: 'ul. Krakowska 78',
-    postCode: '30-001',
-    city: 'Kraków',
-    country: 'Poland',
-    gps: [50.0647, 19.945],
-    isUnload: false,
-  },
-  {
-    name: 'Sklep Elektroniczny',
-    address: 'ul. Nowy Świat 10',
-    postCode: '00-001',
-    city: 'Warszawa',
-    country: 'Poland',
-    gps: [52.2321, 21.016],
-    isUnload: true,
-  },
-];

@@ -2,19 +2,21 @@ import { Formik } from 'formik';
 import { Container } from '@/components/views/styledContainers';
 import PrimaryTextInput from '@/components/common/_elements/PrimaryTextInput';
 import SecondaryButton from '@/components/common/_elements/SecondaryButton';
-import {
-  H2,
-  H4,
-  Text,
-  H5,
-  H6,
-  SmallText,
-} from '@/components/views/styledTexts';
+import { H2, H4, Text, H5, H6, SmallText } from '@/components/views/styledTexts';
 import Switcher from '@/components/common/_elements/Switcher';
 import { initialValues, validationSchema } from './handlers';
 import CustomSelect from '@/components/common/_elements/CustomSelect';
+import Modal from '../Modal';
 
-export default function AddCarrier() {
+export default function AddCarrierModal({ closeModal }: { closeModal: () => void }) {
+  return (
+    <Modal closeModal={closeModal}>
+      <AddCarrier />
+    </Modal>
+  );
+}
+
+export function AddCarrier() {
   return (
     <Container
       mobileWidth="90vw"
@@ -67,12 +69,7 @@ export default function AddCarrier() {
                 mobileJustifyContent="space-between"
                 mobileMargin="5rem 0 3rem 0"
               >
-                <Container
-                  width="50%"
-                  mobileWidth="100%"
-                  padding="0 5rem"
-                  flex={1}
-                >
+                <Container width="50%" mobileWidth="100%" padding="0 5rem" flex={1}>
                   <Container
                     flex={1}
                     mobileWidth="100%"
@@ -130,10 +127,7 @@ export default function AddCarrier() {
                           options={['test1', 'test2']}
                         />
                       </Container>
-                      <Container
-                        mobileFlexDirection="row"
-                        mobileWidth="47%"
-                      >
+                      <Container mobileFlexDirection="row" mobileWidth="47%">
                         <H2 style={{ fontSize: '3rem' }}>VAT</H2>
                         <Switcher checked={true} handleChange={() => {}} />
                       </Container>
@@ -204,8 +198,7 @@ export default function AddCarrier() {
                       onBlur={handleBlur('contactPersonFullName')}
                       value={contactPersonFullName}
                       error={
-                        touched.contactPersonFullName &&
-                        errors.contactPersonFullName
+                        touched.contactPersonFullName && errors.contactPersonFullName
                       }
                     />
                     <PrimaryTextInput
@@ -213,20 +206,14 @@ export default function AddCarrier() {
                       onChange={handleChange('contactPersonPhone')}
                       onBlur={handleBlur('contactPersonPhone')}
                       value={contactPersonPhone}
-                      error={
-                        touched.contactPersonPhone &&
-                        errors.contactPersonPhone
-                      }
+                      error={touched.contactPersonPhone && errors.contactPersonPhone}
                     />
                     <PrimaryTextInput
                       label="Email"
                       onChange={handleChange('contactPersonEmail')}
                       onBlur={handleBlur('contactPersonEmail')}
                       value={contactPersonEmail}
-                      error={
-                        touched.contactPersonEmail &&
-                        errors.contactPersonEmail
-                      }
+                      error={touched.contactPersonEmail && errors.contactPersonEmail}
                     />
                   </Container>
                   <Container mobileWidth="100%">
@@ -238,9 +225,7 @@ export default function AddCarrier() {
                       onChange={handleChange('driverFullName')}
                       onBlur={handleBlur('driverFullName')}
                       value={driverFullName}
-                      error={
-                        touched.driverFullName && errors.driverFullName
-                      }
+                      error={touched.driverFullName && errors.driverFullName}
                     />
                     <PrimaryTextInput
                       label="Telefon"
@@ -265,16 +250,10 @@ export default function AddCarrier() {
                       onChange={handleChange('driverLicenseNumber')}
                       onBlur={handleBlur('driverLicenseNumber')}
                       value={driverLicenseNumber}
-                      error={
-                        touched.driverLicenseNumber &&
-                        errors.driverLicenseNumber
-                      }
+                      error={touched.driverLicenseNumber && errors.driverLicenseNumber}
                     />
                   </Container>
-                  <Container
-                    alignSelf="flex-end"
-                    mobileFlexDirection="row"
-                  >
+                  <Container alignSelf="flex-end" mobileFlexDirection="row">
                     <Container mobileMargin="0 2rem">
                       <SecondaryButton text="Wyczyść" />
                     </Container>

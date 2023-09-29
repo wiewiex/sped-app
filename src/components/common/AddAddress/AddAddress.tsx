@@ -1,5 +1,4 @@
 import { Formik } from 'formik';
-import { Dispatch, SetStateAction, useState } from 'react';
 import { Container } from '@/components/views/styledContainers';
 import PrimaryTextInput from '@/components/common/_elements/PrimaryTextInput';
 import SecondaryButton from '@/components/common/_elements/SecondaryButton';
@@ -10,8 +9,17 @@ import CustomSelect from '@/components/common/_elements/CustomSelect';
 import CustomDateInput from '@/components/common/_elements/CustomDateInput';
 import ToggleButton from '@/components/common/_elements/ToggleButton';
 import CustomTextArea from '@/components/common/_elements/CustomTextArea';
+import Modal from '../Modal';
 
-export default function AddAddress() {
+export default function AddAddressModal({ closeModal }: { closeModal: () => void }) {
+  return (
+    <Modal closeModal={closeModal}>
+      <AddAddress />
+    </Modal>
+  );
+}
+
+export function AddAddress() {
   return (
     <Container
       mobileWidth="90vw"
@@ -132,10 +140,7 @@ export default function AddAddress() {
                 >
                   <CustomDateInput text="Data i godzina rozpoczęcia załadunku" />
                   <CustomDateInput text="Data i godzina rozpoczęcia rozładunku" />
-                  <Container
-                    mobileWidth="100%"
-                    mobileAlignItems="flex-start"
-                  >
+                  <Container mobileWidth="100%" mobileAlignItems="flex-start">
                     <Container mobileMargin="0 0 1rem 0">
                       <SmallText>Dodatkowe informacje</SmallText>
                     </Container>

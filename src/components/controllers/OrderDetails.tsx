@@ -1,6 +1,6 @@
 import { Container } from '@/components/views/styledContainers';
 import { H3 } from '@/components/views/styledTexts';
-import Addresses from '@/components/common/Addresses';
+import Addresses from '../common/Addresses';
 import AmountsRead from '@/components/common/Amounts/AmountsRead';
 import ClientAndCarrierRead from '@/components/common/ClientAndCarrier/ClientAndCarrierRead';
 import DetailsRead from '@/components/common/Details/DetailsRead';
@@ -18,7 +18,7 @@ export default function OrderDetails() {
         <H3>Zlecenie nr: 79/BP/08/2023</H3>
       </Container>
       <ClientAndCarrierRead />
-      <Addresses />
+      <Addresses showModal={console.log} />
       <AmountsRead />
       <DetailsRead />
     </Container>

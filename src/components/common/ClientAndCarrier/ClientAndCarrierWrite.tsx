@@ -3,10 +3,14 @@ import { H3 } from '@/components/views/styledTexts';
 import Tile from '@/components/common/_elements/Tile';
 import PlusOnQuarter from '../_icons/PlusOnQuarter';
 import CustomSelect from '@/components/common/_elements/CustomSelect';
-import { useAppContext } from '@/context/AppContext';
 
-export default function ClientAndCarrierWrite() {
-  const { setShowCarrierModal, setShowClientModal } = useAppContext();
+export default function ClientAndCarrierWrite({
+  showAddCarrier,
+  showAddClient,
+}: {
+  showAddClient: () => void;
+  showAddCarrier: () => void;
+}) {
   return (
     <Container
       flexDirection="row"
@@ -36,7 +40,7 @@ export default function ClientAndCarrierWrite() {
           mobileRight="0"
           mobileBottom="0"
           onClick={() => {
-            setShowClientModal(true);
+            showAddClient();
           }}
         >
           <PlusOnQuarter />
@@ -67,7 +71,7 @@ export default function ClientAndCarrierWrite() {
           mobileRight="0"
           mobileBottom="0"
           onClick={() => {
-            setShowCarrierModal(true);
+            showAddCarrier();
           }}
         >
           <PlusOnQuarter />

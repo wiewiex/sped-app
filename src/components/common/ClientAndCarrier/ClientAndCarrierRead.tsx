@@ -1,12 +1,14 @@
 import { Container, ElementPositionWrapper } from '@/components/views/styledContainers';
 import { H3, H5, SmallText, Text } from '@/components/views/styledTexts';
 import Tile from '@/components/common/_elements/Tile';
-import { useAppContext } from '@/context/AppContext';
 import PenOnQuarter from '../_icons/PenOnQuarter';
 import { ReactNode } from 'react';
 
-export default function ClientAndCarrierRead() {
-  const { setShowCarrierModal, setShowClientModal } = useAppContext();
+export default function ClientAndCarrierRead({
+  showClientModal,
+}: {
+  showClientModal: () => void;
+}) {
   return (
     <Container
       flexDirection="row"
@@ -36,7 +38,7 @@ export default function ClientAndCarrierRead() {
           mobileRight="0"
           mobileBottom="0"
           onClick={() => {
-            setShowClientModal(true);
+            showClientModal();
           }}
         >
           <PenOnQuarter />

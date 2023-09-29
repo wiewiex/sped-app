@@ -1,4 +1,4 @@
-import Layout from '@/components/controllers/Layout';
+import Layout from '@/components/_controllers/Layout';
 import GlobalStyle from '@/utils/GlobalStyle';
 import { themeDark } from '@/utils/theme';
 import type { AppProps } from 'next/app';

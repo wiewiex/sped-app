@@ -1,0 +1,82 @@
+import { Container, ElementPositionWrapper } from '@/components/_views/styledContainers';
+import { H3 } from '@/components/_views/styledTexts';
+import Tile from '@/components/_elements/Tile';
+import PlusOnQuarter from '../_icons/PlusOnQuarter';
+import CustomSelect from '@/components/_elements/CustomSelect';
+
+export default function ClientAndCarrierWrite({
+  showAddCarrier,
+  showAddClient,
+}: {
+  showAddClient: () => void;
+  showAddCarrier: () => void;
+}) {
+  return (
+    <Container
+      flexDirection="row"
+      justifyContent="space-between"
+      mobileWidth="100%"
+      alignItems="stretch"
+    >
+      <Tile mobileWidth="100%" width="48%">
+        <Container
+          flex={1}
+          mobileWidth="90%"
+          mobileJustifyContent="space-around"
+          mobileMinHeight="20rem"
+          minHeight="25rem"
+        >
+          <H3>Klient</H3>
+          <CustomSelect
+            placeholder="Wybierz klienta"
+            options={['Tesco', 'Aldi', 'Lidl']}
+          />
+          <CustomSelect
+            placeholder="Wybierz osobę kontaktową"
+            options={['Manager', 'Driver']}
+          />
+        </Container>
+        <ElementPositionWrapper
+          mobileRight="0"
+          mobileBottom="0"
+          onClick={() => {
+            showAddClient();
+          }}
+        >
+          <PlusOnQuarter />
+        </ElementPositionWrapper>
+      </Tile>
+      <Tile mobileWidth="100%" width="48%">
+        <Container
+          flex={1}
+          mobileWidth="90%"
+          mobileJustifyContent="space-around"
+          mobileMinHeight="20rem"
+        >
+          <H3>Przewoźnik</H3>
+          <CustomSelect
+            placeholder="Wybierz przewoźnika"
+            options={['DHL', 'UPS', 'GSL']}
+          />
+          <CustomSelect
+            placeholder="Wybierz osobę kontaktową"
+            options={['DHL', 'UPS', 'GSL']}
+          />
+          <CustomSelect
+            placeholder="Wybierz kierowcę"
+            options={['Marek', 'Józek', 'Krzysiek']}
+          />
+        </Container>
+        <ElementPositionWrapper
+          mobileRight="0"
+          mobileBottom="0"
+          onClick={() => {
+            showAddCarrier();
+          }}
+        >
+          <PlusOnQuarter />
+        </ElementPositionWrapper>
+      </Tile>
+    </Container>
+  );
+}

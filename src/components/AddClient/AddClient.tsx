@@ -8,6 +8,7 @@ import { initialValues, validationSchema } from './handlers';
 import CustomSelect from '@/components/_elements/CustomSelect';
 import Switcher from '@/components/_elements/Switcher';
 import Modal from '../Modal';
+import ContactPerson from '../AddCarrier/ContactPerson';
 
 export default function AddClientModal({ closeModal }: { closeModal: () => void }) {
   return (
@@ -152,6 +153,17 @@ export function AddClient() {
                         <H2 style={{ fontSize: '3rem' }}>VAT</H2>
                         <Switcher checked={true} handleChange={() => {}} />
                       </Container>
+                    </Container>
+                    <Container mobileWidth="100%" mobileMargin="2rem 0 0 0">
+                      <ContactPerson
+                        contactPersonEmail=""
+                        contactPersonFullName=""
+                        contactPersonPhone=""
+                        errors={errors}
+                        touched={touched}
+                        handleBlur={handleBlur}
+                        handleChange={handleChange}
+                      />
                     </Container>
                   </Container>
                   <Container
